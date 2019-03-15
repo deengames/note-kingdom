@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://BasicBlock.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 30, 30 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 20 )
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 9.0
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 19, 19, 2 )
+
+[node name="Block" type="KinematicBody2D"]
+collision/safe_margin = 0.01
+script = ExtResource( 1 )
+
+[node name="ClearArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="Four1" type="CollisionShape2D" parent="ClearArea"]
+visible = false
+position = Vector2( -10, -10 )
+z_index = 1
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Four2" type="CollisionShape2D" parent="ClearArea"]
+visible = false
+position = Vector2( 10, -10 )
+z_index = 1
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Four3" type="CollisionShape2D" parent="ClearArea"]
+visible = false
+position = Vector2( 10, 10 )
+z_index = 1
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Four4" type="CollisionShape2D" parent="ClearArea"]
+visible = false
+position = Vector2( -10, 10 )
+z_index = 1
+shape = SubResource( 4 )
+disabled = true
+
+[node name="Three" type="CollisionShape2D" parent="ClearArea"]
+visible = false
+z_index = 1
+shape = SubResource( 2 )
+disabled = true
+
+[node name="Round" type="CollisionShape2D" parent="."]
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource( 3 )
+
+[connection signal="body_entered" from="ClearArea" to="." method="log_clears"]

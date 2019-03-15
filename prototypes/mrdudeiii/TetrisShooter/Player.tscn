@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://BasicBlock.tscn" type="PackedScene" id=2]
+
+[node name="Player" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+recoil = 0.2
+
+[node name="Block" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( 21, 0.248154 )
+
+[node name="Block2" parent="." instance=ExtResource( 2 )]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 0, 0.248154 )
+
+[node name="Block3" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( -21, 0.248154 )
+
+[node name="Block4" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( -32, -20.7518 )
+
+[node name="Block8" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( -11, -20.7518 )
+
+[node name="Block9" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( 10, -20.7518 )
+
+[node name="Block7" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( -11, 21.2482 )
+
+[node name="Block10" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( 10, 21.2482 )
+
+[node name="Block6" parent="." instance=ExtResource( 2 )]
+modulate = Color( 0.0117647, 0.0745098, 1, 1 )
+position = Vector2( 31, 21.2482 )
+
+[node name="Tween" type="Tween" parent="."]
+
