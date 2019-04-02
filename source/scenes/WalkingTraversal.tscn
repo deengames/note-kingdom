@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/PushableBlock.tscn" type="PackedScene" id=2]
 
 [sub_resource type="OpenSimplexNoise" id=3]
 period = 4.0
@@ -34,4 +35,7 @@ __meta__ = {
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
 shadow_enabled = true
+
+[node name="TestBlock" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 5 )
 
