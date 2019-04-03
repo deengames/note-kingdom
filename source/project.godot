@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Forgotten Kingdom"
+config/name="Note Kingdom"
 run/main_scene="res://scenes/WalkingTraversal.tscn"
 config/icon="res://icon.png"
 
