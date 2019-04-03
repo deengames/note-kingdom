@@ -4,6 +4,7 @@ extends KinematicBody
 export var move_speed:int = 200 # pixels per second?
 var _acceleration:Vector3 = Vector3(0, 0, 0)
 var can_move = true
+const RAYCAST_DISTANCE = 1.25
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,19 +15,19 @@ func _process(delta):
 	if can_move:
 		if Input.is_key_pressed(KEY_S):
 			self._acceleration.z = move_speed
-			$RayCast.cast_to = Vector3(0, 0, 1.25)
+			$RayCast.cast_to = Vector3(0, 0, RAYCAST_DISTANCE)
 		elif Input.is_key_pressed(KEY_W):
 			self._acceleration.z = -move_speed
-			$RayCast.cast_to = Vector3(0, 0, -1.25)
+			$RayCast.cast_to = Vector3(0, 0, -RAYCAST_DISTANCE)
 		else:
 			self._acceleration.z = 0
 		
 		if Input.is_key_pressed(KEY_D):
-			$RayCast.cast_to = Vector3(1.25, 0, 0)
+			$RayCast.cast_to = Vector3(RAYCAST_DISTANCE, 0, 0)
 			self._acceleration.x = move_speed
 		elif Input.is_key_pressed(KEY_A):
 			self._acceleration.x = -move_speed
-			$RayCast.cast_to = Vector3(-1.25, 0, 0)
+			$RayCast.cast_to = Vector3(-RAYCAST_DISTANCE, 0, 0)
 		else:
 			self._acceleration.x = 0
 		
