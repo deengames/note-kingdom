@@ -1,13 +1,14 @@
 extends KinematicBody
 
 # Y-component is zero so we stay flat on the ground
-export var move_speed:int = 200 # pixels per second?
+export var move_speed:float = 10.0 # pixels per second?
 export var block_push_delay:float = 0.2 # in seconds, how long before the block pushes on contact
 var _acceleration:Vector3 = Vector3(0, 0, 0)
 var can_move = true
 var _push_delay = 0.0 
 var _last_input:Vector2 = Vector2(0, 0) 
-const RAYCAST_DISTANCE = 1.5
+const RAYCAST_DISTANCE = 1.25
+const STEP_DISTANCE = 4.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,29 +33,24 @@ func _process(delta):
 		_acceleration = Vector3(input_direction.x, 0, input_direction.y) * move_speed
 		if abs(input_direction.x) == 1.0 or abs(input_direction.y) == 1.0:
 			$RayCast.cast_to = Vector3(input_direction.x, 0, input_direction.y) * RAYCAST_DISTANCE
-			$RayCastFar.cast_to = $RayCast.cast_to * 4
+#			$RayCastFar.cast_to = $RayCast.cast_to * 4
 		var collider = $RayCast.get_collider()
 		
 		if collider != null:
-			$RayCastFar.enabled = true
-			$RayCastFar.add_exception(collider)
+#			$RayCastFar.enabled = true
+#			$RayCastFar.add_exception(collider)
 			var behind_collider = $RayCastFar.get_collider()
 			_push_delay += delta
 			if collider.pushable and behind_collider == null and _push_delay >= block_push_delay and _last_input == input_direction: # added a delay instead of a button press
-#				$Tween.reset_all()
-				$Tween.interpolate_property(collider, "translation", collider.translation, collider.translation + $RayCast.cast_to * 2, 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-				$Tween.interpolate_property(self, "translation", self.translation, self.translation + $RayCast.cast_to * 2, 1, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
-				$Tween.start()
-				can_move = false
+				move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
+				collider.move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
 			$PlayerCharacter/AnimationPlayer.play("Push")
 			$PlayerCharacter.rotation.y = Vector2(-$RayCast.cast_to.x, $RayCast.cast_to.z).tangent().angle()
-			
 		else:
-			$RayCastFar.remove_exception(collider)
-			$RayCastFar.enabled = false
-			$Tween.reset_all()
+#			$RayCastFar.enabled = false
+#			$Tween.reset_all()
 			_push_delay = 0.0
-			_acceleration = move_and_slide(self._acceleration * delta)
+			move_and_slide(_acceleration)
 			$PlayerCharacter/AnimationPlayer.play("Run")
 			$PlayerCharacter.rotation.y = -input_direction.tangent().angle()
 					
@@ -62,4 +58,5 @@ func _process(delta):
 
 func _on_Tween_tween_completed(object, key):
 	if object == self:
+#		$RayCastFar.clear_exceptions()
 		can_move = true
