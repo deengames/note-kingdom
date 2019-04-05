@@ -7,6 +7,7 @@
 
 [node name="KinematicBody" type="KinematicBody"]
 script = ExtResource( 1 )
+pushable = true
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = ExtResource( 2 )
