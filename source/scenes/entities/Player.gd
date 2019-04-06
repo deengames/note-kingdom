@@ -41,7 +41,8 @@ func _process(delta):
 #			$RayCastFar.add_exception(collider)
 			var behind_collider = $RayCastFar.get_collider()
 			_push_delay += delta
-			if collider.pushable and behind_collider == null and _push_delay >= block_push_delay and _last_input == input_direction: # added a delay instead of a button press
+			 # added a delay instead of a button press
+			if collider is KinematicBody and "pushable" in collider and collider.pushable and behind_collider == null and _push_delay >= block_push_delay and _last_input == input_direction:
 				move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
 				collider.move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
 			$PlayerCharacter/AnimationPlayer.play("Push")
