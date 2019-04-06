@@ -24,6 +24,7 @@ size = Vector2( 50, 50 )
 [sub_resource type="PlaneShape" id=5]
 
 [node name="Spatial" type="Spatial"]
+editor/display_folded = true
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0 )
