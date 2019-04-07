@@ -244,7 +244,6 @@ __meta__ = {
 shape = SubResource( 5 )
 
 [node name="Pushable Blocks" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="TestBlock" parent="Pushable Blocks" instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 1.97543, 5 )
