@@ -56,8 +56,3 @@ func _process(delta):
 			$PlayerCharacter.rotation.y = -input_direction.tangent().angle()
 					
 		_last_input = input_direction
-
-func _on_Tween_tween_completed(object, key):
-	if object == self:
-#		$RayCastFar.clear_exceptions()
-		can_move = true
