@@ -4,6 +4,8 @@ const Player = preload("res://scenes/entities/Player.gd")
 
 signal got_note
 
+export var text:String = ""
+
 const _ROTATE_SPEED = 100
 var _current_angle:float = 0
 
