@@ -1,5 +1,11 @@
 extends Area
 
+const Player = preload("res://scenes/entities/Player.gd")
+
+signal got_note
+
+export var text:String = ""
+
 const _ROTATE_SPEED = 100
 var _current_angle:float = 0
 
@@ -9,12 +15,5 @@ func _process(delta):
 
 
 func _on_StaticBody_body_entered(body):
-	# TODO: find a non-hacky way to do this
-	if body.is_in_group("player"):
-		print("touched the player")
-		# touched the player
-		pass
-#	var script = body.script
-#	if script.resource_path.index("/Player.gd") > -1:
-#		# touched the player
-#		pass
+	if body is Player:
+		emit_signal("got_note", self)

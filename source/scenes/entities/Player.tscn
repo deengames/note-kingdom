@@ -31,9 +31,6 @@ cast_to = Vector3( -1.5, 0, 0 )
 [node name="RayCastFar" type="RayCast" parent="."]
 cast_to = Vector3( -1.5, 0, 0 )
 
-[node name="Tween" type="Tween" parent="."]
-
 [node name="PlayerCharacter" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.750994, 0 )
 
-[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
