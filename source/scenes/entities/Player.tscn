@@ -6,7 +6,9 @@
 
 [sub_resource type="CapsuleShape" id=1]
 
-[node name="KinematicBody" type="KinematicBody"]
+[node name="KinematicBody" type="KinematicBody" groups=[
+"player",
+]]
 script = ExtResource( 1 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

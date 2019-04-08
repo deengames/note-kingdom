@@ -10,7 +10,11 @@ func _process(delta):
 
 func _on_StaticBody_body_entered(body):
 	# TODO: find a non-hacky way to do this
-	var script = body.script
-	if script.resource_path.index("/Player.gd") > -1:
+	if body.is_in_group("player"):
+		print("touched the player")
 		# touched the player
 		pass
+#	var script = body.script
+#	if script.resource_path.index("/Player.gd") > -1:
+#		# touched the player
+#		pass
