@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Ground and Border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 21.5808, 0 )
+
+[node name="KinematicBody65" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5505, 0.75, -2.11176 )
+
+[node name="Ground and Border" parent="." instance=ExtResource( 2 )]
+
+[node name="StaticBody" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3357, 2.2777, 18.4187 )
+
+[node name="Blocking" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="StaticBody" parent="Blocking" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, -12.1127, 1, 18.2772 )
+
+[node name="StaticBody2" parent="Blocking" instance=ExtResource( 4 )]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 1, -14.921, 1, 12.8109 )
+
+[node name="Levers" type="Node" parent="."]
+
+[node name="Spatial" parent="Levers" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2001, 0, 9.85057 )
+
