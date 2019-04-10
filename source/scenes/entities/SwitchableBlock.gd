@@ -1,10 +1,11 @@
 extends StaticBody
 
-export var appear:bool = true
+#export var appear:bool = true
 
 func _ready():
-	# set visibility/state based on property
-	self.visible = self.appear
+	# set visibility/state based on external property
+	# self.visible = self.appear
+	self.visible = self.name.to_lower().begins_with("on")
 	self._update_state()
 
 func flip():
