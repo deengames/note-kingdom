@@ -1,9 +1,15 @@
 extends StaticBody
 
-const _HIDDEN_Y = -4
-var _base_y = self.translation.y
+export var appear:bool = true
+
+func _ready():
+	# set visibility/state based on property
+	self.visible = self.appear
+	self._update_state()
 
 func flip():
-	# TODO: tween
-	self.translation.y = _HIDDEN_Y - self.translation.y
-	print(str(self.translation.y))
+	self.visible = not self.visible
+	self._update_state()
+
+func _update_state():
+	$CollisionShape.disabled = not self.visible

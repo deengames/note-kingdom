@@ -23,7 +23,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3357, 2.2777, 18.4187 )
 [node name="Blocking" type="Node" parent="."]
 
 [node name="StaticBody" parent="Blocking" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -12.1127, 1, 20.6359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 4, -12.1127, 1, 18.4085 )
 
 [node name="StaticBody2" parent="Blocking" instance=ExtResource( 4 )]
 transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 1, -14.921, 1, 12.8109 )
@@ -31,11 +31,12 @@ transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 1, -14.921, 1, 12.8109 )
 [node name="Lever1" type="Node" parent="."]
 
 [node name="Spatial" parent="Lever1" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2001, 0, 9.85057 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5512, 0, 9.64271 )
 
 [node name="StaticBody" parent="Lever1" instance=ExtResource( 6 )]
-transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, -21.192, 1, 12.651 )
+transform = Transform( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, -21.3051, 0, 13.1988 )
 
-[node name="Under" parent="Lever1" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -12.07, -5, 16.393 )
+[node name="StaticBody2" parent="Lever1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 3, -12.0079, 0, 8.62868 )
+appear = false
 
