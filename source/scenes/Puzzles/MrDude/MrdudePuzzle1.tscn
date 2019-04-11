@@ -1,0 +1,459 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/PushableBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=5]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 4.0
+
+[sub_resource type="NoiseTexture" id=2]
+width = 50
+height = 50
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0.501961, 0, 1 )
+albedo_texture = SubResource( 2 )
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
+size = Vector2( 50, 50 )
+
+[sub_resource type="PlaneShape" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+shadow_enabled = true
+
+[node name="Ground and Border" type="Node" parent="."]
+
+[node name="KinematicBody" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 6 )
+
+[node name="KinematicBody65" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 2, 21 )
+
+[node name="KinematicBody66" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 2, 17 )
+
+[node name="KinematicBody67" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 2, 13 )
+
+[node name="KinematicBody68" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 2, 9 )
+
+[node name="KinematicBody69" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 2, 9 )
+
+[node name="KinematicBody70" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -18, 2, 9 )
+
+[node name="KinematicBody71" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -22, 2, 9 )
+
+[node name="KinematicBody72" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 2, -3 )
+
+[node name="KinematicBody76" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 2, 2, -3 )
+
+[node name="KinematicBody86" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 2, -11 )
+
+[node name="KinematicBody87" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 2, -15 )
+
+[node name="KinematicBody88" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 2, -21 )
+
+[node name="KinematicBody98" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -8, 2, -17 )
+
+[node name="KinematicBody117" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 2, -17 )
+
+[node name="KinematicBody119" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 2, -17 )
+
+[node name="KinematicBody121" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 2, -17 )
+
+[node name="KinematicBody123" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 2, -17 )
+
+[node name="KinematicBody99" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -8, 2, -21 )
+
+[node name="KinematicBody116" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -12, 2, -21 )
+
+[node name="KinematicBody118" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -16, 2, -21 )
+
+[node name="KinematicBody120" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -20, 2, -21 )
+
+[node name="KinematicBody122" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -24, 2, -21 )
+
+[node name="KinematicBody77" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, -3 )
+
+[node name="KinematicBody102" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, -7 )
+
+[node name="KinematicBody105" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, -11 )
+
+[node name="KinematicBody106" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, -21 )
+
+[node name="KinematicBody110" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, -17 )
+
+[node name="KinematicBody80" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, 1 )
+
+[node name="KinematicBody81" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, 5 )
+
+[node name="KinematicBody82" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, 9 )
+
+[node name="KinematicBody91" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, 3 )
+
+[node name="KinematicBody94" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 2, 15 )
+
+[node name="KinematicBody95" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, 15 )
+
+[node name="KinematicBody96" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18, 2, 15 )
+
+[node name="KinematicBody97" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18, 2, 19 )
+
+[node name="KinematicBody92" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18, 2, 9 )
+
+[node name="KinematicBody93" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22, 2, 9 )
+
+[node name="KinematicBody83" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, 15 )
+
+[node name="KinematicBody84" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6, 2, 21 )
+
+[node name="KinematicBody78" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 2, -3 )
+
+[node name="KinematicBody100" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 2, -7 )
+
+[node name="KinematicBody104" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 2, -11 )
+
+[node name="KinematicBody108" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 2, -21 )
+
+[node name="KinematicBody109" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 2, -17 )
+
+[node name="KinematicBody79" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, -3 )
+
+[node name="KinematicBody101" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, -7 )
+
+[node name="KinematicBody103" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, -11 )
+
+[node name="KinematicBody107" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, -21 )
+
+[node name="KinematicBody112" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18, 2, -21 )
+
+[node name="KinematicBody115" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22, 2, -21 )
+
+[node name="KinematicBody111" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 2, -17 )
+
+[node name="KinematicBody113" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 18, 2, -17 )
+
+[node name="KinematicBody114" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 22, 2, -17 )
+
+[node name="KinematicBody75" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 2, 3 )
+
+[node name="KinematicBody73" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 2, -3 )
+
+[node name="KinematicBody74" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 2, -3 )
+
+[node name="KinematicBody85" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 2, -7 )
+
+[node name="KinematicBody89" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 2, -11 )
+
+[node name="KinematicBody90" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 2, -11 )
+
+[node name="KinematicBody2" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 3 )
+
+[node name="KinematicBody3" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 0 )
+
+[node name="KinematicBody4" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -3 )
+
+[node name="KinematicBody5" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -6 )
+
+[node name="KinematicBody6" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -9 )
+
+[node name="KinematicBody7" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -12 )
+
+[node name="KinematicBody8" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -15 )
+
+[node name="KinematicBody9" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -18 )
+
+[node name="KinematicBody10" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, -21 )
+
+[node name="KinematicBody11" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, -24 )
+
+[node name="KinematicBody12" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1, -24 )
+
+[node name="KinematicBody13" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, -24 )
+
+[node name="KinematicBody14" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -24 )
+
+[node name="KinematicBody15" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, -24 )
+
+[node name="KinematicBody16" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -24 )
+
+[node name="KinematicBody17" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -24 )
+
+[node name="KinematicBody18" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -24 )
+
+[node name="KinematicBody19" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -24 )
+
+[node name="KinematicBody20" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -24 )
+
+[node name="KinematicBody21" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, -24 )
+
+[node name="KinematicBody22" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -24 )
+
+[node name="KinematicBody23" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -24 )
+
+[node name="KinematicBody24" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, -24 )
+
+[node name="KinematicBody25" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, -24 )
+
+[node name="KinematicBody26" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, -24 )
+
+[node name="KinematicBody27" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, -24 )
+
+[node name="KinematicBody28" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -21 )
+
+[node name="KinematicBody29" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -18 )
+
+[node name="KinematicBody30" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -15 )
+
+[node name="KinematicBody31" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -12 )
+
+[node name="KinematicBody32" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -9 )
+
+[node name="KinematicBody33" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -6 )
+
+[node name="KinematicBody34" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -3 )
+
+[node name="KinematicBody35" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 0 )
+
+[node name="KinematicBody36" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 3 )
+
+[node name="KinematicBody37" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 6 )
+
+[node name="KinematicBody38" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 9 )
+
+[node name="KinematicBody39" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 12 )
+
+[node name="KinematicBody40" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 15 )
+
+[node name="KinematicBody41" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 18 )
+
+[node name="KinematicBody42" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 21 )
+
+[node name="KinematicBody43" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 1, 24 )
+
+[node name="KinematicBody44" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1, 24 )
+
+[node name="KinematicBody45" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1, 24 )
+
+[node name="KinematicBody46" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 24 )
+
+[node name="KinematicBody47" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 24 )
+
+[node name="KinematicBody48" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 24 )
+
+[node name="KinematicBody49" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 24 )
+
+[node name="KinematicBody50" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 24 )
+
+[node name="KinematicBody51" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 24 )
+
+[node name="KinematicBody52" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 24 )
+
+[node name="KinematicBody53" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 24 )
+
+[node name="KinematicBody54" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 24 )
+
+[node name="KinematicBody55" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1, 24 )
+
+[node name="KinematicBody56" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 24 )
+
+[node name="KinematicBody57" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 1, 24 )
+
+[node name="KinematicBody58" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21, 1, 24 )
+
+[node name="KinematicBody59" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1, 24 )
+
+[node name="KinematicBody60" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 21 )
+
+[node name="KinematicBody61" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 18 )
+
+[node name="KinematicBody62" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 15 )
+
+[node name="KinematicBody63" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 12 )
+
+[node name="KinematicBody64" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1, 9 )
+
+[node name="Ground" type="StaticBody" parent="Ground and Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="Mesh" type="MeshInstance" parent="Ground and Border/Ground"]
+mesh = SubResource( 4 )
+material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground and Border/Ground"]
+shape = SubResource( 5 )
+
+[node name="Pushable Blocks" type="Node" parent="."]
+
+[node name="TestBlock" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 1.97543, 5 )
+
+[node name="TestBlock3" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 1.97543, 9 )
+
+[node name="TestBlock2" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -10, 1.97543, 1 )
+
+[node name="TestBlock5" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 1.97543, -3 )
+
+[node name="TestBlock8" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 10, 1.97543, 11 )
+
+[node name="TestBlock9" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 1.97543, 9 )
+
+[node name="TestBlock6" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -2, 1.97543, -7 )
+
+[node name="TestBlock7" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -6, 1.97543, -13 )
+
+[node name="TestBlock4" parent="Pushable Blocks" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -14, 1.97543, 3 )
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="StaticBody" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, 17 )
+
+[node name="NotePanel" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="UI Stuff" type="Node" parent="."]
+
