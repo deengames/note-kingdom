@@ -3,11 +3,11 @@
 [ext_resource path="res://assets/textures/Grass.png" type="Texture" id=1]
 [ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=2]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="PlaneMesh" id=2]
-material = SubResource( 4 )
+material = SubResource( 1 )
 size = Vector2( 50, 50 )
 
 [sub_resource type="PlaneShape" id=3]

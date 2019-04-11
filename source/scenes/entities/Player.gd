@@ -1,7 +1,7 @@
 extends KinematicBody
 
 # Y-component is zero so we stay flat on the ground
-export var move_speed:float = 10.0 # pixels per second?
+export var player_speed:float = 10.0 # pixels per second?
 export var block_push_delay:float = 0.2 # in seconds, how long before the block pushes on contact
 var _acceleration:Vector3 = Vector3(0, 0, 0)
 var can_move = true
@@ -9,6 +9,8 @@ var _push_delay = 0.0
 var _last_input:Vector2 = Vector2(0, 0) 
 const RAYCAST_DISTANCE = 1.25
 const STEP_DISTANCE = 4.0
+var RUN_SPEED = player_speed * 2
+var WALK_SPEED = player_speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,6 +19,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if can_move:
+		# Run option
+		var move_speed
+		
+		if Input.is_action_pressed("run"):
+			move_speed = RUN_SPEED
+		else:
+			move_speed = WALK_SPEED
+		
 		# MrDudeIII found this in a KidsCanCode tutorial
 		var input_direction = Vector2(
 			int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
