@@ -1,0 +1,185 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=6]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 4.0
+
+[sub_resource type="NoiseTexture" id=2]
+width = 50
+height = 50
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0.501961, 0, 1 )
+albedo_texture = SubResource( 2 )
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
+size = Vector2( 50, 50 )
+
+[sub_resource type="PlaneShape" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+shadow_enabled = true
+
+[node name="Ground and Border" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Wall" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 27, -23, 3, 0 )
+
+[node name="Wall2" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 27, 23, 3, 0 )
+
+[node name="Wall3" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 25, 0, 0, 0, 3, 0, 0, 0, 1, 0, 3, -25 )
+
+[node name="Wall4" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 11, 0, 0, 0, 3, 0, 0, 0, 1, -14, 3, 25 )
+
+[node name="Wall5" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 11, 0, 0, 0, 3, 0, 0, 0, 1, 14, 3, 25 )
+
+[node name="CenterWall" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, -20, 2, 14 )
+
+[node name="CenterWall10" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, -20, 2, -6 )
+
+[node name="CenterWall13" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 8, -8, 2, 4 )
+
+[node name="CenterWall16" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 3, 8, 2, -11 )
+
+[node name="CenterWall18" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 3, -8, 2, -11 )
+
+[node name="CenterWall17" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 3, 8, 2, -21 )
+
+[node name="CenterWall19" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 3, -8, 2, -21 )
+
+[node name="CenterWall14" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 8, 8, 2, 4 )
+
+[node name="CenterWall2" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, 20, 2, 14 )
+
+[node name="CenterWall9" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 2, 20, 2, -6 )
+
+[node name="CenterWall4" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 2, -8, 2, 14 )
+
+[node name="CenterWall12" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 2, -8, 2, -6 )
+
+[node name="CenterWall7" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 2, 8, 2, 14 )
+
+[node name="CenterWall11" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 2, 8, 2, -6 )
+
+[node name="Ground" type="StaticBody" parent="Ground and Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="Mesh" type="MeshInstance" parent="Ground and Border/Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground and Border/Ground"]
+shape = SubResource( 5 )
+
+[node name="Switches1" type="Node" parent="."]
+
+[node name="On6" parent="Switches1" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, -16, 1, 14 )
+
+[node name="Off3" parent="Switches1" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, -16, 1, -6 )
+
+[node name="Spatial" parent="Switches1" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -20, 0, 19 )
+
+[node name="Switches2" type="Node" parent="."]
+
+[node name="Spatial2" parent="Switches2" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 20, 0, 19 )
+
+[node name="On8" parent="Switches2" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, 16, 1, 14 )
+
+[node name="Switches3" type="Node" parent="."]
+
+[node name="Spatial4" parent="Switches3" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -12, 0, 3 )
+
+[node name="On8" parent="Switches3" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 14 )
+
+[node name="Switches4" type="Node" parent="."]
+
+[node name="Spatial3" parent="Switches4" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 12, 0, 3 )
+
+[node name="On5" parent="Switches4" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, 16, 1, -6 )
+
+[node name="Switches5" type="Node" parent="."]
+
+[node name="On2" parent="Switches5" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 2, -8, 1, -16 )
+
+[node name="Off7" parent="Switches5" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 14 )
+
+[node name="Spatial7" parent="Switches5" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -4, 0, 3 )
+
+[node name="Switches6" type="Node" parent="."]
+
+[node name="On" parent="Switches6" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 2, 8, 1, -16 )
+
+[node name="Spatial6" parent="Switches6" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 4, 0, 3 )
+
+[node name="Switches7" type="Node" parent="."]
+
+[node name="On4" parent="Switches7" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, -6 )
+
+[node name="Spatial5" parent="Switches7" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 20, 0, -16 )
+
+[node name="Switches8" type="Node" parent="."]
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.819, 1, -19 )
+
+[node name="NotePanel" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="UI Stuff" type="Node" parent="."]
+
