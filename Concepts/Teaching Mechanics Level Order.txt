@@ -1,0 +1,79 @@
+# Teaching Mechanics Level Order
+
+## Pushing Blocks
+
+### Exposure
+
+1. You can push blocks out of the way
+
+### Explanation
+
+2. Walls stop the push blocks
+3. Other push blocks stop the push blocks
+4. Sometimes you need to go back out of the room to reset
+
+### Exam
+
+3. Prove your mastery of block pushing
+
+## Toggle Switches
+
+### Exposure
+
+1. You can press a button to toggle switches
+
+### Explanation
+
+2. Some doors are changed by multiple switches
+3. Some switches change multiple doors
+4. Toggle switches and push blocks together
+
+### Exam
+
+5. Prove your mastery of switch pressing
+
+## Pressure Plates
+
+### Exposure
+
+1. Stepping on a pressure plate opens certain doors
+
+### Explanation
+
+2. Some plates need to be held down by blocks
+3. Groups of plates need to all be pressed at the same time
+4. Some pressure plates are unset by other pressure plates
+
+### Exam
+
+5. Prove your mastery of pressure plates
+
+## Keys and Doors
+
+### Exposure
+
+1. Keys open certain doors
+
+### Explanation
+
+2. Keys and Blocks
+3. Keys and Switches
+4. Keys and Pressure Plates
+
+### Exam
+
+5. Prove your mastery of Keys and Doors
+
+## Everything
+
+### Exposure
+
+1. Intro Challenge
+
+### Explanation
+
+2. Intermediate Challenge
+
+### Exam
+
+3. Final Challenge

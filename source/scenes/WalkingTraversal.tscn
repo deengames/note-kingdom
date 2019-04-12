@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/WalkingTraversal.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,10 @@
 [ext_resource path="res://scenes/entities/PushableBlock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/entities/Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=10]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -40,5 +44,40 @@ text = "DEMO!!"
 visible = false
 
 [node name="UI Stuff" type="Node" parent="."]
+
+[node name="Keys and Doors" type="Node" parent="."]
+
+[node name="Key1" parent="Keys and Doors" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78864, 1.96543, -7.15374 )
+number = 1
+
+[node name="Key2" parent="Keys and Doors" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.355, 1.93, -7.154 )
+number = 2
+
+[node name="Door1" parent="Keys and Doors" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2005, 1.81561, -10.3317 )
+number = 1
+
+[node name="Door2" parent="Keys and Doors" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.204088, 1.51427, -11.4522 )
+number = 2
+
+[node name="Plates1" type="Node" parent="."]
+
+[node name="On" parent="Plates1" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -5 )
+
+[node name="Spatial" parent="Plates1" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Plates2" type="Node" parent="."]
+
+[node name="On" parent="Plates2" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -5 )
+
+[node name="Spatial" parent="Plates2" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.0640669, 0 )
 
 [connection signal="got_note" from="Notes/StaticBody" to="." method="_on_StaticBody_got_note"]

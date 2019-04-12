@@ -12,6 +12,9 @@ const STEP_DISTANCE = 4.0
 var RUN_SPEED = player_speed * 2
 var WALK_SPEED = player_speed
 
+# TODO: persist when you recreate the character
+var keys = [] # numbers like 1, 37
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
