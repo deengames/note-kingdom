@@ -42,7 +42,7 @@
 
 2. Some plates need to be held down by blocks
 3. Groups of plates need to all be pressed at the same time
-4. Some pressure plates are unset by other pressure plates
+4. Some pressure plates are unset by other pressure plates?
 
 ### Exam
 
@@ -64,7 +64,7 @@
 
 5. Prove your mastery of Keys and Doors
 
-## Everything
+## Everything -- These levels will be in the dark
 
 ### Exposure
 

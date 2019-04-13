@@ -13,7 +13,15 @@ func _process(delta):
 
 func _on_Area_body_entered(body):
 	if body is Player:
-		body.keys.append(self.number)
-		self.get_parent().remove_child(self)
-		self.queue_free()
+		if body.keys.size() < 1:
+			body.keys.append(number)
+#			get_parent().remove_child(self)
+			self.queue_free()
+		else:
+			var number_switch = body.keys[0]
+			body.keys = [self.number]
+			self.number = number_switch
+			hide()
+			yield(self, "body_exited")
+			show()
 		

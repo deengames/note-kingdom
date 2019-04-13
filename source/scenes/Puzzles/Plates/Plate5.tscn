@@ -1,0 +1,2551 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=6]
+
+[sub_resource type="OpenSimplexNoise" id=1]
+period = 4.0
+
+[sub_resource type="NoiseTexture" id=2]
+width = 50
+height = 50
+seamless = true
+noise = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0, 0.501961, 0, 1 )
+albedo_texture = SubResource( 2 )
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
+size = Vector2( 50, 50 )
+
+[sub_resource type="PlaneShape" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+shadow_enabled = true
+
+[node name="Ground and Border" type="Node" parent="."]
+
+[node name="Wall" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 27, -23, 3, 0 )
+
+[node name="Wall2" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 27, 23, 3, 0 )
+
+[node name="Wall3" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 25, 0, 0, 0, 3, 0, 0, 0, 1, 0, 3, -25 )
+
+[node name="Wall4" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 11, 0, 0, 0, 3, 0, 0, 0, 1, -14, 3, 25 )
+
+[node name="Wall5" parent="Ground and Border" instance=ExtResource( 2 )]
+transform = Transform( 11, 0, 0, 0, 3, 0, 0, 0, 1, 14, 3, 25 )
+
+[node name="Ground" type="StaticBody" parent="Ground and Border"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
+
+[node name="Mesh" type="MeshInstance" parent="Ground and Border/Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+mesh = SubResource( 4 )
+material/0 = null
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground and Border/Ground"]
+shape = SubResource( 5 )
+
+[node name="PushableBlocks" type="Node" parent="."]
+
+[node name="Switches1" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 23 )
+
+[node name="Off" parent="Switches1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches1" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches2" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 21 )
+
+[node name="Off" parent="Switches2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches2" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches3" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 19 )
+
+[node name="Off" parent="Switches3" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches3" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches4" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 17 )
+
+[node name="Off" parent="Switches4" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches4" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches5" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 15 )
+
+[node name="Off" parent="Switches5" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches5" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches6" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 15 )
+
+[node name="Off" parent="Switches6" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches6" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches7" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 15 )
+
+[node name="Off" parent="Switches7" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches7" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches8" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 15 )
+
+[node name="Off" parent="Switches8" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches8" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches9" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15 )
+
+[node name="Off" parent="Switches9" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches9" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches10" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 15 )
+
+[node name="Off" parent="Switches10" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches10" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches11" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 17 )
+
+[node name="Off" parent="Switches11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches11" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches12" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 19 )
+
+[node name="Off" parent="Switches12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches12" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches13" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 21 )
+
+[node name="Off" parent="Switches13" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches13" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches14" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 23 )
+
+[node name="Off" parent="Switches14" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches14" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches15" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 15 )
+
+[node name="Off" parent="Switches15" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches15" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches16" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 15 )
+
+[node name="Off" parent="Switches16" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches16" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches17" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 15 )
+
+[node name="Off" parent="Switches17" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches17" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches18" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 15 )
+
+[node name="Off" parent="Switches18" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches18" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches19" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 15 )
+
+[node name="Off" parent="Switches19" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches19" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches20" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 15 )
+
+[node name="Off" parent="Switches20" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches20" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches21" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 13 )
+
+[node name="Off" parent="Switches21" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches21" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches22" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 11 )
+
+[node name="Off" parent="Switches22" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches22" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches23" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 9 )
+
+[node name="Off" parent="Switches23" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches23" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches24" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 7 )
+
+[node name="Off" parent="Switches24" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches24" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches25" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 5 )
+
+[node name="Off" parent="Switches25" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches25" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches26" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 3 )
+
+[node name="Off" parent="Switches26" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches26" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches27" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 1 )
+
+[node name="Off" parent="Switches27" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches27" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches28" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -1 )
+
+[node name="Off" parent="Switches28" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches28" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches29" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -3 )
+
+[node name="Off" parent="Switches29" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches29" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches30" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -5 )
+
+[node name="Off" parent="Switches30" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches30" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches31" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -7 )
+
+[node name="Off" parent="Switches31" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches31" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches32" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -9 )
+
+[node name="Off" parent="Switches32" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches32" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches33" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -11 )
+
+[node name="Off" parent="Switches33" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches33" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches34" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -13 )
+
+[node name="Off" parent="Switches34" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches34" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches35" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -15 )
+
+[node name="Off" parent="Switches35" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches35" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches36" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -17 )
+
+[node name="Off" parent="Switches36" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches36" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches37" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -19 )
+
+[node name="Off" parent="Switches37" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches37" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches38" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -19 )
+
+[node name="Off" parent="Switches38" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches38" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches39" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -19 )
+
+[node name="Off" parent="Switches39" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches39" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches40" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -17 )
+
+[node name="Off" parent="Switches40" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches40" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches41" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15 )
+
+[node name="Off" parent="Switches41" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches41" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches42" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -13 )
+
+[node name="Off" parent="Switches42" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches42" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches43" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -11 )
+
+[node name="Off" parent="Switches43" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches43" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches44" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -9 )
+
+[node name="Off" parent="Switches44" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches44" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches45" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -7 )
+
+[node name="Off" parent="Switches45" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches45" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches46" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5 )
+
+[node name="Off" parent="Switches46" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches46" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches47" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -3 )
+
+[node name="Off" parent="Switches47" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches47" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches48" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -1 )
+
+[node name="Off" parent="Switches48" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches48" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches49" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 3 )
+
+[node name="Off" parent="Switches49" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches49" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches50" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 5 )
+
+[node name="Off" parent="Switches50" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches50" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches51" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 7 )
+
+[node name="Off" parent="Switches51" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches51" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches52" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 9 )
+
+[node name="Off" parent="Switches52" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches52" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches53" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 11 )
+
+[node name="Off" parent="Switches53" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches53" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches54" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 11 )
+
+[node name="Off" parent="Switches54" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches54" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches55" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 11 )
+
+[node name="Off" parent="Switches55" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches55" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches56" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 11 )
+
+[node name="Off" parent="Switches56" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches56" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches133" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 7 )
+
+[node name="Off" parent="Switches133" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches133" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches134" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 7 )
+
+[node name="Off" parent="Switches134" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches134" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches135" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 5 )
+
+[node name="Off" parent="Switches135" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches135" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches136" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 3 )
+
+[node name="Off" parent="Switches136" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches136" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches137" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 1 )
+
+[node name="Off" parent="Switches137" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches137" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches138" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -1 )
+
+[node name="Off" parent="Switches138" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches138" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches139" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -3 )
+
+[node name="Off" parent="Switches139" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches139" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches140" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -5 )
+
+[node name="Off" parent="Switches140" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches140" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches141" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -5 )
+
+[node name="Off" parent="Switches141" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches141" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches142" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 9 )
+
+[node name="Off" parent="Switches142" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches142" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches143" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 7 )
+
+[node name="Off" parent="Switches143" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches143" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches144" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 7 )
+
+[node name="Off" parent="Switches144" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches144" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches145" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 9 )
+
+[node name="Off" parent="Switches145" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches145" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches146" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 7 )
+
+[node name="Off" parent="Switches146" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches146" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches205" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1 )
+
+[node name="Off" parent="Switches205" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches205" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches209" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 1 )
+
+[node name="Off" parent="Switches209" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches209" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches210" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 3 )
+
+[node name="Off" parent="Switches210" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches210" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches211" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 3 )
+
+[node name="Off" parent="Switches211" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches211" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches212" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 5 )
+
+[node name="Off" parent="Switches212" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches212" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches213" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 7 )
+
+[node name="Off" parent="Switches213" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches213" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches214" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 7 )
+
+[node name="Off" parent="Switches214" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches214" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches215" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 3 )
+
+[node name="Off" parent="Switches215" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches215" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches216" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 1 )
+
+[node name="Off" parent="Switches216" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches216" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches217" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -1 )
+
+[node name="Off" parent="Switches217" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches217" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches218" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -3 )
+
+[node name="Off" parent="Switches218" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches218" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches219" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -1 )
+
+[node name="Off" parent="Switches219" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches219" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches220" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -1 )
+
+[node name="Off" parent="Switches220" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches220" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches221" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -3 )
+
+[node name="Off" parent="Switches221" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches221" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches222" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -5 )
+
+[node name="Off" parent="Switches222" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches222" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches223" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -7 )
+
+[node name="Off" parent="Switches223" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches223" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches224" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -9 )
+
+[node name="Off" parent="Switches224" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches224" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches225" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -11 )
+
+[node name="Off" parent="Switches225" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches225" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches206" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 3 )
+
+[node name="Off" parent="Switches206" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches206" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches207" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 3 )
+
+[node name="Off" parent="Switches207" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches207" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches208" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1 )
+
+[node name="Off" parent="Switches208" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches208" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches147" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 7 )
+
+[node name="Off" parent="Switches147" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches147" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches148" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7 )
+
+[node name="Off" parent="Switches148" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches148" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches149" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 5 )
+
+[node name="Off" parent="Switches149" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches149" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches150" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3 )
+
+[node name="Off" parent="Switches150" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches150" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches151" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 3 )
+
+[node name="Off" parent="Switches151" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches151" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches152" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3 )
+
+[node name="Off" parent="Switches152" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches152" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches153" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 3 )
+
+[node name="Off" parent="Switches153" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches153" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches154" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 1 )
+
+[node name="Off" parent="Switches154" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches154" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches155" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -1 )
+
+[node name="Off" parent="Switches155" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches155" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches156" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -3 )
+
+[node name="Off" parent="Switches156" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches156" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches157" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3 )
+
+[node name="Off" parent="Switches157" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches157" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches158" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -3 )
+
+[node name="Off" parent="Switches158" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches158" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches159" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3 )
+
+[node name="Off" parent="Switches159" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches159" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches160" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3 )
+
+[node name="Off" parent="Switches160" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches160" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches161" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -3 )
+
+[node name="Off" parent="Switches161" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches161" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches162" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -5 )
+
+[node name="Off" parent="Switches162" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches162" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches163" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -7 )
+
+[node name="Off" parent="Switches163" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches163" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches164" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -7 )
+
+[node name="Off" parent="Switches164" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches164" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches165" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -7 )
+
+[node name="Off" parent="Switches165" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches165" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches166" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -9 )
+
+[node name="Off" parent="Switches166" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches166" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches167" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -11 )
+
+[node name="Off" parent="Switches167" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches167" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches168" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -13 )
+
+[node name="Off" parent="Switches168" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches168" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches169" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -15 )
+
+[node name="Off" parent="Switches169" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches169" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches170" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -15 )
+
+[node name="Off" parent="Switches170" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches170" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches171" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -15 )
+
+[node name="Off" parent="Switches171" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches171" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches172" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -15 )
+
+[node name="Off" parent="Switches172" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches172" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches173" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -17 )
+
+[node name="Off" parent="Switches173" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches173" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches174" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -19 )
+
+[node name="Off" parent="Switches174" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches174" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches175" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -19 )
+
+[node name="Off" parent="Switches175" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches175" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches176" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -19 )
+
+[node name="Off" parent="Switches176" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches176" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches177" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -17 )
+
+[node name="Off" parent="Switches177" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches177" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches178" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -15 )
+
+[node name="Off" parent="Switches178" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches178" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches179" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -13 )
+
+[node name="Off" parent="Switches179" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches179" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches180" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -11 )
+
+[node name="Off" parent="Switches180" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches180" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches181" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -11 )
+
+[node name="Off" parent="Switches181" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches181" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches182" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -11 )
+
+[node name="Off" parent="Switches182" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches182" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches183" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -9 )
+
+[node name="Off" parent="Switches183" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches183" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches184" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7 )
+
+[node name="Off" parent="Switches184" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches184" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches185" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -7 )
+
+[node name="Off" parent="Switches185" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches185" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches186" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -9 )
+
+[node name="Off" parent="Switches186" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches186" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches187" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -11 )
+
+[node name="Off" parent="Switches187" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches187" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches188" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -13 )
+
+[node name="Off" parent="Switches188" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches188" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches189" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15 )
+
+[node name="Off" parent="Switches189" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches189" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches190" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -15 )
+
+[node name="Off" parent="Switches190" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches190" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches191" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -15 )
+
+[node name="Off" parent="Switches191" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches191" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches192" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -17 )
+
+[node name="Off" parent="Switches192" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches192" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches193" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -17 )
+
+[node name="Off" parent="Switches193" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches193" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches194" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -17 )
+
+[node name="Off" parent="Switches194" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches194" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches195" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -17 )
+
+[node name="Off" parent="Switches195" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches195" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches196" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -17 )
+
+[node name="Off" parent="Switches196" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches196" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches197" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -17 )
+
+[node name="Off" parent="Switches197" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches197" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches198" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -17 )
+
+[node name="Off" parent="Switches198" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches198" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches199" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -15 )
+
+[node name="Off" parent="Switches199" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches199" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches200" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -13 )
+
+[node name="Off" parent="Switches200" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches200" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches201" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -13 )
+
+[node name="Off" parent="Switches201" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches201" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches202" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -11 )
+
+[node name="Off" parent="Switches202" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches202" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches203" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -9 )
+
+[node name="Off" parent="Switches203" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches203" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches204" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -9 )
+
+[node name="Off" parent="Switches204" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches204" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches57" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 11 )
+
+[node name="Off" parent="Switches57" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches57" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches58" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 11 )
+
+[node name="Off" parent="Switches58" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches58" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches59" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 11 )
+
+[node name="Off" parent="Switches59" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches59" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches60" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 11 )
+
+[node name="Off" parent="Switches60" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches60" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches61" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 11 )
+
+[node name="Off" parent="Switches61" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches61" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches62" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 11 )
+
+[node name="Off" parent="Switches62" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches62" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches63" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 11 )
+
+[node name="Off" parent="Switches63" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches63" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches64" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 11 )
+
+[node name="Off" parent="Switches64" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches64" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches65" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 11 )
+
+[node name="Off" parent="Switches65" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches65" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches66" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 11 )
+
+[node name="Off" parent="Switches66" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches66" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches67" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 9 )
+
+[node name="Off" parent="Switches67" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches67" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches68" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 7 )
+
+[node name="Off" parent="Switches68" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches68" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches69" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5 )
+
+[node name="Off" parent="Switches69" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches69" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches70" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 3 )
+
+[node name="Off" parent="Switches70" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches70" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches71" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 1 )
+
+[node name="Off" parent="Switches71" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches71" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches72" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -1 )
+
+[node name="Off" parent="Switches72" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches72" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches73" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -3 )
+
+[node name="Off" parent="Switches73" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches73" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches74" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5 )
+
+[node name="Off" parent="Switches74" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches74" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches75" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -7 )
+
+[node name="Off" parent="Switches75" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches75" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches76" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -9 )
+
+[node name="Off" parent="Switches76" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches76" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches77" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -11 )
+
+[node name="Off" parent="Switches77" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches77" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches78" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -13 )
+
+[node name="Off" parent="Switches78" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches78" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches79" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15 )
+
+[node name="Off" parent="Switches79" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches79" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches80" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -15 )
+
+[node name="Off" parent="Switches80" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches80" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches100" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -15 )
+
+[node name="Off" parent="Switches100" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches100" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches101" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -15 )
+
+[node name="Off" parent="Switches101" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches101" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches102" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -11 )
+
+[node name="Off" parent="Switches102" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches102" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches103" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -11 )
+
+[node name="Off" parent="Switches103" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches103" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches104" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -9 )
+
+[node name="Off" parent="Switches104" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches104" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches105" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -5 )
+
+[node name="Off" parent="Switches105" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches105" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches106" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -5 )
+
+[node name="Off" parent="Switches106" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches106" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches107" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -3 )
+
+[node name="Off" parent="Switches107" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches107" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches108" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 1 )
+
+[node name="Off" parent="Switches108" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches108" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches109" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 1 )
+
+[node name="Off" parent="Switches109" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches109" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches110" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 3 )
+
+[node name="Off" parent="Switches110" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches110" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches111" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 7 )
+
+[node name="Off" parent="Switches111" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches111" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches112" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 7 )
+
+[node name="Off" parent="Switches112" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches112" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches113" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 9 )
+
+[node name="Off" parent="Switches113" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches113" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches114" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 13 )
+
+[node name="Off" parent="Switches114" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches114" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches115" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 13 )
+
+[node name="Off" parent="Switches115" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches115" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches116" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 17 )
+
+[node name="Off" parent="Switches116" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches116" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches117" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 19 )
+
+[node name="Off" parent="Switches117" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches117" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches118" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, 21 )
+
+[node name="Off" parent="Switches118" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches118" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches119" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 21 )
+
+[node name="Off" parent="Switches119" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches119" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches120" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 21 )
+
+[node name="Off" parent="Switches120" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches120" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches121" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 19 )
+
+[node name="Off" parent="Switches121" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches121" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches122" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 17 )
+
+[node name="Off" parent="Switches122" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches122" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches123" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15 )
+
+[node name="Off" parent="Switches123" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches123" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches124" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 13 )
+
+[node name="Off" parent="Switches124" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches124" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches125" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 15 )
+
+[node name="Off" parent="Switches125" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches125" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches126" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 17 )
+
+[node name="Off" parent="Switches126" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches126" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches127" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 19 )
+
+[node name="Off" parent="Switches127" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches127" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches128" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 21 )
+
+[node name="Off" parent="Switches128" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches128" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches129" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 23 )
+
+[node name="Off" parent="Switches129" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches129" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches81" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -19 )
+
+[node name="Off" parent="Switches81" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches81" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches130" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -19 )
+
+[node name="Off" parent="Switches130" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches130" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches131" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -19 )
+
+[node name="Off" parent="Switches131" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches131" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches132" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -21 )
+
+[node name="Off" parent="Switches132" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches132" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches82" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -21 )
+
+[node name="Off" parent="Switches82" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches82" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches83" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -21 )
+
+[node name="Off" parent="Switches83" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches83" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches84" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -21 )
+
+[node name="Off" parent="Switches84" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches84" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches85" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -21 )
+
+[node name="Off" parent="Switches85" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches85" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches86" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -21 )
+
+[node name="Off" parent="Switches86" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches86" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches87" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -21 )
+
+[node name="Off" parent="Switches87" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches87" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches88" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -21 )
+
+[node name="Off" parent="Switches88" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches88" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches89" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -21 )
+
+[node name="Off" parent="Switches89" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches89" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches90" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -21 )
+
+[node name="Off" parent="Switches90" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches90" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches91" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -21 )
+
+[node name="Off" parent="Switches91" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches91" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches92" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -21 )
+
+[node name="Off" parent="Switches92" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches92" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches93" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -21 )
+
+[node name="Off" parent="Switches93" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches93" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches94" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -21 )
+
+[node name="Off" parent="Switches94" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches94" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches95" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -21 )
+
+[node name="Off" parent="Switches95" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches95" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches96" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -21 )
+
+[node name="Off" parent="Switches96" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches96" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches97" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -21 )
+
+[node name="Off" parent="Switches97" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches97" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches98" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -21 )
+
+[node name="Off" parent="Switches98" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches98" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Switches99" type="Spatial" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -21 )
+
+[node name="Off" parent="Switches99" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="Spatial1" parent="Switches99" instance=ExtResource( 4 )]
+transform = Transform( 3, 0, 0, 0, 1, 0, 0, 0, 3, 0, 0.0640669, 0 )
+auto_reset = true
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.819, 1, 20 )
+
+[node name="NotePanel" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="UI Stuff" type="Node" parent="."]
+
