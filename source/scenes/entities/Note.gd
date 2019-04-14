@@ -1,10 +1,11 @@
 extends Area
 
+const NotePanel = preload("res://scenes/NotePanel.tscn")
 const Player = preload("res://scenes/entities/Player.gd")
 
 signal got_note
 
-export var text:String = ""
+export var message_key:String = ""
 
 const _ROTATE_SPEED = 100
 var _current_angle:float = 0
@@ -17,6 +18,9 @@ func _process(delta):
 
 func _on_StaticBody_body_entered(body):
 	if body is Player:
+		var note_panel = NotePanel.instance()
+		note_panel.set_text(message_key)
+		self.get_parent().add_child(note_panel)
+		
 		self.get_parent().remove_child(self)
 		self.queue_free()
-		emit_signal("got_note", self)

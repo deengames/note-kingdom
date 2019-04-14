@@ -1,11 +1,11 @@
 extends Node2D
 
 func _on_EnglishButton_pressed():
-	Globals.language = "en-US"
+	Globals.set_language("en-US")
 	_launch_game()
 
 func _on_RussianButton_pressed():
-	Globals.language = "ru-RU"
+	Globals.set_language("ru-RU")
 	_launch_game()
 	
 func _launch_game():
