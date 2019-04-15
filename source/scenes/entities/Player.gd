@@ -3,24 +3,29 @@ extends KinematicBody
 # Y-component is zero so we stay flat on the ground
 export var player_speed:float = 10.0 # pixels per second?
 export var block_push_delay:float = 0.2 # in seconds, how long before the block pushes on contact
-var _acceleration:Vector3 = Vector3(0, 0, 0)
+
 var can_move = true
+
+var _acceleration:Vector3 = Vector3(0, 0, 0)
 var _push_delay = 0.0 
 var _last_input:Vector2 = Vector2(0, 0) 
+
 const RAYCAST_DISTANCE = 1.25
 const STEP_DISTANCE = 4.0
+const _GRAVITY = -10 # downward force
 var RUN_SPEED = player_speed * 2
 var WALK_SPEED = player_speed
+const MAX_SLOPE_ANGLE = 60
 
 # TODO: persist when you recreate the character
 var keys = [] # numbers like 1, 37
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-	
+func _physics_process(delta):
+	_process_input(delta)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process_input(delta):
+	
 	if can_move:
 		# Run option
 		var move_speed
@@ -43,7 +48,7 @@ func _process(delta):
 			input_direction = input_direction.normalized()
 			
 		
-		_acceleration = Vector3(input_direction.x, 0, input_direction.y) * move_speed
+		_acceleration = Vector3(input_direction.x, _GRAVITY, input_direction.y) * move_speed
 		if abs(input_direction.x) == 1.0 or abs(input_direction.y) == 1.0:
 			$RayCast.cast_to = Vector3(input_direction.x, 0, input_direction.y) * RAYCAST_DISTANCE
 #			$RayCastFar.cast_to = $RayCast.cast_to * 4
@@ -64,7 +69,8 @@ func _process(delta):
 #			$RayCastFar.enabled = false
 #			$Tween.reset_all()
 			_push_delay = 0.0
-			move_and_slide(_acceleration)
+			# Values from: https://docs.godotengine.org/en/3.1/tutorials/3d/fps_tutorial/part_one.html?highlight=gravity
+			move_and_slide(_acceleration, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 			$PlayerCharacter/AnimationPlayer.play("Run")
 			$PlayerCharacter.rotation.y = -input_direction.tangent().angle()
 					

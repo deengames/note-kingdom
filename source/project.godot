@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Note Kingdom"
-run/main_scene="res://scenes/WalkingTraversal.tscn"
+run/main_scene="res://scenes/LanguageSelectScene.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://scripts/Globals.gd"
 
 [display]
 
