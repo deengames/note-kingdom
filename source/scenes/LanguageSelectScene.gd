@@ -9,4 +9,4 @@ func _on_RussianButton_pressed():
 	_launch_game()
 	
 func _launch_game():
-	get_tree().change_scene("res://scenes/WalkingTraversal.tscn")
+	get_tree().change_scene("res://scenes/KingdomEntrance.tscn")
