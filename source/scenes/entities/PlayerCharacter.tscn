@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/models/Material_001.material" type="Material" id=1]
 
@@ -17,8 +17,67 @@ surfaces/0 = {
 "vertex_count": 437
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Push"
+[sub_resource type="Animation" id=6]
+resource_name = "Fall"
+length = 0.2
+loop = true
+step = 0.05
+tracks/0/type = "transform"
+tracks/0/path = NodePath("Rotator/Armature:Hair")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 1.35525e-020, -1.49012e-007, -2.38419e-007, 7.57307e-029, -3.55271e-015, -7.10543e-015, 1, 1, 1, 1, 0.05, 1, 1.35525e-020, -1.49012e-007, -2.38419e-007, -0.109461, -5.50719e-015, -1.49032e-014, 0.993991, 1, 1, 1, 0.1, 1, 1.35525e-020, -1.49012e-007, -2.38419e-007, 0.0640095, -6.63604e-015, 7.54567e-015, 0.997949, 1, 1, 1, 0.15, 1, 1.35525e-020, -1.49012e-007, -2.38419e-007, -0.145721, 3.51479e-015, 5.17703e-016, 0.989326, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("Rotator/Armature:LeftCalf")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 3.72529e-009, -1.19209e-007, -7.45058e-008, -7.45058e-009, 5.24754e-017, -6.63567e-009, 1, 1, 1, 1, 0.1, 1, 3.72529e-009, -1.19209e-007, -7.45058e-008, -1.11759e-008, 2.32831e-010, -1.04483e-008, 1, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("Rotator/Armature:LeftThigh")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 3.55271e-015, 3.72529e-009, 0, -2.12155e-005, 0.00480782, 0.0828649, 0.996549, 0.999995, 1.00001, 1, 0.1, 1, 7.10543e-015, -3.72529e-009, -2.98023e-008, -2.93125e-005, 0.0074948, 0.130399, 0.991433, 0.999989, 1.00001, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("Rotator/Armature:RightCalf")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, -2.23517e-008, -5.96046e-008, 4.84288e-008, -0.0736275, 0.0268737, 0.829515, 0.552957, 1, 1, 1, 0.1, 1, -2.23517e-008, -5.96046e-008, 4.84288e-008, -0.0628471, 0.0229369, 0.708053, 0.702983, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("Rotator/Armature:RightThigh")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 1.42109e-014, 3.72529e-009, 0, -4.28219e-005, 0.0186865, -0.492287, 0.870232, 1.00008, 0.999922, 1, 0.1, 1, 1.42109e-014, 3.72529e-009, 0, -4.28219e-005, 0.0186865, -0.492287, 0.870232, 1.00008, 0.999922, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("Rotator/Armature:Root")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, 0, 0, -1.86265e-009, 0, 0, 0, 1, 1, 1, 1, 0.1, 1, 0, 0, -1.86265e-009, 0, 0, 0, 1, 1, 1, 1 )
+tracks/6/type = "value"
+tracks/6/path = NodePath("Rotator:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 30, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
 length = 0.8
 loop = true
 step = 0.05
@@ -77,8 +136,7 @@ tracks/6/keys = {
 "values": [ Vector3( -12.4491, -180, -1.10579e-006 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Run"
+[sub_resource type="Animation" id=8]
 length = 0.4
 loop = true
 step = 0.05
@@ -137,8 +195,7 @@ tracks/6/keys = {
 "values": [ Vector3( 12, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Stand"
+[sub_resource type="Animation" id=5]
 length = 0.125
 loop = true
 tracks/0/type = "transform"
@@ -275,8 +332,9 @@ material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Stand"
-anims/Push = SubResource( 2 )
-anims/Run = SubResource( 3 )
-anims/Stand = SubResource( 4 )
-blend_times = [ "Push", "Run", 0.1, "Push", "Stand", 0.1, "Run", "Push", 0.2, "Run", "Stand", 0.1, "Stand", "Push", 0.1, "Stand", "Run", 0.1 ]
+anims/Fall = SubResource( 6 )
+anims/Push = SubResource( 7 )
+anims/Run = SubResource( 8 )
+anims/Stand = SubResource( 5 )
+blend_times = [ "Push", "Fall", 0.1, "Push", "Run", 0.1, "Push", "Stand", 0.1, "Run", "Fall", 0.1, "Run", "Push", 0.2, "Run", "Stand", 0.1, "Stand", "Fall", 0.1, "Stand", "Push", 0.1, "Stand", "Run", 0.1 ]
 
