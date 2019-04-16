@@ -22,6 +22,7 @@ shape = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 43.6154, 24.9741 )
+current = true
 fov = 30.0
 far = 1000.0
 
@@ -30,9 +31,26 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 enabled = true
 cast_to = Vector3( -1.5, 0, 0 )
 
-[node name="RayCastFar" type="RayCast" parent="."]
-cast_to = Vector3( -1.5, 0, 0 )
-
 [node name="PlayerCharacter" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.750994, 0 )
+
+[node name="RayCastGround1" type="RayCast" parent="PlayerCharacter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750994, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.8, 0.8 )
+
+[node name="RayCastGround2" type="RayCast" parent="PlayerCharacter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750994, 0 )
+enabled = true
+cast_to = Vector3( -0.8, -0.8, 0 )
+
+[node name="RayCastGround3" type="RayCast" parent="PlayerCharacter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750994, 0 )
+enabled = true
+cast_to = Vector3( 0.8, -0.8, 0 )
+
+[node name="RayCastGround4" type="RayCast" parent="PlayerCharacter"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750994, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.8, -0.8 )
 
