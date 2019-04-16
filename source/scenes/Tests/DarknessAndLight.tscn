@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Tests/DarknessAndLight.gd" type="Script" id=1]
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/PushableBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Tests/OmniLight.gd" type="Script" id=6]
+[ext_resource path="res://scenes/entities/Key.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=8]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.327 )
+
+[node name="Ground and Border" parent="." instance=ExtResource( 3 )]
+
+[node name="Pushable Blocks" type="Node" parent="."]
+
+[node name="TestBlock" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 1.97543, 5 )
+
+[node name="TestBlock3" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -4, 1.97543, 1 )
+
+[node name="TestBlock2" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 1.97543, 1 )
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, -13 )
+message_key = "HELLO_WORLD"
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="AntiLight" type="DirectionalLight" parent="Lights"]
+transform = Transform( 0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, -0.75, 0.433013, 7.91353, 15, 7.40152 )
+light_negative = true
+
+[node name="OmniLight" type="OmniLight" parent="Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05082, 0 )
+light_energy = 2.0
+omni_range = 10.0
+script = ExtResource( 6 )
+
+[node name="Area" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6075, 0, 4.32676 )
+
+[node name="Spatial" parent="Area" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.301, 0, -9.96234 )
+
+[connection signal="got_note" from="Notes/StaticBody" to="." method="_on_StaticBody_got_note"]
