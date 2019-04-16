@@ -218,7 +218,7 @@ surfaces/0 = {
 [sub_resource type="BoxShape" id=21]
 extents = Vector3( 3.31042, 1, 7.42293 )
 
-[node name="Scene Root" type="StaticBody"]
+[node name="Building" type="StaticBody"]
 
 [node name="MainBody" type="MeshInstance" parent="."]
 transform = Transform( 1.89164, 0, 0, 0, 1.89164, 0, 0, 0, 1.89164, -1.08036, 3.16137, -0.0921203 )
