@@ -19,43 +19,28 @@ shadow_enabled = true
 
 [node name="Ground and Border" parent="Walls" instance=ExtResource( 2 )]
 
-[node name="Wall" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 20, 0, 0, 0, 3, 0, 0, 0, 1, 2.22095, 1, 15.029 )
+[node name="StaticBody" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 15, 0, 0, 0, 3, 0, 0, 0, 2, 7.29265, 0, 13.502 )
 
-[node name="Wall3" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 14, 0, 0, 0, 3, 0, 0, 0, 1, -8.15747, 1, -4.79301 )
+[node name="StaticBody2" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 15, 0, 0, 0, 3, 0, 0, 0, 1, -7.19903, 0, -2.56495 )
 
-[node name="Wall7" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 11, 0, 0, 0, 3, 0, 0, 0, 1, -10.8722, 1, -7.6239 )
-
-[node name="Wall6" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 10, 0, 0, 0, 3, 0, 0, 0, 1, -6.05227, 1, -16.4827 )
-
-[node name="Wall2" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 12, 13.4914, 1, -5.85518 )
-
-[node name="Wall4" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 6, 4.48423, 1, 2.53972 )
-
-[node name="Wall8" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 4, 0, 0, 0, 3, 0, 0, 0, 1, 9.53006, 1, 2.53972 )
-
-[node name="Wall5" parent="Walls" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 6, 4.48423, 1, -16.5047 )
+[node name="StaticBody3" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 4, -5.19957, 0, 0.899002 )
 
 [node name="Pushable Blocks" type="Node" parent="."]
 
 [node name="PushBlock" parent="Pushable Blocks" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -20.4589, 1.97543, 16.4053 )
+transform = Transform( 3, 0, 0, 0, 2, 0, 0, 0, 2, -17.7627, 1.97543, 5.76616 )
 
 [node name="PushBlock2" parent="Pushable Blocks" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 8.38434, 1.97543, 10.7619 )
+transform = Transform( 3, 0, 0, 0, 2, 0, 0, 0, 2, -11.0928, 1.97543, 10.7857 )
 
 [node name="PushBlock3" parent="Pushable Blocks" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 8.85929, 1.97543, -14.1998 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 3, -16.711, 1.97543, 11.6195 )
 
 [node name="PushBlock4" parent="Pushable Blocks" instance=ExtResource( 4 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -5.23154, 1.97543, -11.6415 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 3, -11.8651, 1.97543, 5.00011 )
 
 [node name="Notes" type="Node" parent="."]
 
