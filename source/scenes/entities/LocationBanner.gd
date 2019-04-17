@@ -6,9 +6,15 @@ extends ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Label.text = get_node("/root/Location").location_name 
-	get_node("../Tween").interpolate_property(self, "modulate:a", 1, 0, 2, Tween.TRANS_BACK, Tween.EASE_IN)
-	get_node("../Tween").start()
+	var location_label = get_node("/root/Location")
+	
+	if location_label != null:
+		$Label.text = location_label.location_name
+		get_node("../Tween").interpolate_property(self, "modulate:a", 1, 0, 3, Tween.TRANS_BACK, Tween.EASE_IN)
+		get_node("../Tween").start()
+	else:
+		# Just viewing a single puzzle. Hide it.
+		self.modulate = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
