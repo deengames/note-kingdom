@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/PushableBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=5]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+shadow_enabled = true
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Ground and Border" parent="Walls" instance=ExtResource( 2 )]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 20, 0, 0, 0, 1, 0, 0, 0, 1, 2.22095, 1, 15.029 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 14, 0, 0, 0, 1, 0, 0, 0, 1, -8.15747, 1, -4.79301 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 1, -10.8722, 1, -7.6239 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 1, -6.05227, 1, -16.4827 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 12, 13.4914, 1, -5.85518 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6, 4.48423, 1, 2.53972 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 4, 0, 0, 0, 1, 0, 0, 0, 1, 9.53006, 1, 2.53972 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 6, 4.48423, 1, -16.5047 )
+
+[node name="Pushable Blocks" type="Node" parent="."]
+
+[node name="PushBlock" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -20.4589, 1.97543, 16.4053 )
+
+[node name="PushBlock2" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 8.38434, 1.97543, 10.7619 )
+
+[node name="PushBlock3" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 8.85929, 1.97543, -14.1998 )
+
+[node name="PushBlock4" parent="Pushable Blocks" instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -5.23154, 1.97543, -11.6415 )
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181, 1, -19 )
+message_key = "NOTE_1"
+
