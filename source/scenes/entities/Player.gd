@@ -25,7 +25,6 @@ func _physics_process(delta):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process_input(delta):
-	
 	if can_move:
 		# Run option
 		var move_speed

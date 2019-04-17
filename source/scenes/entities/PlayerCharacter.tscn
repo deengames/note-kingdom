@@ -17,7 +17,7 @@ surfaces/0 = {
 "vertex_count": 437
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Fall"
 length = 0.2
 loop = true
@@ -77,7 +77,7 @@ tracks/6/keys = {
 "values": [ Vector3( 30, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 step = 0.05
@@ -136,7 +136,7 @@ tracks/6/keys = {
 "values": [ Vector3( -12.4491, -180, -1.10579e-006 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=4]
 length = 0.4
 loop = true
 step = 0.05
@@ -332,9 +332,9 @@ material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Stand"
-anims/Fall = SubResource( 6 )
-anims/Push = SubResource( 7 )
-anims/Run = SubResource( 8 )
+anims/Fall = SubResource( 2 )
+anims/Push = SubResource( 3 )
+anims/Run = SubResource( 4 )
 anims/Stand = SubResource( 5 )
 blend_times = [ "Push", "Fall", 0.1, "Push", "Run", 0.1, "Push", "Stand", 0.1, "Run", "Fall", 0.1, "Run", "Push", 0.2, "Run", "Stand", 0.1, "Stand", "Fall", 0.1, "Stand", "Push", 0.1, "Stand", "Run", 0.1 ]
 

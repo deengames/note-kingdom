@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/entities/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/player.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://scenes/entities/PlayerCharacter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/LocationBanner.gd" type="Script" id=4]
+[ext_resource path="res://assets/fonts/Minimal5x5Monospaced.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 5 )
 
 [node name="KinematicBody" type="KinematicBody" groups=[
 "player",
@@ -54,3 +60,37 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.750994, 0 )
 enabled = true
 cast_to = Vector3( 0, -0.8, -0.8 )
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Tween" type="Tween" parent="CanvasLayer"]
+
+[node name="LocationBanner" type="ColorRect" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -35.0
+margin_right = 640.0
+margin_bottom = 35.0
+color = Color( 0.172549, 0.176471, 0.345098, 1 )
+script = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="CanvasLayer/LocationBanner"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -30.0
+margin_right = 640.0
+margin_bottom = 35.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.768627, 1, 1, 1 )
+text = "Location name
+"
+align = 1
+valign = 1
+uppercase = true
+
+[connection signal="tween_completed" from="CanvasLayer/Tween" to="CanvasLayer/LocationBanner" method="_on_Tween_tween_completed"]
