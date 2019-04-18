@@ -9,4 +9,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if target != null:
-		translation = Vector3(target.translation.x, target.translation.y + 1, target.translation.z)
+		translation = Vector3(target.translation.x, target.translation.y + 5, target.translation.z)
