@@ -1,4 +1,4 @@
 extends Spatial
 
 func _ready():
-	$Lights/OmniLight.target = $Player
+	$Lights/PlayerLight.target = $Player
