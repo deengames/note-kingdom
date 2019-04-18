@@ -20,6 +20,9 @@ const MAX_SLOPE_ANGLE = 60
 # TODO: persist when you recreate the character
 var keys = [] # numbers like 1, 37
 
+func _ready():
+	Globals.player = self
+
 func _physics_process(delta):
 	_process_input(delta)
 

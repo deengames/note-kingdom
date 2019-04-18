@@ -1,5 +1,8 @@
 extends Node
 
+const Player = preload("res://scenes/entities/Player.gd")
+
+var player:Player
 var _language:String = "en-US"
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message

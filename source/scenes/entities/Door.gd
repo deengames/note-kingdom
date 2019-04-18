@@ -9,13 +9,15 @@ var _total_elapsed:float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	self._base_y = self.translation.y 
 	self._base_y = $MeshInstance.translation.y # just the mesh
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	_total_elapsed += delta
-	$MeshInstance.translation.y = _base_y + 0.5 + cos(_total_elapsed)
+	if Globals.player.keys.find(number) == -1:
+		_total_elapsed += delta
+		$MeshInstance.translation.y = _base_y + 0.5 + cos(_total_elapsed)
+	else:
+		# Visual feedback: when player has the key, stop moving.
+		translation.y = 1 # partially underground
 
 func _on_Area_body_entered(body):
 	if body is Player:
