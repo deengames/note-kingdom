@@ -8,6 +8,7 @@ var _language:String = "en-US"
 # is a hash of message_key => localized message
 var _language_data = {"en-US": {}, "ru-RU": {}}
 
+
 func _ready():
 	for code in _language_data.keys():
 		var file = File.new()
