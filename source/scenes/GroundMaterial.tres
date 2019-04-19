@@ -12,4 +12,5 @@ noise = SubResource( 1 )
 [resource]
 albedo_color = Color( 0, 0.501961, 0, 1 )
 albedo_texture = SubResource( 2 )
+metallic_specular = 0.0
 

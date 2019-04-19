@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Location.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/models/KingdomEntranceTileMap_001.material" type="Material" id=3]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=4]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -59,4 +60,10 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Map"]
 shape = SubResource( 3 )
+
+[node name="StaticBody" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
+
+[node name="StaticBody2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 22, 16 )
 

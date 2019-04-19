@@ -13,7 +13,7 @@ var _current_angle:float = 0
 func _process(delta):
 	self._current_angle += (_ROTATE_SPEED * delta)
 	self.rotation_degrees.y = self._current_angle
-	$MeshInstance2.get_surface_material(0).uv1_offset = Vector3($MeshInstance2.get_surface_material(0).uv1_offset.x + delta * 10, $MeshInstance2.get_surface_material(0).uv1_offset.y + delta * 3, 0)
+	#$MeshInstance2.get_surface_material(0).uv1_offset = Vector3($MeshInstance2.get_surface_material(0).uv1_offset.x + delta * 2, $MeshInstance2.get_surface_material(0).uv1_offset.y, 0)
 
 
 func _on_StaticBody_body_entered(body):
