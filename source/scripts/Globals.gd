@@ -3,10 +3,17 @@ extends Node
 const Player = preload("res://scenes/entities/Player.gd")
 
 var player:Player
+
+var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
 var _language:String = "en-US"
+
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message
-var _language_data = {"en-US": {}, "ru-RU": {}}
+var _language_data = {"en-US": {}, "ru-RU": {}, "hi-HI": {}}
+
+var _language_fonts = {
+	"hi-HI": preload("res://assets/fonts/HindiFont.tres")
+}
 
 func _ready():
 	for code in _language_data.keys():
@@ -25,6 +32,12 @@ func _ready():
 
 func set_language(code):
 	self._language = code
+
+func get_language_font():
+	if _language_fonts.has(_language):
+		return _language_fonts[_language]
+	else:
+		return _DEFAULT_FONT
 
 func translate(message_key):
 	var data = _language_data[_language]
