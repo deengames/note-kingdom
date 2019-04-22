@@ -1,3 +1,7 @@
 HELLO_WORLD: english message!
 CLOSE: Close
 KINGDOM_ENTRANCE: Kingdom Entrance
+VILLAGE_NORTH: Village North
+VILLAGE_EAST: Village East
+VILLAGE_SOUTH: Village South
+VILLAGE_WEST: Village West

@@ -1,3 +1,7 @@
 HELLO_WORLD: Привет, мир
 CLOSE: близко
 KINGDOM_ENTRANCE: Королевство Вход
+VILLAGE_NORTH: Деревня Север
+VILLAGE_EAST: Деревня Восток
+VILLAGE_SOUTH: Деревня Юг
+VILLAGE_WEST: Деревня Запад

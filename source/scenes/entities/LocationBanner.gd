@@ -9,10 +9,10 @@ func _ready():
 	var location_label = get_node("/root/Location")
 	
 	if location_label != null:
-		var location_name = location_label.location_name
-		location_name = location_name.to_upper().replace(" ", "_")
+		var location_key = location_label.location_name
+		location_key = location_key.to_upper().replace(" ", "_")
 		$Label.add_font_override("font", Globals.get_language_font())
-		$Label.text = Globals.translate(location_name)
+		$Label.text = Globals.translate(location_key)
 		get_node("../Tween").interpolate_property(self, "modulate:a", 1, 0, 3, Tween.TRANS_BACK, Tween.EASE_IN)
 		get_node("../Tween").start()
 	else:
