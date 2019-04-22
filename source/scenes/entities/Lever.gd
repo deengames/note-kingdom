@@ -1,7 +1,8 @@
 extends Spatial
 
 const Player = preload("res://scenes/entities/Player.gd")
-const SwitchableBlock = preload("res://scenes/entities/SwitchableBlock.gd")
+
+export var switchable_type:String = "SwitchableBlock"
 
 var _OFF_ROTATION
 var _is_on = false
@@ -37,10 +38,12 @@ func _input(event):
 # Find all the switchable blocks in it. Flip 'em.
 # TODO: should be more explicit way of doing this.
 func _move_my_blocks():
+	var type_class = load("res://scenes/entities/{type}.gd".format({type = switchable_type}))
+	
 	var parent_group = self.get_parent()
 	var siblings = parent_group.get_children()
 	
 	for sibling in siblings:
-		if sibling is SwitchableBlock:
+		if sibling is type_class:
 			sibling.flip()
 	
