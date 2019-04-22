@@ -1,2 +1,3 @@
 HELLO_WORLD: english message!
 CLOSE: Close
+KINGDOM_ENTRANCE: Kingdom Entrance

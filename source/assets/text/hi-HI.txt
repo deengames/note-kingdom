@@ -1,2 +1,3 @@
 HELLO_WORLD: हिंदी संदेश
 CLOSE: बंद करे
+KINGDOM_ENTRANCE: साम्राज्य प्रवेश
