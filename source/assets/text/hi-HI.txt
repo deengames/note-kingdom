@@ -1,0 +1,7 @@
+HELLO_WORLD: हिंदी संदेश
+CLOSE: बंद करे
+KINGDOM_ENTRANCE: साम्राज्य प्रवेश
+VILLAGE_NORTH: गाँव उत्तर
+VILLAGE_EAST: गाँव पूर्व
+VILLAGE_SOUTH: गाँव दक्षिण
+VILLAGE_WEST: गाँव पश्चिम
