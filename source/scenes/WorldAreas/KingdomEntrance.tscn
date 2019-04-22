@@ -51,7 +51,6 @@ shadow_enabled = true
 environment = SubResource( 1 )
 
 [node name="Map" type="StaticBody" parent="."]
-editor/display_folded = true
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
 
 [node name="Mesh" type="MeshInstance" parent="Map"]
