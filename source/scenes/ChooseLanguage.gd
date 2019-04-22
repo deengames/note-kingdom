@@ -11,3 +11,7 @@ func _on_EnglishLanguage_pressed():
 func _on_RussianLanguage_pressed():
 	Globals.set_language("ru-RU")
 	queue_free()
+	
+func _on_HindiLanguage_pressed():
+	Globals.set_language("hi-HI")
+	queue_free()
