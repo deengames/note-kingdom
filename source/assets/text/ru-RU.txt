@@ -1,10 +1,10 @@
-PLAY: Играть
-SETTINGS: настройки
-CREDITS: кредиты
+﻿PLAY: Играть
+SETTINGS: Настройки
+CREDITS: Авторы
 EXIT: Выход
-CLOSE: близко
-KINGDOM_ENTRANCE: Королевство Вход
-VILLAGE_NORTH: Деревня Север
-VILLAGE_EAST: Деревня Восток
-VILLAGE_SOUTH: Деревня Юг
-VILLAGE_WEST: Деревня Запад
+CLOSE: Закрыть
+KINGDOM_ENTRANCE: Вход в Королевство
+VILLAGE_NORTH: Деревня. Север
+VILLAGE_EAST: Деревня. Восток
+VILLAGE_SOUTH: Деревня. Юг
+VILLAGE_WEST: Деревня. Запад
