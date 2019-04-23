@@ -19,6 +19,7 @@ func _process(delta):
 func _on_StaticBody_body_entered(body):
 	if body is Player:
 		var note_panel = NotePanel.instance()
+		Globals.notes_collected.append(message_key) # this may need to change
 		note_panel.set_text(message_key)
 		self.get_parent().add_child(note_panel)
 		

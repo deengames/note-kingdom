@@ -22,7 +22,7 @@ var keys = [] # numbers like 1, 37
 
 func _ready():
 	Globals.player = self
-	if Globals.last_room != "":
+	if Globals.last_room != "" and get_tree().get_root().find_node(Globals.last_room, true, false) != null:
 		translation = get_tree().get_root().find_node(Globals.last_room, true, false).global_transform.origin
 		if get_tree().get_root().get_node("Location").location_name:
 			Globals.current_room = get_tree().get_root().get_node("Location").location_name

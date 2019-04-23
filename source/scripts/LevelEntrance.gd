@@ -5,8 +5,16 @@ signal enter_or_exit
 # If this loads a scene that has the current scene in it, it does circular loading and crashes
 #export(PackedScene) var newArea
 
-export(String, FILE, "*.tscn") var newArea: = ""# let's just use the string resource location instead
 
+export(String, FILE, "*.tscn") var newArea: = ""# let's just use the string resource location instead
+export(int) var unlockNumber: = 0 # the number of notes needed to unlock this puzzle.
+
+func _ready():
+	if Globals.notes_collected.size() == unlockNumber and has_node("AnimationPlayer"):
+		$AnimationPlayer.play("Open")
+	elif Globals.notes_collected.size() > unlockNumber and has_node("AnimationPlayer"):
+		$AnimationPlayer.play("Open")
+		$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 #warning-ignore:unused_argument
 func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we discard, so just leave this
 	var old_area = ""

@@ -9,6 +9,7 @@ var _language:String = "en-US"
 
 var last_room:String = "" # we need this for moving the player appropriately on loading rooms
 var current_room:String = "" # we need this for saves
+var notes_collected: = [] # as you get notes, dump them into this
 
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message
