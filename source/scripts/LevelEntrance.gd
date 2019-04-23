@@ -15,6 +15,7 @@ func _ready():
 	elif Globals.notes_collected.size() > unlockNumber and has_node("AnimationPlayer"):
 		$AnimationPlayer.play("Open")
 		$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
+
 #warning-ignore:unused_argument
 func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we discard, so just leave this
 	var old_area = ""
