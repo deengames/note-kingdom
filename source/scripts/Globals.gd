@@ -7,6 +7,9 @@ var player:Player
 var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
 var _language:String = "en-US"
 
+var last_room:String = "" # we need this for moving the player appropriately on loading rooms
+var current_room:String = "" # we need this for saves
+
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message
 var _language_data = {"en-US": {}, "ru-RU": {}, "hi-HI": {}}
