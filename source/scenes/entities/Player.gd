@@ -17,6 +17,8 @@ var RUN_SPEED = player_speed * 2
 var WALK_SPEED = player_speed
 const MAX_SLOPE_ANGLE = 60
 
+var _last_known_position = Vector3(0, 0, 0)
+
 # TODO: persist when you recreate the character
 var keys = [] # numbers like 1, 37
 
@@ -40,6 +42,12 @@ func _process_input(delta):
 			$PlayerCharacter/RayCastGround2.is_colliding() or
 			$PlayerCharacter/RayCastGround3.is_colliding()
 			)
+		
+		# Hack to make teleporters work. NightBlade doesn't get how colliders are supposed to work.
+		if not grounded and self.translation ==  _last_known_position:
+			grounded = false
+			$PlayerCharacter/AnimationPlayer.play("Fall")
+			
 		if Input.is_action_pressed("run"):
 			move_speed = RUN_SPEED
 		else:
@@ -89,3 +97,5 @@ func _process_input(delta):
 				$PlayerCharacter/AnimationPlayer.play("Fall")
 					
 		_last_input = input_direction
+	
+	_last_known_position = self.translation

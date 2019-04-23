@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Tests/WalkingTraversal.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/entities/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Environment" id=1]
 
@@ -21,6 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55606, 6.12389, 4.71853 )
 [node name="Ground and Border" parent="." instance=ExtResource( 3 )]
 
 [node name="Pushable Blocks" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="TestBlock" parent="Pushable Blocks" instance=ExtResource( 4 )]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 1.97543, 5 )
@@ -32,6 +34,7 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -4, 1.97543, 1 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 1.97543, 1 )
 
 [node name="Notes" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, -13 )
@@ -40,6 +43,7 @@ message_key = "HELLO_WORLD"
 [node name="UI Stuff" type="Node" parent="."]
 
 [node name="Keys and Doors" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Key1" parent="Keys and Doors" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78864, 1.96543, -7.15374 )
@@ -58,6 +62,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.204088, 1.51427, -11.4522 )
 number = 2
 
 [node name="Plates1" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="On" parent="Plates1" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, -5 )
@@ -67,6 +72,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.0640669, 0 )
 auto_reset = true
 
 [node name="Plates2" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="On" parent="Plates2" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -5 )
@@ -79,5 +85,19 @@ environment = SubResource( 1 )
 
 [node name="DirectionalLight2" type="DirectionalLight" parent="."]
 transform = Transform( 0.999751, -0.0155415, 0.0160153, 0, 0.717641, 0.696413, -0.0223165, -0.69624, 0.717462, 0, 0, 0 )
+
+[node name="Teleporters" type="Node" parent="."]
+
+[node name="T1" parent="Teleporters" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.34763, 0, 14.3507 )
+target_name = "T2"
+
+[node name="T2" parent="Teleporters" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.295937, 0, 14.0798 )
+target_name = "T3"
+
+[node name="T3" parent="Teleporters" instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76446, 0, 14.2128 )
+target_name = "T1"
 
 [connection signal="got_note" from="Notes/StaticBody" to="." method="_on_StaticBody_got_note"]
