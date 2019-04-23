@@ -73,9 +73,8 @@ align = 1
 valign = 1
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 margin_left = 480.0
-margin_top = 360.0
+margin_top = 300.0
 margin_right = 800.0
 margin_bottom = 720.0
 custom_constants/separation = 32
