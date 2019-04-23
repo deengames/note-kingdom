@@ -1,4 +1,7 @@
-HELLO_WORLD: हिंदी संदेश
+PLAY: प्ले
+SETTINGS: सेटिंग्स
+CREDITS: क्रेडिट
+EXIT: बाहर जाएं
 CLOSE: बंद करे
 KINGDOM_ENTRANCE: साम्राज्य प्रवेश
 VILLAGE_NORTH: गाँव उत्तर

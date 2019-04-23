@@ -1,4 +1,7 @@
-HELLO_WORLD: Привет, мир
+PLAY: Играть
+SETTINGS: настройки
+CREDITS: кредиты
+EXIT: Выход
 CLOSE: близко
 KINGDOM_ENTRANCE: Королевство Вход
 VILLAGE_NORTH: Деревня Север

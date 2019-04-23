@@ -1,4 +1,7 @@
-HELLO_WORLD: english message!
+PLAY: Play
+SETTINGS: Settings
+CREDITS: Credits
+EXIT: Exit
 CLOSE: Close
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_NORTH: Village North
