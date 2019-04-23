@@ -2,14 +2,14 @@ extends Node
 
 const Player = preload("res://scenes/entities/Player.gd")
 
-var player:Player
+var player: Player
 
 var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
-var _language:String = "en-US"
+var _language: String = "en-US"
 
-var last_room:String = "" # we need this for moving the player appropriately on loading rooms
-var current_room:String = "" # we need this for saves
-var notes_collected: = [] # as you get notes, dump them into this
+var last_room: String = "" # we need this for moving the player appropriately on loading rooms
+var current_room: String = "" # we need this for saves
+var notes_collected: Array = [false, false, false, false, false, false] # as you get note, set notes_collected[note_numer] = true
 
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message

@@ -1,11 +1,11 @@
 extends Spatial
 
-export var number:int = 0
+export var number: int = 0
 
 const Player = preload("res://scenes/entities/Player.gd")
 
-var _base_y:float
-var _total_elapsed:float = 0
+var _base_y: float
+var _total_elapsed: float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
