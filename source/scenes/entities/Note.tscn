@@ -15,7 +15,7 @@ uv1_scale = Vector3( 3, 2, 1 )
 extents = Vector3( 0.5, 1, 0 )
 
 [sub_resource type="CylinderMesh" id=4]
-height = 35.0
+height = 60.0
 
 [sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
@@ -42,7 +42,7 @@ spot_attenuation = 0.999992
 spot_angle = 10.0
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
 

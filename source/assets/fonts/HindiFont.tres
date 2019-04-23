@@ -3,6 +3,6 @@
 [ext_resource path="res://assets/fonts/Akshar Unicode.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 36
+size = 32
 font_data = ExtResource( 1 )
 

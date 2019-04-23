@@ -1,8 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://assets/fonts/PT_Serif-Web-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Bender/Jovanny Lemonad - Bender.otf" type="DynamicFontData" id=1]
 
 [resource]
-size = 36
+size = 32
 font_data = ExtResource( 1 )
 
