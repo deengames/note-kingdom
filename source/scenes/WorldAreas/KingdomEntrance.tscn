@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Location.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/models/KingdomEntranceTileMap_001.material" type="Material" id=3]
 [ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/entities/AreaDoor.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/textures/Diary16x16Icon.png" type="Texture" id=6]
-[ext_resource path="res://assets/fonts/DefaultFont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenes/GUI.gd" type="Script" id=6]
+[ext_resource path="res://assets/textures/Diary16x16Icon.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/DefaultFont.tres" type="DynamicFont" id=8]
+[ext_resource path="res://scenes/DiaryPanel.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -94,23 +96,28 @@ transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, 
 shape = SubResource( 4 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="GUI"]
 position = Vector2( 40, 40 )
 scale = Vector2( 5, 5 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Label" type="Label" parent="GUI"]
 margin_top = 80.0
 margin_right = 80.0
 margin_bottom = 116.0
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_constants/shadow_as_outline = 1
 text = "Tab"
 align = 1
+
+[node name="DiaryPanelContainer" type="CanvasLayer" parent="GUI"]
+
+[node name="DiaryPanel" parent="GUI/DiaryPanelContainer" instance=ExtResource( 9 )]
 
 
 [editable path="Door"]
