@@ -18,7 +18,7 @@ func _ready():
 		var note_info = Globals.notes_collected[i]
 		if note_info[0] == true:
 			new_button.text = note_info[1]
-			new_button.note_key = "Note %s" % i
+			new_button.note_key = "NOTE_%s" % i
 			$Panel/VBoxContainer.add_child(new_button)
 
 func set_text(message_key):
