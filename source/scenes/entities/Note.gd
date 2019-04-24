@@ -5,10 +5,10 @@ const Player = preload("res://scenes/entities/Player.gd")
 
 signal got_note
 
-export var message_key:String = ""
+export var message_key: String = ""
 
 const _ROTATE_SPEED = 100
-var _current_angle:float = 0
+var _current_angle: float = 0
 
 func _process(delta):
 	self._current_angle += (_ROTATE_SPEED * delta)

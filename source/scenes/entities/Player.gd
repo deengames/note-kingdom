@@ -1,14 +1,14 @@
 extends KinematicBody
 
 # Y-component is zero so we stay flat on the ground
-export var player_speed:float = 10.0 # pixels per second?
-export var block_push_delay:float = 0.2 # in seconds, how long before the block pushes on contact
+export var player_speed: float = 10.0 # pixels per second?
+export var block_push_delay: float = 0.2 # in seconds, how long before the block pushes on contact
 
 var can_move = true
 
-var _acceleration:Vector3 = Vector3(0, 0, 0)
+var _acceleration: Vector3 = Vector3(0, 0, 0)
 var _push_delay = 0.0 
-var _last_input:Vector2 = Vector2(0, 0) 
+var _last_input: Vector2 = Vector2(0, 0) 
 
 const RAYCAST_DISTANCE = 1.25
 const STEP_DISTANCE = 4.0
