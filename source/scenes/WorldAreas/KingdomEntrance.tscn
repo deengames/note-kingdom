@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Location.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/models/KingdomEntranceTileMap_001.material" type="Material" id=3]
 [ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/entities/AreaDoor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/textures/Diary16x16Icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/fonts/DefaultFont.tres" type="DynamicFont" id=7]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -55,6 +57,7 @@ shadow_enabled = true
 environment = SubResource( 1 )
 
 [node name="Map" type="StaticBody" parent="."]
+editor/display_folded = true
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
 
 [node name="Mesh" type="MeshInstance" parent="Map"]
@@ -71,10 +74,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 22, 16 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 transform = Transform( 6, 0, 0, 0, 1, 0, 0, 0, 10, -7, -8, -61 )
 newArea = "res://scenes/WorldAreas/VillageSouth.tscn"
 
 [node name="StaticBody3" type="StaticBody" parent="."]
+editor/display_folded = true
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 12, -24 )
@@ -87,6 +92,25 @@ shape = SubResource( 4 )
 [node name="CollisionShape2" type="CollisionShape" parent="StaticBody3"]
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, 12, 28 )
 shape = SubResource( 4 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="GUI"]
+position = Vector2( 40, 40 )
+scale = Vector2( 5, 5 )
+texture = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="GUI"]
+margin_top = 80.0
+margin_right = 80.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_constants/shadow_as_outline = 1
+text = "Tab"
+align = 1
 
 
 [editable path="Door"]
