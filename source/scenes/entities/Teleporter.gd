@@ -1,6 +1,8 @@
 extends Spatial
 
 export var target_name:String = ""
+export var one_time_use:bool = false
+
 var can_teleport = true
 var _target
 
@@ -16,11 +18,11 @@ func _ready():
 		print("WARNING: can't find teleporter target " + target_name)
 
 func _on_Area_body_entered(body):
-	if can_teleport:# and body == Globals.player:
-		_target.can_teleport = false
+	if can_teleport:
 		body.translation = Vector3(_target.translation.x, _target.translation.y + 10, _target.translation.z)
-		print("Teleported to " + target_name)
+		if self.one_time_use:
+			self.get_parent().remove_child(self)
+			self.queue_free()
 
 func _on_Area_body_exited(body):
-	#if body == Globals.player:
 	can_teleport = true
