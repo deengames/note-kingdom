@@ -12,14 +12,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("open_close_diary"):
 		# DiaryPanelContainer should store only "DiaryPanel" or do not store anything at all
 		var diary_panel_container_children = $DiaryPanelContainer.get_children()
-		# If DiaryPanelContainer have DiaryPanel
+		# If DiaryPanelContainer already store something
 		if diary_panel_container_children != []:
-			var diary_panel_container_children_name = diary_panel_container_children[0].name
-			# If soneome accidentally put not "DiaryPanel" node in DiaryPanelContainer this check will help
-			if diary_panel_container_children_name == "DiaryPanel":
-				diary_panel_container_children[0].queue_free()
-			else:
-				print("Error! DiaryPanelContainer store not DiaryPanel node but" + diary_panel_container_children_name)
+			diary_panel_container_children[0].queue_free()
 		else:
 			$DiaryPanelContainer.add_child(diary_panel.instance())
-	print($DiaryPanelContainer.get_children())

@@ -9,7 +9,7 @@ var _language: String = "en-US"
 
 var last_room: String = "" # we need this for moving the player appropriately on loading rooms
 var current_room: String = "" # we need this for saves
-var notes_collected: Array = [false, false, false, false, false, false] # as you get note, set notes_collected[note_numer] = true
+var notes_collected: Array = [[true, "first_node_sentencde"], [false, ""], [false, ""], [false, ""], [false, ""]] # as you get note, set notes_collected[note_numer][0] = true
 
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message

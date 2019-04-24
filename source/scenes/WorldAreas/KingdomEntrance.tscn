@@ -116,8 +116,11 @@ text = "Tab"
 align = 1
 
 [node name="DiaryPanelContainer" type="CanvasLayer" parent="GUI"]
+editor/display_folded = true
 
 [node name="DiaryPanel" parent="GUI/DiaryPanelContainer" instance=ExtResource( 9 )]
+
+[node name="NotePanelContainer" type="CanvasLayer" parent="GUI"]
 
 
 [editable path="Door"]

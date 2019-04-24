@@ -1,5 +1,7 @@
 extends Panel
 
+var diary_panel_button = preload("res://scenes/DiaryPanelButton.tscn")
+
 func _ready():
 	$Tween.interpolate_property(self, "rect_position:y", self.rect_position.y, 0, 0.2, Tween.TRANS_EXPO,Tween.EASE_OUT)
 	$Tween.start()
@@ -10,6 +12,15 @@ func _ready():
 	$Label.add_font_override("font", language_font)
 	$CloseButton.add_font_override("font", language_font)
 	
+	# Adding notes buttons
+	for i in Globals.notes_collected.size():
+		var new_button = diary_panel_button.instance()
+		var note_info = Globals.notes_collected[i]
+		if note_info[0] == true:
+			new_button.text = note_info[1]
+			new_button.note_key = "Note %s" % i
+			$Panel/VBoxContainer.add_child(new_button)
+
 func set_text(message_key):
 	$Label.text = Globals.translate(message_key)
 
