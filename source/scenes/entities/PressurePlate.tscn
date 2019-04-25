@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/entities/PressurePlate.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/sfx/plate-click.ogg" type="AudioStream" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 2, 0.5, 2 )
@@ -21,6 +22,9 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.387352, 0 )
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
