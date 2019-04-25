@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/entities/Note.gd" type="Script" id=1]
 [ext_resource path="res://assets/textures/Note.png" type="Texture" id=2]
+[ext_resource path="res://assets/audio/sfx/note-rustle.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 1, 2, 0 )
@@ -45,5 +46,8 @@ spot_angle = 10.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 27, 0 )
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_StaticBody_body_entered"]
