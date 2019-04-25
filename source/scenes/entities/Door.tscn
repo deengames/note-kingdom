@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/entities/Door.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/sfx/door-creak.ogg" type="AudioStream" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 3, 4, 1 )
@@ -28,5 +29,8 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Area"]
 shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

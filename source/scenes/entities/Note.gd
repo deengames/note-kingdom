@@ -19,6 +19,9 @@ func _process(delta):
 
 func _on_StaticBody_body_entered(body):
 	if body is Player:
+		$AudioStreamPlayer.play()
+		hide()
+		
 		var note_panel = NotePanel.instance()
 		#Globals.notes_collected.append(note_key) # its fine store all the notes as a dictionary somewhere, but not in notes_collected.
 		Globals.notes_collected[note_key][0] = true # this may need to change
@@ -34,4 +37,5 @@ func _on_StaticBody_body_entered(body):
 			note_panel_container_children[0].queue_free()
 		GUI.get_node("NotePanelContainer").add_child(note_panel)
 		
+		yield($AudioStreamPlayer, "finished")
 		self.queue_free()
