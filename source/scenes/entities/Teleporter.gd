@@ -18,10 +18,13 @@ func _ready():
 		print("WARNING: can't find teleporter target " + target_name)
 
 func _on_Area_body_entered(body):
+	$AudioStreamPlayer.play()
+	
 	if can_teleport:
 		body.translation = Vector3(_target.translation.x, _target.translation.y + 10, _target.translation.z)
 		if self.one_time_use:
 			self.get_parent().remove_child(self)
+			yield($AudioStreamPlayer, "finished")
 			self.queue_free()
 
 func _on_Area_body_exited(body):
