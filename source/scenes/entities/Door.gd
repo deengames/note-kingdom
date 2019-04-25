@@ -24,5 +24,9 @@ func _on_Area_body_entered(body):
 		var key_index = body.keys.find(self.number)
 		if key_index > -1:
 			body.keys.remove(key_index)
-			self.get_parent().remove_child(self)
+			$AudioStreamPlayer.play()
+			# Disappear. Stop colliding, too.
+			hide()
+			remove_child($CollisionShape)
+			yield($AudioStreamPlayer, "finished")
 			self.queue_free()
