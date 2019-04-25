@@ -64,7 +64,6 @@ func _process_input(delta):
 #			$PlayerCharacter/AnimationPlayer.play("Stand")
 
 			if _block_pushing != null:
-				print("notn null")
 				_block_pushing.stop_audio()
 				_block_pushing = null
 				

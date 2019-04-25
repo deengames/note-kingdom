@@ -13,9 +13,14 @@ func _process(delta):
 
 func _on_Area_body_entered(body):
 	if body is Player:
+		$AudioStreamPlayer.play()
+		hide()
+		
 		if body.keys.size() < 1:
 			body.keys.append(number)
-#			get_parent().remove_child(self)
+			# Yielding immediately sometimes doesn't play the key sound.
+			# Like, on the first key you pick up - buffering?
+			yield($AudioStreamPlayer, "finished")
 			self.queue_free()
 		else:
 			var number_switch = body.keys[0]
