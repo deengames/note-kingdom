@@ -18,6 +18,7 @@ var WALK_SPEED = player_speed
 const MAX_SLOPE_ANGLE = 60
 
 var _last_known_position = Vector3(0, 0, 0)
+var _block_pushing = null # ah, you horrible hack. stops audio when we stop pushing
 
 # TODO: persist when you recreate the character
 var keys = [] # numbers like 1, 37
@@ -61,7 +62,12 @@ func _process_input(delta):
 		if not input_direction:
 			_push_delay = 0.0 # reset the push delay if you stop pressing a button
 #			$PlayerCharacter/AnimationPlayer.play("Stand")
-			
+
+			if _block_pushing != null:
+				print("notn null")
+				_block_pushing.stop_audio()
+				_block_pushing = null
+				
 			if not grounded:
 				move_and_slide(Vector3(0, _GRAVITY, 0), Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 				$PlayerCharacter/AnimationPlayer.play("Fall")
@@ -84,6 +90,10 @@ func _process_input(delta):
 			if collider is KinematicBody and "pushable" in collider and collider.pushable and  _push_delay >= block_push_delay and _last_input == input_direction:
 				move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
 				collider.move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
+				_block_pushing = collider
+				collider.play_audio()
+				print(str(_block_pushing))
+				
 			$PlayerCharacter/AnimationPlayer.play("Push")
 			$PlayerCharacter.rotation.y = Vector2(-$RayCast.cast_to.x, $RayCast.cast_to.z).tangent().angle()
 		else:

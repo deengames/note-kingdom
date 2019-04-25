@@ -11,5 +11,5 @@ dest_files=[ "res://.import/block-scrape.ogg-49d47d1e60b68c1d7976cf0bdb73d499.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
