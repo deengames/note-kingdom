@@ -1,6 +1,7 @@
 extends Area
 
 const NotePanel = preload("res://scenes/NotePanel.tscn")
+const GUI = preload("res://scenes/GUI.tscn")
 const Player = preload("res://scenes/entities/Player.gd")
 
 signal got_note
@@ -19,14 +20,22 @@ func _process(delta):
 func _on_StaticBody_body_entered(body):
 	if body is Player:
 		var note_panel = NotePanel.instance()
-		Globals.notes_collected[note_key][0] = true # this may need to change
+		Globals.notes_collected.append(note_key) # its fine store all the notes as a dictionary somewhere, but not in notes_collected.
+#		Globals.notes_collected[note_key][0] = true # this may need to change
 		note_panel.set_text("NOTE_%s" % note_key)
 		
-		var note_panel_container_children = get_node("/root/Location/GUI/NotePanelContainer").get_children(); 
+		# we need to instatiate the GUI from code first, otherwise this breaks depending on 
+		# where you pick up a note
+		var GUI_panel
+		if not get_tree().get_root().find_node("GUI"):
+			GUI_panel = GUI.instance()
+		else:
+			GUI_panel = get_tree().get_root().find_node("GUI")
+		var note_panel_container_children = GUI_panel.get_node("NotePanelContainer").get_children(); 
 		# NoteContainer should be used only to store one NotePanel at once 
 		# If NoteContainer already store something
 		if note_panel_container_children != []:
 			note_panel_container_children[0].queue_free()
-		get_node("/root/Location/GUI/NotePanelContainer").add_child(note_panel)
+		GUI_panel.get_node("NotePanelContainer").add_child(note_panel)
 		
 		self.queue_free()

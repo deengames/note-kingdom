@@ -1,15 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/LevelEntrance.gd" type="Script" id=1]
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/entities/Lever.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=7]
 
-[node name="Spatial" type="Spatial"]
+[node name="Switch1" type="Spatial"]
+script = ExtResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
@@ -18,71 +20,69 @@ shadow_enabled = true
 
 [node name="Walls" type="Node" parent="."]
 
-[node name="Ground and Border" parent="Walls" instance=ExtResource( 2 )]
+[node name="Ground and Border" parent="Walls" instance=ExtResource( 3 )]
 
-[node name="Wall" parent="Walls" instance=ExtResource( 3 )]
+[node name="Wall" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( 9, 0, 0, 0, 3, 0, 0, 0, 1, -13.1486, 3, 14.5939 )
 
-[node name="Wall2" parent="Walls" instance=ExtResource( 3 )]
+[node name="Wall2" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( 9, 0, 0, 0, 3, 0, 0, 0, 1, 12.8389, 3, 14.5939 )
 
 [node name="Subpuzzle1" type="Node" parent="."]
 
-[node name="On1" parent="Subpuzzle1" instance=ExtResource( 4 )]
+[node name="On1" parent="Subpuzzle1" instance=ExtResource( 5 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 3, 14.8498 )
 
-[node name="Off1" parent="Subpuzzle1" instance=ExtResource( 4 )]
+[node name="Off1" parent="Subpuzzle1" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -13.0484, 3, 9.25577 )
 
-[node name="Spatial" parent="Subpuzzle1" instance=ExtResource( 5 )]
+[node name="Spatial" parent="Subpuzzle1" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0332, 0, 18.9918 )
 
-[node name="Spatial2" parent="Subpuzzle1" instance=ExtResource( 5 )]
+[node name="Spatial2" parent="Subpuzzle1" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0332, 0, 8.79142 )
 
-[node name="Wall3" parent="Subpuzzle1" instance=ExtResource( 3 )]
+[node name="Wall3" parent="Subpuzzle1" instance=ExtResource( 4 )]
 transform = Transform( 9, 0, 0, 0, 3, 0, 0, 0, 1, -13.1486, 3, 4.18333 )
 
-[node name="Wall4" parent="Subpuzzle1" instance=ExtResource( 3 )]
+[node name="Wall4" parent="Subpuzzle1" instance=ExtResource( 4 )]
 transform = Transform( 9, 0, 0, 0, 3, 0, 0, 0, 1, 12.8389, 3, 4.18333 )
 
 [node name="Subpuzzle2" type="Node" parent="."]
 
 [node name="Node" type="Node" parent="Subpuzzle2"]
-editor/display_folded = true
 
-[node name="On1" parent="Subpuzzle2/Node" instance=ExtResource( 4 )]
+[node name="On1" parent="Subpuzzle2/Node" instance=ExtResource( 5 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 3, 4.05716 )
 
-[node name="Spatial" parent="Subpuzzle2/Node" instance=ExtResource( 5 )]
+[node name="Spatial" parent="Subpuzzle2/Node" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -19.2792, 0, 9.39439 )
 
 [node name="Node2" type="Node" parent="Subpuzzle2"]
-editor/display_folded = true
 
-[node name="On1" parent="Subpuzzle2/Node2" instance=ExtResource( 4 )]
+[node name="On1" parent="Subpuzzle2/Node2" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, 3.96245, 3, -14.2379 )
 
-[node name="On2" parent="Subpuzzle2/Node2" instance=ExtResource( 4 )]
+[node name="On2" parent="Subpuzzle2/Node2" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -3.65676, 3, -14.2379 )
 
-[node name="Spatial3" parent="Subpuzzle2/Node2" instance=ExtResource( 5 )]
+[node name="Spatial3" parent="Subpuzzle2/Node2" instance=ExtResource( 6 )]
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -5.76681, 0, -4.17187 )
 
 [node name="Node3" type="Node" parent="Subpuzzle2"]
 
-[node name="On1" parent="Subpuzzle2/Node3" instance=ExtResource( 4 )]
+[node name="On1" parent="Subpuzzle2/Node3" instance=ExtResource( 5 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 1, 0.0498657, 3, -18.0342 )
 
-[node name="On2" parent="Subpuzzle2/Node3" instance=ExtResource( 4 )]
+[node name="On2" parent="Subpuzzle2/Node3" instance=ExtResource( 5 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 1, 0.0498657, 3, -10.3952 )
 
-[node name="Spatial3" parent="Subpuzzle2/Node3" instance=ExtResource( 5 )]
+[node name="Spatial3" parent="Subpuzzle2/Node3" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72943, 0, -4.17187 )
 
 [node name="Notes" type="Node" parent="."]
 
-[node name="Note" parent="Notes" instance=ExtResource( 6 )]
+[node name="Note" parent="Notes" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181, 1, -15.0041 )
-message_key = "NOTE_4"
 
+[connection signal="enter_or_exit" from="Walls/Ground and Border" to="." method="enter_or_exit_puzzle"]

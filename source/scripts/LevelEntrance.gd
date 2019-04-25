@@ -26,6 +26,7 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 		if get_tree().get_root().get_node("Location").location_name: # note the space between the words in location_name
 			old_area = get_tree().get_root().get_node("Location").location_name
 			print("old area name is " + old_area)
+			print("new area name is " + newArea)
 		get_tree().change_scene(newArea)
 	else:
 		old_area = get_tree().current_scene.name
@@ -33,9 +34,9 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 		if old_area.begins_with("Block"):
 			nameString = "South"
 		elif old_area.begins_with("Switch"):
-			nameString = "East"
-		elif old_area.begins_with("Plate"):
 			nameString = "West"
+		elif old_area.begins_with("Plate"):
+			nameString = "East"
 		elif old_area.begins_with("Key"):
 			nameString = "North"
 		if nameString != "":
