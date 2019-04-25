@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/block-scrape.ogg-49d47d1e60b68c1d7976cf0bdb73d499.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/sfx/block-scrape.ogg"
+dest_files=[ "res://.import/block-scrape.ogg-49d47d1e60b68c1d7976cf0bdb73d499.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
