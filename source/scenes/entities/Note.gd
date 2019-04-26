@@ -29,13 +29,14 @@ func _on_StaticBody_body_entered(body):
 		
 		# we need to instatiate the GUI from code first, otherwise this breaks depending on 
 		# where you pick up a note
-		var GUI = get_node("/root/Location/GUI")
-		var note_panel_container_children = GUI.get_node("NotePanelContainer").get_children(); 
-		# NoteContainer should be used only to store one NotePanel at once 
-		# If NoteContainer already store something
-		if note_panel_container_children != []:
-			note_panel_container_children[0].queue_free()
-		GUI.get_node("NotePanelContainer").add_child(note_panel)
+		if has_node("/root/Location/GUI"):
+			var GUI = get_node("/root/Location/GUI")
+			var note_panel_container_children = GUI.get_node("NotePanelContainer").get_children(); 
+			# NoteContainer should be used only to store one NotePanel at once 
+			# If NoteContainer already store something
+			if note_panel_container_children != []:
+				note_panel_container_children[0].queue_free()
+			GUI.get_node("NotePanelContainer").add_child(note_panel)
 		
 		yield($AudioStreamPlayer, "finished")
 		self.queue_free()
