@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/entities/PressurePlate.gd" type="Script" id=1]
-[ext_resource path="res://assets/audio/sfx/plate-click.ogg" type="AudioStream" id=2]
+[ext_resource path="res://assets/textures/HouseTexture3.png" type="Texture" id=2]
+[ext_resource path="res://assets/audio/sfx/plate-click.ogg" type="AudioStream" id=3]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 1, 5, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 2, 2, 2 )
+uv1_offset = Vector3( -0.25, 0, 0 )
 
 [sub_resource type="CubeMesh" id=1]
+material = SubResource( 3 )
 size = Vector3( 2, 0.5, 2 )
 
 [sub_resource type="BoxShape" id=2]
@@ -24,7 +32,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.387352, 0 )
 shape = SubResource( 2 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

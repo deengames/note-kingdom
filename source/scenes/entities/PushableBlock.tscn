@@ -2,13 +2,14 @@
 
 [ext_resource path="res://scenes/entities/PushableBlock.gd" type="Script" id=1]
 [ext_resource path="res://assets/models/block.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://assets/textures/ice-block.png" type="Texture" id=3]
+[ext_resource path="res://assets/textures/HouseTexture3.png" type="Texture" id=3]
 [ext_resource path="res://assets/audio/sfx/block-scrape.ogg" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
 margin = 0.5
 
 [sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 4, 0.5, 3.94531, 1 )
 albedo_texture = ExtResource( 3 )
 
 [node name="KinematicBody" type="KinematicBody"]

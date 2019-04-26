@@ -1,16 +1,10 @@
-[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
 
-[sub_resource type="OpenSimplexNoise" id=1]
-period = 4.0
-
-[sub_resource type="NoiseTexture" id=2]
-width = 50
-height = 50
-seamless = true
-noise = SubResource( 1 )
+[ext_resource path="res://assets/textures/HouseTexture3.png" type="Texture" id=1]
 
 [resource]
-albedo_color = Color( 0, 0.501961, 0, 1 )
-albedo_texture = SubResource( 2 )
+albedo_color = Color( 0.411765, 0.552941, 0.67451, 1 )
+albedo_texture = ExtResource( 1 )
 metallic_specular = 0.0
+uv1_scale = Vector3( 2, 2, 2 )
 
