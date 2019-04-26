@@ -6,7 +6,24 @@ const Player = preload("res://scenes/entities/Player.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	# color change here using a shader
+	
+	var add_color = Color()
+	if fmod(number, 3) == 0:
+		add_color = Color(number, 0, 0)
+	elif fmod(number, 2) == 0:
+		add_color = Color(0, number, 0)
+	else:
+		add_color = Color(0, 0, number)
+	$CSGTorus.material.set("shader_param/color_added", add_color)
+#	$Post.get_surface_material(1).set("shader_param/color_added", add_color)
+#	$Post2.get_surface_material(1).set("shader_param/color_added", add_color)
+#	$Post4.get_surface_material(1).set("shader_param/color_added", add_color)
+	# apply the material to each of the key mesh components
+	$Post.set_surface_material(0, $CSGTorus.material)
+	$Post2.set_surface_material(0, $CSGTorus.material)
+	$Post3.set_surface_material(0, $CSGTorus.material)
+	
 
 func _process(delta):
 	self.rotation_degrees.y += (100 * delta)

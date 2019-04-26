@@ -4,7 +4,9 @@ extends ColorRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var location_label = get_node("/root/Location")
+	var location_label = null
+	if has_node("/root/Location"):
+		location_label = get_node("/root/Location")
 	
 	if location_label != null:
 		var location_key = location_label.location_name

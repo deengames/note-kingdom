@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=5]
+code = "shader_type spatial;
+
+uniform vec4 color_added = vec4(0.0, 0.0, 0.0, .0);
+// the possible values will be stored in key.gd
+
+void vertex () {
+	
+	
+}
+
+void fragment () {
+	ROUGHNESS = 0.23;
+	METALLIC = 0.9;
+}
+
+void light () {
+	SPECULAR_LIGHT += vec3(0.0, 0.0, 0.0);
+	DIFFUSE_LIGHT += color_added.rgb;
+}"
+
+[resource]
+resource_local_to_scene = true
+shader = SubResource( 5 )
+shader_param/color_added = Plane( 0, 0, 0, 1 )
+

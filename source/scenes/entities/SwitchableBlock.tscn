@@ -4,8 +4,11 @@
 [ext_resource path="res://assets/textures/HouseTexture3.png" type="Texture" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
-albedo_color = Color( 7, 3, 3, 1 )
+flags_world_triplanar = true
+albedo_color = Color( 4, 2, 1, 1 )
 albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.5, 0.5, 0.5 )
+uv1_triplanar = true
 
 [sub_resource type="ArrayMesh" id=2]
 surfaces/0 = {

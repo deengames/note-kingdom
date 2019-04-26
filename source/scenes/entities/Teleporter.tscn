@@ -1,14 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/entities/Teleporter.gd" type="Script" id=1]
-[ext_resource path="res://assets/textures/Door.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/GateTileMap.png" type="Texture" id=2]
 [ext_resource path="res://assets/audio/sfx/teleporter.ogg" type="AudioStream" id=3]
+[ext_resource path="res://assets/textures/Door.png" type="Texture" id=4]
 
 [sub_resource type="CylinderShape" id=1]
 height = 1.0
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 2, 2, 2, 1 )
 albedo_texture = ExtResource( 2 )
 
 [sub_resource type="SphereMesh" id=3]
@@ -18,6 +18,29 @@ height = 0.5
 radial_segments = 6
 rings = 6
 is_hemisphere = true
+
+[sub_resource type="ParticlesMaterial" id=4]
+flag_rotate_y = true
+angular_velocity = 0.5
+angle = 5.0
+angle_random = 1.0
+
+[sub_resource type="SpatialMaterial" id=5]
+flags_transparent = true
+flags_unshaded = true
+flags_do_not_receive_shadows = true
+params_blend_mode = 1
+albedo_color = Color( 2, 2, 2, 0.498039 )
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 0.5, 0.25, 0.5 )
+uv1_offset = Vector3( 0, 0, 0.55 )
+uv1_triplanar = true
+
+[sub_resource type="CylinderMesh" id=6]
+material = SubResource( 5 )
+height = 0.3
+radial_segments = 8
+rings = 1
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -35,6 +58,13 @@ material/0 = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="Particles" type="Particles" parent="."]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 0.5, 4.37114e-008 )
+amount = 7
+visibility_aabb = AABB( -1.46605, -5.9307, -1.25653, 2.9321, 11.8614, 2.51306 )
+process_material = SubResource( 4 )
+draw_pass_1 = SubResource( 6 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
