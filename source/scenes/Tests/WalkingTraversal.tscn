@@ -15,7 +15,7 @@
 
 [sub_resource type="Environment" id=1]
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=2]
 flags_world_triplanar = true
 albedo_texture = ExtResource( 11 )
 emission_enabled = true
@@ -28,7 +28,7 @@ uv1_scale = Vector3( 0.25, 0.25, 0.25 )
 uv1_triplanar = true
 
 [sub_resource type="CubeMesh" id=3]
-material = SubResource( 4 )
+material = SubResource( 2 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )

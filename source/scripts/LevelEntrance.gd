@@ -32,15 +32,17 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 		old_area = get_tree().current_scene.name
 		var nameString = ""
 		if old_area.begins_with("Block"):
-			nameString = "South"
+			nameString = "VillageSouth"
 		elif old_area.begins_with("Switch"):
-			nameString = "West"
+			nameString = "VillageWest"
 		elif old_area.begins_with("Plate"):
-			nameString = "East"
+			nameString = "VillageEast"
 		elif old_area.begins_with("Key"):
-			nameString = "North"
+			nameString = "VillageNorth"
+		elif old_area.begins_with("Teleporter"):
+			nameString = "Castle"
 		if nameString != "":
-			get_tree().change_scene("res://scenes/WorldAreas/Village" + nameString + ".tscn")
+			get_tree().change_scene("res://scenes/WorldAreas/" + nameString + ".tscn")
 	# at the end here, move player to the spot if it's got one
 	# jk, store it in global and dump in player ready lolololol
 	$"/root/Globals".last_room = old_area
