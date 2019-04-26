@@ -8,5 +8,5 @@ VILLAGE_NORTH: Village North
 VILLAGE_EAST: Village East
 VILLAGE_SOUTH: Village South
 VILLAGE_WEST: Village West
-NOTE_0: Tesst text text text textr
+NOTE_0: This is about as long as notes get. We don't have a lot of room here with that huge font size that you picked. Well, actually, it's rather close to a tweet size. Maybe?
 NOTE_1: Another one text note text
