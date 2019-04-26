@@ -49,7 +49,7 @@ transform = Transform( 1, 0, -1.19209e-007, 0, 1, 0, 1.19209e-007, 0, 1, 11.6603
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1.3, 0, 0, 0, 1, -19.8435, 0, 39 )
 newArea = "res://scenes/Puzzles/Blocks/Block2.tscn"
-unlockNumber = 1
+unlockNumber = 2
 
 [node name="Block2" type="Position3D" parent="Map/Building2"]
 transform = Transform( -0.866025, 0, 0.5, 0, 0.769231, 0, -0.5, 0, -0.866025, 11, 3.07692, -2.28882e-005 )
@@ -58,7 +58,7 @@ transform = Transform( -0.866025, 0, 0.5, 0, 0.769231, 0, -0.5, 0, -0.866025, 11
 editor/display_folded = true
 transform = Transform( 0.573576, 0, 0.819152, 0, 1, 0, -0.819152, 0, 0.573576, -17.8435, 0, 64 )
 newArea = "res://scenes/Puzzles/Blocks/Block3.tscn"
-unlockNumber = 1
+unlockNumber = 2
 
 [node name="Block3" type="Position3D" parent="Map/Building3"]
 transform = Transform( -0.0871551, 0, 0.996195, 0, 1, 0, -0.996195, 0, -0.0871551, 10.8138, 3, -0.247326 )
@@ -74,7 +74,7 @@ transform = Transform( -0.703435, 0, -0.124035, 0, 1, 0, 0.173649, 0, -0.984807,
 [node name="Building5" parent="Map" instance=ExtResource( 5 )]
 transform = Transform( -0.388228, 0, 1.44889, 0, 1.5, 0, -1.44889, 0, -0.388228, 19.1565, 0, 60 )
 newArea = "res://scenes/Puzzles/Blocks/Block5.tscn"
-unlockNumber = 4
+unlockNumber = 3
 
 [node name="Block5" type="Position3D" parent="Map/Building5"]
 transform = Transform( 0.471404, 0, 0.471404, 0, 0.666667, 0, -0.471404, 0, 0.471404, 11.1659, 3.33333, -0.459053 )
@@ -83,6 +83,7 @@ transform = Transform( 0.471404, 0, 0.471404, 0, 0.666667, 0, -0.471404, 0, 0.47
 editor/display_folded = true
 transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -6.22298e-006, -5.96046e-008, 93 )
 newArea = "res://scenes/WorldAreas/VillageSquare.tscn"
+unlockNumber = 4
 
 [node name="Village Square" type="Position3D" parent="Map/Door"]
 transform = Transform( -1, 0, 1.17225e-007, 0, 1, 0, -1.17225e-007, 0, -1, -5.25314e-006, 1, -4 )

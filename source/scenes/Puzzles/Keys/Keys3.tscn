@@ -116,30 +116,30 @@ number = 4
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 18.1897, 0, -1.74294 )
 
 [node name="Door3" parent="Keys and Doors/Puzzle3" instance=ExtResource( 6 )]
-transform = Transform( 15, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -5.34817 )
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -5.348 )
 number = 3
 
 [node name="Door4" parent="Keys and Doors/Puzzle3" instance=ExtResource( 6 )]
-transform = Transform( 13, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -6.86218 )
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -6.862 )
 number = 4
 
 [node name="Door5" parent="Keys and Doors/Puzzle3" instance=ExtResource( 6 )]
-transform = Transform( 11, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -8.44333 )
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -8.44333 )
 number = 5
 
 [node name="Door6" parent="Keys and Doors/Puzzle3" instance=ExtResource( 6 )]
-transform = Transform( 9, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -10.2111 )
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -10.2111 )
 number = 6
 
 [node name="Door7" parent="Keys and Doors/Puzzle3" instance=ExtResource( 6 )]
-transform = Transform( 7, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -11.9866 )
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, -0.0488987, 3, -11.9866 )
 number = 7
 
 [node name="Wall8" parent="Keys and Doors/Puzzle3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 10, -5.87275, 3, -15.0877 )
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 10, -5.34071, 3, -15.0877 )
 
 [node name="Wall9" parent="Keys and Doors/Puzzle3" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 10, 4.67052, 3, -15.0877 )
+transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 10, 5.2427, 3, -15.0877 )
 
 [node name="Notes" type="Node" parent="."]
 
