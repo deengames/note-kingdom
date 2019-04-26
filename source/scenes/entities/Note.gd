@@ -32,7 +32,7 @@ func _on_StaticBody_body_entered(body):
 		var ui_node = CanvasLayer.new()
 		ui_node.add_child(note_panel)
 		get_parent().add_child(ui_node)
-		Globals.player.freeze()
+		#Globals.player.freeze()
 
 		yield($AudioStreamPlayer, "finished")
 		self.queue_free()
