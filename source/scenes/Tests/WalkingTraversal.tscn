@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Tests/WalkingTraversal.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
@@ -10,8 +10,11 @@
 [ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/entities/Artifact.gd" type="Script" id=11]
 
 [sub_resource type="Environment" id=1]
+
+[sub_resource type="CubeMesh" id=2]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -38,7 +41,6 @@ editor/display_folded = true
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, -13 )
-message_key = "HELLO_WORLD"
 
 [node name="UI Stuff" type="Node" parent="."]
 
@@ -99,5 +101,11 @@ target_name = "T3"
 [node name="T3" parent="Teleporters" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76446, 0, 14.2128 )
 target_name = "T1"
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1.70711, -0.292893, 1, 1, 1, -1.41421, -0.292893, 1.70711, 1, 13.101, 4, 4.662 )
+mesh = SubResource( 2 )
+material/0 = null
+script = ExtResource( 11 )
 
 [connection signal="got_note" from="Notes/StaticBody" to="." method="_on_StaticBody_got_note"]
