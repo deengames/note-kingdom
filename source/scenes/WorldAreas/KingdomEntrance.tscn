@@ -67,7 +67,7 @@ environment = ExtResource( 3 )
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
 
 [node name="Map" type="MeshInstance" parent="Map"]
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 material/0 = null
 material/1 = null
 

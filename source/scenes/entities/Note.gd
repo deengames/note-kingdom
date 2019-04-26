@@ -29,9 +29,8 @@ func _on_StaticBody_body_entered(body):
 
 		# we need to instatiate the GUI from code first, otherwise this breaks depending on
 		# where you pick up a note
-		var ui_node = CanvasLayer.new()
-		ui_node.add_child(note_panel)
-		get_parent().add_child(ui_node)
+		
+		body.get_node("GUI").get_node("NotePanelContainer").add_child(note_panel)
 		#Globals.player.freeze()
 
 		yield($AudioStreamPlayer, "finished")
