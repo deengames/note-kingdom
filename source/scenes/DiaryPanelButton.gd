@@ -15,9 +15,9 @@ func _on_Button_pressed():
 	var note_panel = NotePanel.instance()
 	note_panel.set_text(note_key)
 	# Chain of code to add new NotePanel into GUI
-	var note_panel_container_children = get_node("/root/Location/GUI/NotePanelContainer").get_children(); 
+	var note_panel_container_children = get_parent().get_parent().get_parent().get_parent().get_parent().get_node("NotePanelContainer").get_children()
 	# NoteContainer should be used only to store one NotePanel at once 
 	# If NoteContainer already store something
 	if note_panel_container_children != []:
 		note_panel_container_children[0].queue_free()
-	get_node("/root/Location/GUI/NotePanelContainer").add_child(note_panel)
+	get_parent().get_parent().get_parent().get_parent().get_parent().get_node("NotePanelContainer").add_child(note_panel)
