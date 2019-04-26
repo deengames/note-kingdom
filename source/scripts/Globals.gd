@@ -10,7 +10,7 @@ var _language: String = "en-US"
 var last_room: String = "" # we need this for moving the player appropriately on loading rooms
 var current_room: String = "" # we need this for saves
 
-var notes_collected: Array = [] # Please leave notes_collected empty. We append the keys to this array as you collect notes [[false, "first_note"], [false, "second_note"], [false, ""], [false, ""], [false, ""]] # as you get note, set notes_collected[note_numer][0] = true
+var notes_collected: Array = [[false, "first_note_header"], [false, "second_note_header"], [false, "header"], [false, "also_header"], [false, "only_header,yes"]] # as you get note, set notes_collected[note_numer][0] = true
 
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message
