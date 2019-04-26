@@ -45,5 +45,6 @@ func _on_Area_body_entered(body):
 			self.number = number_switch
 			hide()
 			yield(self, "body_exited")
+			_ready()
 			show()
 		
