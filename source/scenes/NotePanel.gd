@@ -14,4 +14,5 @@ func set_text(message_key):
 	$Label.text = Globals.translate(message_key)
 
 func _on_CloseButton_pressed():
+	Globals.player.can_move = true
 	self.queue_free()
