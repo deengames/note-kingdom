@@ -37,10 +37,10 @@ transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -4, 1.97543, 1 )
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 4, 1.97543, 1 )
 
 [node name="Notes" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, -13 )
+note_key = 0
 
 [node name="UI Stuff" type="Node" parent="."]
 

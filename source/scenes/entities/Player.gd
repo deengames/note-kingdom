@@ -91,7 +91,6 @@ func _process_input(delta):
 				collider.move_and_slide($RayCast.cast_to.normalized() * STEP_DISTANCE)
 				_block_pushing = collider
 				collider.play_audio()
-				print(str(_block_pushing))
 				
 			$PlayerCharacter/AnimationPlayer.play("Push")
 			$PlayerCharacter.rotation.y = Vector2(-$RayCast.cast_to.x, $RayCast.cast_to.z).tangent().angle()
@@ -108,3 +107,10 @@ func _process_input(delta):
 		_last_input = input_direction
 	
 	_last_known_position = self.translation
+
+func freeze():
+	self.can_move = false
+	$PlayerCharacter/AnimationPlayer.play("Stand")
+
+func unfreeze():
+	self.can_move = true

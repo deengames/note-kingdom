@@ -18,7 +18,7 @@ func _process(delta):
 
 
 func _on_StaticBody_body_entered(body):
-	if body is Player:
+	if body is Player and self.visible:
 		$AudioStreamPlayer.play()
 		hide()
 		
@@ -29,13 +29,10 @@ func _on_StaticBody_body_entered(body):
 		
 		# we need to instatiate the GUI from code first, otherwise this breaks depending on 
 		# where you pick up a note
-		var GUI = get_node("/root/Location/GUI")
-		var note_panel_container_children = GUI.get_node("NotePanelContainer").get_children(); 
-		# NoteContainer should be used only to store one NotePanel at once 
-		# If NoteContainer already store something
-		if note_panel_container_children != []:
-			note_panel_container_children[0].queue_free()
-		GUI.get_node("NotePanelContainer").add_child(note_panel)
+		var ui_node = CanvasLayer.new()
+		ui_node.add_child(note_panel)
+		get_parent().add_child(ui_node)
+		Globals.player.freeze()
 		
 		yield($AudioStreamPlayer, "finished")
 		self.queue_free()
