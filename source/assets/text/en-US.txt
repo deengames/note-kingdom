@@ -6,6 +6,9 @@ EXIT: Exit
 CLOSE: Close
 SAVE_AND_EXIT: Apply and return to main menu
 CHOOSE_LANGUAGE: Choose language
+AUDIO_SETTINGS: Audio settings
+MUSIC: Music
+SOUND_EFFECTS: Sound effects
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_SQUARE: Village Square
 VILLAGE_NORTH: Village North

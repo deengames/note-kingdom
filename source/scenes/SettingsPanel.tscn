@@ -103,14 +103,57 @@ custom_fonts/font = ExtResource( 8 )
 text = "हिन्दी"
 align = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer"]
 margin_top = 296.0
 margin_right = 800.0
-margin_bottom = 336.0
+margin_bottom = 332.0
+custom_fonts/font = SubResource( 1 )
+text = "Audio Settings"
+align = 1
+valign = 1
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer"]
+margin_top = 382.0
+margin_right = 800.0
+margin_bottom = 418.0
+custom_fonts/font = SubResource( 1 )
+text = "Music"
+valign = 1
+
+[node name="SfxLabel" type="Label" parent="VBoxContainer"]
+margin_top = 468.0
+margin_right = 800.0
+margin_bottom = 504.0
+custom_fonts/font = SubResource( 1 )
+text = "Sound Effects"
+valign = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 554.0
+margin_right = 800.0
+margin_bottom = 594.0
 custom_fonts/font = ExtResource( 5 )
 text = "Apply and return to main menu"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+margin_left = 500.0
+margin_top = 382.0
+margin_right = 1000.0
+margin_bottom = 416.0
+value = 100.0
+ticks_on_borders = false
+
+[node name="SfxSlider" type="HSlider" parent="."]
+margin_left = 500.0
+margin_top = 468.0
+margin_right = 1000.0
+margin_bottom = 500.0
+value = 100.0
+ticks_on_borders = false
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/EnglishLanguage" to="." method="_on_EnglishLanguage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RussianLanguage" to="." method="_on_RussianLanguage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/HindiLanguage" to="." method="_on_HindiLanguage_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_SaveButton_pressed"]
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+[connection signal="value_changed" from="SfxSlider" to="." method="_on_SfxSlider_value_changed"]

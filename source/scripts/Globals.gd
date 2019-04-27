@@ -7,9 +7,13 @@ var player: Player
 
 var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
 
+
 # START: global settings to save
 var _language: String = "en-US"
+var music_volume:float = 100
+var sfx_volume:float = 100
 # END: global settings to save
+
 
 # START: save per save-game
 var last_room: String = "" # we need this for moving the player appropriately on loading rooms
@@ -64,6 +68,12 @@ func translate(message_key):
 		
 func _load_global_preferences():
 	var manager = SaveManager.new()
-	var preferences = manager.load(manager.PREFERENCES_FILE_NAME)
-	if preferences != null:
-		set_language(preferences["language"])
+	var data = manager.load(manager.PREFERENCES_FILE_NAME)
+	if data != null:
+		set_language(data["language"])
+		
+		if "music_volume" in data:
+			music_volume = data["music_volume"]
+			
+		if "sfx_volume" in data:
+			sfx_volume = data["sfx_volume"]

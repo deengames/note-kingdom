@@ -11,15 +11,19 @@ const _language_arrow_x = {
 }
 
 func _ready():
-	var language_font = Globals.get_language_font()
-	$VBoxContainer/Label.add_font_override("font", language_font)
-	$VBoxContainer/Label.text = Globals.translate("CHOOSE_LANGUAGE")
-	
-	$VBoxContainer/Button.add_font_override("font", language_font)
-	$VBoxContainer/Button.text = Globals.translate("SAVE_AND_EXIT")
+	_translate($VBoxContainer/Label, "CHOOSE_LANGUAGE")
+	_translate($VBoxContainer/Button, "SAVE_AND_EXIT")
+	_translate($VBoxContainer/Label2, "AUDIO_SETTINGS")
+	_translate($VBoxContainer/MusicLabel, "MUSIC")
+	_translate($VBoxContainer/SfxLabel, "SOUND_EFFECTS")
 	
 	_show_selected_language()
 
+func _translate(control, message_key):
+	var language_font = Globals.get_language_font()	
+	control.add_font_override("font", language_font)
+	control.text = Globals.translate(message_key)
+	
 func _on_EnglishLanguage_pressed():
 	Globals.set_language("en-US")
 	_show_selected_language()
@@ -41,6 +45,16 @@ func _show_selected_language():
 
 func _on_SaveButton_pressed():
 	var manager = SaveManager.new()
-	var data = {'language': Globals._language}
+	var data = {
+		'language': Globals._language,
+		'music_volume': Globals.music_volume,
+		'sfx_volume': Globals.sfx_volume
+	}
 	manager.save(manager.PREFERENCES_FILE_NAME, data)
 	queue_free()
+
+func _on_SfxSlider_value_changed(value):
+	Globals.sfx_volume = value
+
+func _on_MusicSlider_value_changed(value):
+	Globals.music_volume = $MusicSlider.value
