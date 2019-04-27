@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WaltzingPen.ogg-d05f791f620639610bd01b352805a2fd.oggstr"
+
+[deps]
+
+source_file="res://music/WaltzingPen.ogg"
+dest_files=[ "res://.import/WaltzingPen.ogg-d05f791f620639610bd01b352805a2fd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

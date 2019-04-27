@@ -19,14 +19,23 @@ func _ready():
 #warning-ignore:unused_argument
 func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we discard, so just leave this
 	var old_area = ""
-	emit_signal("enter_or_exit")
+	emit_signal("enter_or_exit", body)
 	# what I was thinking for level transitions kind of breaks puzzles, so let's just change rooms and
 	# keep info we need in global or something
+	if body.has_node("GUI"): # this fades to white and back
+		print("body is " + body.name)
+		body.get_node("GUI/AnimationPlayer").play_backwards("ScreenFade")
+		body.set_physics_process(false)
+		yield(body.get_node("GUI/AnimationPlayer"), "animation_finished")
+	else:
+		print("where is GUI though?")
+	
 	if newArea != "":
 		if get_tree().get_root().get_node("Location").location_name: # note the space between the words in location_name
 			old_area = get_tree().get_root().get_node("Location").location_name
 			print("old area name is " + old_area)
 			print("new area name is " + newArea)
+		
 		get_tree().change_scene(newArea)
 	else:
 		old_area = get_tree().current_scene.name
