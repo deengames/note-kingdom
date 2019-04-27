@@ -12,8 +12,7 @@ export(int) var unlockNumber: = 0 # the number of notes needed to unlock this pu
 func _ready():
 	var noteNumber = 0
 	for i in Globals.notes_collected:
-		if i[0] == true:
-			noteNumber += 1
+		noteNumber += 1
 	if noteNumber == unlockNumber and has_node("AnimationPlayer"):
 		$AnimationPlayer.play("Open")
 	elif noteNumber > unlockNumber and has_node("AnimationPlayer"):
