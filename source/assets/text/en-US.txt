@@ -3,6 +3,8 @@ SETTINGS: Settings
 CREDITS: Credits
 EXIT: Exit
 CLOSE: Close
+SAVE: Save
+CHOOSE_LANGUAGE: Choose language
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_SQUARE: Village Square
 VILLAGE_NORTH: Village North

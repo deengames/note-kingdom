@@ -1,16 +1,23 @@
 extends Node
 
 const Player = preload("res://scenes/entities/Player.gd")
+const SaveManager = preload("res://scripts/SaveManager.gd")
 
 var player: Player
 
 var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
-var _language: String = "en-US"
 
+# START: global settings to save
+var _language: String = "en-US"
+# END: global settings to save
+
+# START: save per save-game
 var last_room: String = "" # we need this for moving the player appropriately on loading rooms
 var current_room: String = "" # we need this for saves
 
 var notes_collected: Array = [[false, "first_note_header"], [false, "second_note_header"], [false, "header"], [false, "also_header"], [false, "only_header,yes"]] # as you get note, set notes_collected[note_numer][0] = true
+# END: save per save-game
+
 
 # Set of supported languages. Key is language code; value
 # is a hash of message_key => localized message
@@ -21,6 +28,8 @@ var _language_fonts = {
 }
 
 func _ready():
+	self._load_global_preferences()
+	
 	for code in _language_data.keys():
 		var file = File.new()
 		file.open("res://assets/text/{code}.txt".format({code = code}), File.READ)
@@ -52,3 +61,9 @@ func translate(message_key):
 		print("WARNING: No message with key={k} in {l} language".format({k = message_key, l = _language}))
 		 # make it obvious that it's missing
 		return message_key.to_upper()
+		
+func _load_global_preferences():
+	var manager = SaveManager.new()
+	var preferences = manager.load(manager.PREFERENCES_FILE_NAME)
+	if preferences != null:
+		set_language(preferences["language"])

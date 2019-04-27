@@ -2,23 +2,24 @@ extends Node2D
 
 const SettingsPanel = preload("res://scenes/SettingsPanel.tscn")
 
-var _button_names = {}
 
 func _ready():
-	# Persist button keys because we translate them
-	var buttons = [$ButtonsContainer/PlayButton, $ButtonsContainer/SettingsButton, $ButtonsContainer/CreditsButton, $ButtonsContainer/ExitButton]
-	for button in buttons:
-		_button_names[button] = button.text.to_upper().replace(" ", "_")
+	_on_picked_language() # set in globals on startup
 		
 func _on_PlayButton_pressed():
 	get_tree().change_scene("res://scenes/WorldAreas/KingdomEntrance.tscn")
 
 func _on_picked_language():
-	var buttons = [$ButtonsContainer/PlayButton, $ButtonsContainer/SettingsButton, $ButtonsContainer/CreditsButton, $ButtonsContainer/ExitButton]
-	for button in buttons:
-		var key = _button_names[button]
-		button.add_font_override("font", Globals.get_language_font())
-		button.text = Globals.translate(key)
+	var language_font = Globals.get_language_font()
+	$ButtonsContainer/PlayButton.add_font_override("font", language_font)
+	$ButtonsContainer/SettingsButton.add_font_override("font", language_font)
+	$ButtonsContainer/CreditsButton.add_font_override("font", language_font)
+	$ButtonsContainer/ExitButton.add_font_override("font", language_font)
+	
+	$ButtonsContainer/PlayButton.text = Globals.translate("PLAY")
+	$ButtonsContainer/SettingsButton.text = Globals.translate("SETTINGS")
+	$ButtonsContainer/CreditsButton.text = Globals.translate("CREDITS")
+	$ButtonsContainer/ExitButton.text = Globals.translate("EXIT")
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
