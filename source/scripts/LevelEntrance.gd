@@ -10,9 +10,13 @@ export(String, FILE, "*.tscn") var newArea: = ""# let's just use the string reso
 export(int) var unlockNumber: = 0 # the number of notes needed to unlock this puzzle.
 
 func _ready():
-	if Globals.notes_collected.size() == unlockNumber and has_node("AnimationPlayer"):
+	var noteNumber = 0
+	for i in Globals.notes_collected:
+		if i[0] == true:
+			noteNumber += 1
+	if noteNumber == unlockNumber and has_node("AnimationPlayer"):
 		$AnimationPlayer.play("Open")
-	elif Globals.notes_collected.size() > unlockNumber and has_node("AnimationPlayer"):
+	elif noteNumber > unlockNumber and has_node("AnimationPlayer"):
 		$AnimationPlayer.play("Open")
 		$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 
