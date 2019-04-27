@@ -1,9 +1,10 @@
-PLAY: Play
+NEW_GAME: New Game
+LOAD_GAME: Load Game
 SETTINGS: Settings
 CREDITS: Credits
 EXIT: Exit
 CLOSE: Close
-SAVE&EXIT: Apply and return to main menu
+SAVE_AND_EXIT: Apply and return to main menu
 CHOOSE_LANGUAGE: Choose language
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_SQUARE: Village Square

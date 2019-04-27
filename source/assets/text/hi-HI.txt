@@ -1,8 +1,8 @@
-﻿PLAY: प्ले
+﻿NEW_GAME: प्ले
 SETTINGS: सेटिंग्स
 CREDITS: क्रेडिट
 EXIT: बाहर जाएं
-SAVE&EXIT: Save settings and exit to main menu
+SAVE_AND_EXIT: Save settings and exit to main menu
 CLOSE: बंद करे
 KINGDOM_ENTRANCE: साम्राज्य प्रवेश
 VILLAGE_NORTH: गाँव उत्तर

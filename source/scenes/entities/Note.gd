@@ -1,7 +1,6 @@
 extends Area
 
 const NotePanel = preload("res://scenes/NotePanel.tscn")
-const GUI = preload("res://scenes/GUI.tscn")
 const Player = preload("res://scenes/entities/Player.gd")
 
 signal got_note

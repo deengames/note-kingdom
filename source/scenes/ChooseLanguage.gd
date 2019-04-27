@@ -16,7 +16,7 @@ func _ready():
 	$VBoxContainer/Label.text = Globals.translate("CHOOSE_LANGUAGE")
 	
 	$VBoxContainer/Button.add_font_override("font", language_font)
-	$VBoxContainer/Button.text = Globals.translate("SAVE&EXIT")
+	$VBoxContainer/Button.text = Globals.translate("SAVE_AND_EXIT")
 	
 	_show_selected_language()
 

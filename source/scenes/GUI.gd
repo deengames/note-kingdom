@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var DiaryPanel = preload("res://scenes/DiaryPanel.tscn")
+const SaveManager = preload("res://scripts/SaveManager.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,4 +25,10 @@ func _on_toggle_diary():
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (event is InputEventMouseButton and event.pressed):
-		self._on_toggle_diary()
+		# Save game
+		var save_data = {
+			"last_room": Globals.last_room,
+			"current_room": Globals.current_room,
+			"notes_collected": Globals.notes_collected
+		}
+		SaveManager.save(SaveManager.SAVE_FILE_NAME, save_data)

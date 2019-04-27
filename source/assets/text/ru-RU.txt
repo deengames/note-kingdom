@@ -1,8 +1,8 @@
-﻿PLAY: Играть
+﻿NEW_GAME: Играть
 SETTINGS: Настройки
 CREDITS: Авторы
 EXIT: Выход
-SAVE&EXIT: Применить и выйти в главное меню
+SAVE_AND_EXIT: Применить и выйти в главное меню
 CLOSE: Закрыть
 KINGDOM_ENTRANCE: Вход в Королевство
 VILLAGE_NORTH: Деревня. Север
