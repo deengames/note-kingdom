@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/WalkingInVillage.ogg-acec24cab0912ac3678114d96ae3af8f.oggstr"
+
+[deps]
+
+source_file="res://music/WalkingInVillage.ogg"
+dest_files=[ "res://.import/WalkingInVillage.ogg-acec24cab0912ac3678114d96ae3af8f.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
