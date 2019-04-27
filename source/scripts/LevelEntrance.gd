@@ -23,8 +23,8 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 	# what I was thinking for level transitions kind of breaks puzzles, so let's just change rooms and
 	# keep info we need in global or something
 	if body.has_node("GUI"): # this fades to white and back
-		print("body is " + body.name)
 		body.get_node("GUI/AnimationPlayer").play_backwards("ScreenFade")
+		body.get_node("PlayerCharacter/AnimationPlayer").stop(false)
 		body.set_physics_process(false)
 		yield(body.get_node("GUI/AnimationPlayer"), "animation_finished")
 	else:
