@@ -10,9 +10,13 @@ export(String, FILE, "*.tscn") var newArea: = ""# let's just use the string reso
 export(int) var unlockNumber: = 0 # the number of notes needed to unlock this puzzle.
 
 func _ready():
-	if Globals.notes_collected.size() == unlockNumber and has_node("AnimationPlayer"):
+	var noteNumber = 0
+	for i in Globals.notes_collected:
+		if i[0] == true:
+			noteNumber += 1
+	if noteNumber == unlockNumber and has_node("AnimationPlayer"):
 		$AnimationPlayer.play("Open")
-	elif Globals.notes_collected.size() > unlockNumber and has_node("AnimationPlayer"):
+	elif noteNumber > unlockNumber and has_node("AnimationPlayer"):
 		$AnimationPlayer.play("Open")
 		$AnimationPlayer.seek($AnimationPlayer.current_animation_length, true)
 
@@ -23,8 +27,8 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 	# what I was thinking for level transitions kind of breaks puzzles, so let's just change rooms and
 	# keep info we need in global or something
 	if body.has_node("GUI"): # this fades to white and back
-		print("body is " + body.name)
 		body.get_node("GUI/AnimationPlayer").play_backwards("ScreenFade")
+		body.get_node("PlayerCharacter/AnimationPlayer").stop(false)
 		body.set_physics_process(false)
 		yield(body.get_node("GUI/AnimationPlayer"), "animation_finished")
 	else:

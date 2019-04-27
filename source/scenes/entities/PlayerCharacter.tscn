@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/models/Material_001.material" type="Material" id=1]
+[ext_resource path="res://music/footstep.wav" type="AudioStream" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Character"
@@ -135,6 +136,23 @@ tracks/6/keys = {
 "update": 0,
 "values": [ Vector3( -12.4491, -180, -1.10579e-006 ) ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath("PushingSteps")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.05, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [sub_resource type="Animation" id=4]
 length = 0.4
@@ -193,6 +211,23 @@ tracks/6/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 12, 0, 0 ) ]
+}
+tracks/7/type = "method"
+tracks/7/path = NodePath("RunningSteps")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0.05, 0.25 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -277,6 +312,7 @@ tracks/9/keys = {
 [node name="PlayerCharacter" type="Spatial"]
 
 [node name="Rotator" type="Spatial" parent="."]
+transform = Transform( -1, -3.81456e-008, 8.53673e-008, -1.88459e-008, 0.976488, 0.215572, -9.15833e-008, 0.215572, -0.976488, 0, 0, 0 )
 
 [node name="Armature" type="Skeleton" parent="Rotator"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17379, 0 )
@@ -337,4 +373,15 @@ anims/Push = SubResource( 3 )
 anims/Run = SubResource( 4 )
 anims/Stand = SubResource( 5 )
 blend_times = [ "Push", "Fall", 0.1, "Push", "Run", 0.1, "Push", "Stand", 0.1, "Run", "Fall", 0.1, "Run", "Push", 0.2, "Run", "Stand", 0.1, "Stand", "Fall", 0.1, "Stand", "Push", 0.1, "Stand", "Run", 0.1 ]
+
+[node name="RunningSteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -19.393
+bus = "SFX"
+
+[node name="PushingSteps" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -19.393
+pitch_scale = 0.6
+bus = "SFX"
 
