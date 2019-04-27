@@ -22,8 +22,8 @@ func _on_StaticBody_body_entered(body):
 		hide()
 
 		var note_panel = NotePanel.instance()
-		#Globals.notes_collected.append(note_key) # its fine store all the notes as a dictionary somewhere, but not in notes_collected.
-		Globals.notes_collected[note_key][0] = true # this may need to change
+		# In notes_collected we store only note_key
+		Globals.notes_collected.append(note_key)
 		note_panel.set_text("NOTE_%s" % note_key)
 
 		# we need to instatiate the GUI from code first, otherwise this breaks depending on

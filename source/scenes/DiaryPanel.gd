@@ -16,10 +16,9 @@ func _ready():
 	for i in Globals.notes_collected.size():
 		var new_button = diary_panel_button.instance()
 		var note_info = Globals.notes_collected[i]
-		if note_info[0] == true:
-			new_button.text = note_info[1]
-			new_button.note_key = "NOTE_%s" % i
-			$Panel/VBoxContainer.add_child(new_button)
+		new_button.text = "Note%s" % i
+		new_button.note_key = "NOTE_%s" % Globals.notes_collected[i]
+		$Panel/VBoxContainer.add_child(new_button)
 
 func set_text(message_key):
 	$Label.text = Globals.translate(message_key)

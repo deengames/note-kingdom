@@ -15,7 +15,7 @@ var _language: String = "en-US"
 var last_room: String = "" # we need this for moving the player appropriately on loading rooms
 var current_room: String = "" # we need this for saves
 
-var notes_collected: Array = [[false, "first_note_header"], [false, "second_note_header"], [false, "header"], [false, "also_header"], [false, "only_header,yes"]] # as you get note, set notes_collected[note_numer][0] = true
+var notes_collected: Array = [] # as you get any note array fill up by notes_collected.append(Note key)
 # END: save per save-game
 
 
