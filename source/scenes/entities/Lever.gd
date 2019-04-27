@@ -12,6 +12,7 @@ func _ready():
 	_OFF_ROTATION = $Handle.rotation_degrees
 
 func flip():
+	$AudioStreamPlayer.play()
 	self._is_on = not self._is_on
 	if self._is_on:
 		$Handle.rotation_degrees = -_OFF_ROTATION

@@ -26,4 +26,5 @@ material/0 = SubResource( 2 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -14.136
+bus = "SFX"
 

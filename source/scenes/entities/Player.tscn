@@ -23,9 +23,9 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=3]
 
 [node name="KinematicBody" type="KinematicBody" groups=[
 "player",
@@ -53,7 +53,7 @@ texture = ExtResource( 3 )
 [node name="Area2D" type="Area2D" parent="GUI/Save"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GUI/Save/Area2D"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="GUI"]
 margin_top = 80.0
@@ -83,7 +83,7 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.740423, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 43.6154, 24.9741 )
