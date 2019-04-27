@@ -1,48 +1,54 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/LevelEntrance.gd" type="Script" id=1]
-[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/entities/PushableBlock.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Canelabra.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Puzzles/Teleporters/CastleTextures.gd" type="Script" id=4]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/PushableBlock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=12]
 
 [node name="Teleporter1" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Torch" parent="." instance=ExtResource( 2 )]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+visible = false
 shadow_enabled = true
 
 [node name="Ground and Border" type="Node" parent="."]
+script = ExtResource( 4 )
 
-[node name="Wall7" parent="Ground and Border" instance=ExtResource( 3 )]
+[node name="Wall7" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 15, 6.47396, 2, 9.69431 )
 
-[node name="Wall6" parent="Ground and Border" instance=ExtResource( 3 )]
+[node name="Wall6" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 1, -8.282, 2, 14 )
 
-[node name="Wall8" parent="Ground and Border" instance=ExtResource( 3 )]
+[node name="Wall8" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 1, -8.282, 2, 4.62629 )
 
-[node name="Wall11" parent="Ground and Border" instance=ExtResource( 3 )]
+[node name="Wall11" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 23, 0, 0, 0, 1, 0, 0, 0, 1, 0.112309, 2, -6 )
 
-[node name="Wall12" parent="Ground and Border" instance=ExtResource( 3 )]
+[node name="Wall12" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, -7.5494, 2, -1.10268 )
 
-[node name="Spatial" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Spatial" parent="Ground and Border" instance=ExtResource( 6 )]
 
 [node name="Teleporters" type="Node" parent="."]
 
-[node name="T1" parent="Teleporters" instance=ExtResource( 5 )]
+[node name="T1" parent="Teleporters" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2551, 0, 19.8669 )
 target_name = "T1 Target"
 one_time_use = true
@@ -50,51 +56,58 @@ one_time_use = true
 [node name="T1 Target" type="Spatial" parent="Teleporters"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2551, 0, 9.06958 )
 
-[node name="T2" parent="Teleporters" instance=ExtResource( 5 )]
+[node name="T2" parent="Teleporters" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51093, 0, 9.19266 )
 target_name = "T2 Target"
 
 [node name="T2 Target" type="Spatial" parent="Teleporters"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8015, 0, -0.909835 )
 
-[node name="T3" parent="Teleporters" instance=ExtResource( 5 )]
+[node name="T3" parent="Teleporters" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4192, 0, -1.49711 )
 target_name = "T4"
 
-[node name="T4" parent="Teleporters" instance=ExtResource( 5 )]
+[node name="T4" parent="Teleporters" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32201, 0, -1.49711 )
 target_name = "T5"
 
-[node name="T5" parent="Teleporters" instance=ExtResource( 5 )]
+[node name="T5" parent="Teleporters" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58271, 0, -1.49711 )
 target_name = "T5 Target"
 
 [node name="T5 Target" type="Spatial" parent="Teleporters"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2637, 0, 0 )
 
-[node name="Block" parent="Teleporters" instance=ExtResource( 6 )]
+[node name="Block" parent="Teleporters" instance=ExtResource( 8 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 15.264, 3, 7.26357 )
 
-[node name="T6" parent="Teleporters" instance=ExtResource( 5 )]
+[node name="T6" parent="Teleporters" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2546, 0, 19.7787 )
 target_name = "T6 Target"
 
 [node name="T6 Target" type="Spatial" parent="Teleporters"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7099, 0, -15.6804 )
 
-[node name="Plate" parent="Teleporters" instance=ExtResource( 7 )]
+[node name="T7" parent="Teleporters" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2546, 0, -10.2213 )
+target_name = "T7 Target"
+
+[node name="T7 Target" type="Spatial" parent="Teleporters"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2901, 0, 16.3196 )
+
+[node name="Plate" parent="Teleporters" instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25546, 0.0640669, -20.399 )
 auto_reset = true
 
-[node name="On" parent="Teleporters" instance=ExtResource( 8 )]
+[node name="On" parent="Teleporters" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 8, 9.86, 2, -16.089 )
 
 [node name="Notes" type="Node" parent="."]
 
-[node name="StaticBody" parent="Notes" instance=ExtResource( 9 )]
+[node name="StaticBody" parent="Notes" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.181, 1, -18 )
 
-[node name="NotePanel" parent="." instance=ExtResource( 10 )]
+[node name="NotePanel" parent="." instance=ExtResource( 12 )]
 visible = false
 
 [node name="UI Stuff" type="Node" parent="."]

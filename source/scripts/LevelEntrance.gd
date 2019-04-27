@@ -46,17 +46,3 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 	# at the end here, move player to the spot if it's got one
 	# jk, store it in global and dump in player ready lolololol
 	$"/root/Globals".last_room = old_area
-	
-# this is garbage, how to wait for new scene to load first--maybe I can't, because the new scene is waiting on
-# this script to finish deleting itself maybe?
-#	if old_area != "":
-#		yield(get_tree().current_scene, "tree_exited")
-##		yield(get_tree().current_scene, "tree_entered")
-#		yield(get_tree().current_scene, "ready")
-#		print("current is ready")
-#		var base = get_tree().get_root().get_child(1) # this seems hacky
-#		var pos_3D = base.find_node(old_area, true, false)
-#		if pos_3D:
-#			print("pos 3d is " + pos_3D.name)
-#			base.get_node("KinematicBody").global_transform.translation = pos_3D.global_transform.translation
-##			get_tree().call_group("player", "set", ["translation", pos_3D.translation])

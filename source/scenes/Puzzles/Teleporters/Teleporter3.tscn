@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/LevelEntrance.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/Puzzles/Teleporters/CastleTextures.gd" type="Script" id=3]
+[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/UnpushableBlock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/NotePanel.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Canelabra.tscn" type="PackedScene" id=9]
 
 [node name="Teleporter3" type="Spatial"]
 script = ExtResource( 1 )
@@ -16,72 +18,74 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+visible = false
 shadow_enabled = true
 
 [node name="Ground and Border" type="Node" parent="."]
+script = ExtResource( 3 )
 
-[node name="Spatial" parent="Ground and Border" instance=ExtResource( 3 )]
+[node name="Spatial" parent="Ground and Border" instance=ExtResource( 4 )]
 
-[node name="Wall" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Wall" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 16, -3.81661, 3, -7.55373 )
 
-[node name="Wall2" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Wall2" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 8, 10.4599, 3, -16.0114 )
 
-[node name="Wall6" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Wall6" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 5, -12.4127, 3, 9.88959 )
 
-[node name="Wall3" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Wall3" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 23, 0, 0, 0, 2, 0, 0, 0, 1, 0.410254, 3, -9.18823 )
 
-[node name="Wall5" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Wall5" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 13, 0, 0, 0, 2, 0, 0, 0, 1, 8.71261, 3, 7.36726 )
 
-[node name="Wall4" parent="Ground and Border" instance=ExtResource( 4 )]
+[node name="Wall4" parent="Ground and Border" instance=ExtResource( 5 )]
 transform = Transform( 23, 0, 0, 0, 2, 0, 0, 0, 1, 0.438636, 3, 15.6365 )
 
 [node name="Notes" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="StaticBody" parent="Notes" instance=ExtResource( 5 )]
+[node name="StaticBody" parent="Notes" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462175, 2.64078, -14.1613 )
 
-[node name="NotePanel" parent="." instance=ExtResource( 6 )]
+[node name="NotePanel" parent="." instance=ExtResource( 7 )]
 visible = false
 
 [node name="UI Stuff" type="Node" parent="."]
 
 [node name="Win Path" type="Node" parent="."]
 
-[node name="Pad1" parent="Win Path" instance=ExtResource( 7 )]
+[node name="Pad1" parent="Win Path" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7107, 0, 20.1894 )
 target_name = "Destination1"
 
 [node name="Destination1" type="Spatial" parent="Win Path"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7107, 0, 11.6801 )
 
-[node name="Pad2" parent="Win Path" instance=ExtResource( 7 )]
+[node name="Pad2" parent="Win Path" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.36474, 0, -5.44783 )
 target_name = "Destination2"
 
 [node name="Destination2" type="Spatial" parent="Win Path"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9214, 0, -5.44783 )
 
-[node name="Pad4" parent="Win Path" instance=ExtResource( 7 )]
+[node name="Pad4" parent="Win Path" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.277698, 0, 3.13472 )
 target_name = "Destination4"
 
 [node name="Destination4" type="Spatial" parent="Win Path"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26628, 0, -14.6614 )
 
-[node name="Pad5" parent="Win Path" instance=ExtResource( 7 )]
+[node name="Pad5" parent="Win Path" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7678, 0, -19.1317 )
 target_name = "Destination5"
 
 [node name="Destination5" type="Spatial" parent="Win Path"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165604, 0, -19.3248 )
 
-[node name="Exit" parent="Win Path" instance=ExtResource( 7 )]
+[node name="Exit" parent="Win Path" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.58038, 0, -20.4671 )
 target_name = "Start"
 
@@ -90,45 +94,47 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165604, 0, 20.9872 )
 
 [node name="Non-Win" type="Node" parent="."]
 
-[node name="T1" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T1" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3656, 0, 20.0489 )
 target_name = "Dest"
 
 [node name="Dest" type="Spatial" parent="Non-Win"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.1784, 0, -14.4887 )
 
-[node name="T2" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T2" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8153, 0, -20.4547 )
 target_name = "Start"
 
-[node name="T3" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T3" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3401, 0, -5.52921 )
 target_name = "Start"
 
-[node name="T4" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T4" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3307, 0, 3.03881 )
 target_name = "Start"
 
-[node name="T5" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T5" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.38135, 0, 3.03881 )
 target_name = "Start"
 
-[node name="T6" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T6" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.38101, 0, -20.237 )
 target_name = "Dest"
 
-[node name="T7" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="T7" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.173, 0, -13.8399 )
 target_name = "Start"
 
 [node name="Start" type="Spatial" parent="Non-Win"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165604, 0, 20.9872 )
 
-[node name="Pad3" parent="Non-Win" instance=ExtResource( 7 )]
+[node name="Pad3" parent="Non-Win" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8166, 0, 11.3051 )
 target_name = "Destination3"
 
 [node name="Destination3" type="Spatial" parent="Non-Win"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.19174, 0, 11.3051 )
+
+[node name="Torch" parent="." instance=ExtResource( 9 )]
 
 [connection signal="enter_or_exit" from="Ground and Border/Spatial" to="." method="enter_or_exit_puzzle"]
