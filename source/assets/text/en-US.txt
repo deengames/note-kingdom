@@ -3,7 +3,7 @@ SETTINGS: Settings
 CREDITS: Credits
 EXIT: Exit
 CLOSE: Close
-SAVE: Save
+SAVE&EXIT: Apply and return to main menu
 CHOOSE_LANGUAGE: Choose language
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_SQUARE: Village Square

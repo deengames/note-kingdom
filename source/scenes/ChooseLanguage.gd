@@ -12,11 +12,11 @@ const _language_arrow_x = {
 
 func _ready():
 	var language_font = Globals.get_language_font()
-	$Language/Label.add_font_override("font", language_font)
-	$Language/Label.text = Globals.translate("CHOOSE_LANGUAGE")
+	$VBoxContainer/Label.add_font_override("font", language_font)
+	$VBoxContainer/Label.text = Globals.translate("CHOOSE_LANGUAGE")
 	
-	$Button.add_font_override("font", language_font)
-	$Button.text = Globals.translate("SAVE")
+	$VBoxContainer/Button.add_font_override("font", language_font)
+	$VBoxContainer/Button.text = Globals.translate("SAVE&EXIT")
 	
 	_show_selected_language()
 
@@ -36,7 +36,8 @@ func _on_HindiLanguage_pressed():
 	emit_signal("picked_language")
 	
 func _show_selected_language():
-	$Language/UpArrow.position.x = _language_arrow_x[Globals._language]
+	#$Language/UpArrow.position.x = _language_arrow_x[Globals._language]
+	pass
 
 func _on_SaveButton_pressed():
 	var manager = SaveManager.new()

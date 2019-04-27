@@ -2,6 +2,7 @@
 SETTINGS: Настройки
 CREDITS: Авторы
 EXIT: Выход
+SAVE&EXIT: Применить и выйти в главное меню
 CLOSE: Закрыть
 KINGDOM_ENTRANCE: Вход в Королевство
 VILLAGE_NORTH: Деревня. Север
