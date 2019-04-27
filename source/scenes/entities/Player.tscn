@@ -55,13 +55,13 @@ custom_constants/shadow_as_outline = 1
 text = "Tab"
 align = 1
 
-[node name="DiaryPanelContainer" type="CanvasLayer" parent="GUI"]
-
-[node name="NotePanelContainer" type="CanvasLayer" parent="GUI"]
-
 [node name="Fade" type="ColorRect" parent="GUI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+
+[node name="DiaryPanelContainer" type="CanvasLayer" parent="GUI"]
+
+[node name="NotePanelContainer" type="CanvasLayer" parent="GUI"]
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 visible = false
