@@ -1,9 +1,11 @@
 extends Node
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	var children = get_children()
+	for child in children:
+		if child is AudioStreamPlayer:
+			child.volume_db = VolumeHelper.get_volume(Globals.music_volume)
+	
 	$Channel1.play()
