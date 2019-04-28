@@ -312,6 +312,7 @@ tracks/9/keys = {
 [node name="PlayerCharacter" type="Spatial"]
 
 [node name="Rotator" type="Spatial" parent="."]
+editor/display_folded = true
 transform = Transform( -1, -3.81456e-008, 8.53673e-008, -1.88459e-008, 0.976488, 0.215572, -9.15833e-008, 0.215572, -0.976488, 0, 0, 0 )
 
 [node name="Armature" type="Skeleton" parent="Rotator"]

@@ -2,6 +2,7 @@ extends Area
 
 const NotePanel = preload("res://scenes/NotePanel.tscn")
 const Player = preload("res://scenes/entities/Player.gd")
+const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 signal got_note
 
@@ -9,6 +10,9 @@ export var note_key: int
 
 const _ROTATE_SPEED = 100
 var _current_angle: float = 0
+
+func _ready():
+	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 
 func _process(delta):
 	self._current_angle += (_ROTATE_SPEED * delta)

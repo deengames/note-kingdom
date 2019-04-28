@@ -3,9 +3,12 @@ extends Area
 export var number:int = 0
 
 const Player = preload("res://scenes/entities/Player.gd")
+const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
+	
 	# color change here using a shader
 	
 	var add_color = Color()
@@ -30,6 +33,7 @@ func _process(delta):
 
 func _on_Area_body_entered(body):
 	if body is Player:
+		
 		$AudioStreamPlayer.play()
 		hide()
 		
