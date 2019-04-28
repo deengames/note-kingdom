@@ -1,6 +1,8 @@
 extends Panel
 
 func _ready():
+	
+	$AudioStreamPlayer.play()
 	$Tween.interpolate_property(self, "rect_position:y", self.rect_position.y, 365, 0.2, Tween.TRANS_EXPO,Tween.EASE_OUT)
 	$Tween.start()
 	$CloseButton.text = Globals.translate($CloseButton.text)

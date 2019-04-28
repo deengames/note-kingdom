@@ -12,7 +12,8 @@ const _ROTATE_SPEED = 100
 var _current_angle: float = 0
 
 func _ready():
-	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
+	#$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
+	pass
 
 func _process(delta):
 	self._current_angle += (_ROTATE_SPEED * delta)
@@ -22,7 +23,7 @@ func _process(delta):
 
 func _on_StaticBody_body_entered(body):
 	if body is Player and self.visible:
-		$AudioStreamPlayer.play()
+		#$AudioStreamPlayer.play()
 		hide()
 
 		var note_panel = NotePanel.instance()
@@ -36,5 +37,5 @@ func _on_StaticBody_body_entered(body):
 		body.get_node("GUI").get_node("NotePanelContainer").add_child(note_panel)
 		#Globals.player.freeze()
 
-		yield($AudioStreamPlayer, "finished")
+		#yield($AudioStreamPlayer, "finished")
 		self.queue_free()
