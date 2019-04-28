@@ -2,10 +2,10 @@ extends CanvasLayer
 
 var DiaryPanel = preload("res://scenes/DiaryPanel.tscn")
 const SaveManager = preload("res://scripts/SaveManager.gd")
+const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$SaveGame.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -26,6 +26,7 @@ func _on_toggle_diary():
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (event is InputEventMouseButton and event.pressed):
 		# Save game
+		$SaveGame.play()
 		var save_data = {
 			"last_room": Globals.last_room,
 			"current_room": Globals.current_room,

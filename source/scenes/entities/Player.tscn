@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/entities/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/GUI.gd" type="Script" id=2]
 [ext_resource path="res://assets/textures/Diary16x16Icon.png" type="Texture" id=3]
 [ext_resource path="res://assets/fonts/DefaultFont.tres" type="DynamicFont" id=4]
-[ext_resource path="res://assets/models/player.obj" type="ArrayMesh" id=5]
-[ext_resource path="res://scenes/entities/PlayerCharacter.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/entities/LocationBanner.gd" type="Script" id=7]
+[ext_resource path="res://assets/audio/sfx/save.ogg" type="AudioStream" id=5]
+[ext_resource path="res://assets/models/player.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://scenes/entities/PlayerCharacter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/LocationBanner.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "ScreenFade"
@@ -46,6 +47,7 @@ scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )
 
 [node name="Save" type="Sprite" parent="GUI"]
+editor/display_folded = true
 position = Vector2( 40, 180 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 3 )
@@ -76,9 +78,12 @@ anchor_bottom = 1.0
 
 [node name="NotePanelContainer" type="CanvasLayer" parent="GUI"]
 
+[node name="SaveGame" type="AudioStreamPlayer" parent="GUI"]
+stream = ExtResource( 5 )
+
 [node name="MeshInstance" type="MeshInstance" parent="."]
 visible = false
-mesh = ExtResource( 5 )
+mesh = ExtResource( 6 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -96,7 +101,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 enabled = true
 cast_to = Vector3( -1.5, 0, 0 )
 
-[node name="PlayerCharacter" parent="." instance=ExtResource( 6 )]
+[node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.750994, 0 )
 
@@ -135,7 +140,7 @@ margin_top = -30.0
 margin_right = 640.0
 margin_bottom = 25.0
 color = Color( 0.172549, 0.176471, 0.345098, 1 )
-script = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="CanvasLayer/LocationBanner"]
 anchor_left = 0.5
