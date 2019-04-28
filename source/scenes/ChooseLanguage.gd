@@ -17,6 +17,9 @@ func _ready():
 	_translate($VBoxContainer/MusicLabel, "MUSIC")
 	_translate($VBoxContainer/SfxLabel, "SOUND_EFFECTS")
 	
+	$MusicSlider.value = Globals.music_volume
+	$SfxSlider.value = Globals.sfx_volume
+	
 	_show_selected_language()
 
 func _translate(control, message_key):
