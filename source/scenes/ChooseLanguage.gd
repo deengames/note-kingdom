@@ -21,6 +21,12 @@ func _ready():
 	$SfxSlider.value = Globals.sfx_volume
 	
 	_show_selected_language()
+	if Globals._language == "en-US":
+		$Panel.rect_position.x = 272
+	elif Globals._language == "ru-RU":
+		$Panel.rect_position.x = 520
+	elif Globals._language == "hi-HI":
+		$Panel.rect_position.x = 768
 
 func _translate(control, message_key):
 	var language_font = Globals.get_language_font()	
@@ -31,16 +37,19 @@ func _on_EnglishLanguage_pressed():
 	Globals.set_language("en-US")
 	_show_selected_language()
 	emit_signal("picked_language")
+	$Panel.rect_position.x = 272
 
 func _on_RussianLanguage_pressed():
 	Globals.set_language("ru-RU")
 	_show_selected_language()
 	emit_signal("picked_language")
+	$Panel.rect_position.x = 520
 	
 func _on_HindiLanguage_pressed():
 	Globals.set_language("hi-HI")
 	_show_selected_language()
 	emit_signal("picked_language")
+	$Panel.rect_position.x = 768
 	
 func _show_selected_language():
 	#$Language/UpArrow.position.x = _language_arrow_x[Globals._language]
