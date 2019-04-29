@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 20 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 50, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0 )
 shadow_enabled = true
 
 [node name="Walls" type="Node" parent="."]
@@ -56,7 +56,7 @@ transform = Transform( 9, 0, 0, 0, 3, 0, 0, 0, 1, 12.8389, 3, 4.18333 )
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 3, 4.05716 )
 
 [node name="Spatial" parent="Subpuzzle2/Node" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -19.2792, 0, 9.39439 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.2792, 0, 9.39439 )
 
 [node name="Node2" type="Node" parent="Subpuzzle2"]
 
@@ -67,7 +67,7 @@ transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, 3.96245, 3, -14.2379 )
 transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 3, -3.65676, 3, -14.2379 )
 
 [node name="Spatial3" parent="Subpuzzle2/Node2" instance=ExtResource( 6 )]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -5.76681, 0, -4.17187 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.76681, 0, -4.17187 )
 
 [node name="Node3" type="Node" parent="Subpuzzle2"]
 
