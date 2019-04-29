@@ -1,0 +1,171 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Tests/WalkingTraversal.gd" type="Script" id=1]
+[ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/entities/Ground and Border.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/textures/Artefact Texture.png" type="Texture" id=5]
+[ext_resource path="res://scenes/entities/Artifact.gd" type="Script" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_world_triplanar = true
+albedo_texture = ExtResource( 5 )
+emission_enabled = true
+emission = Color( 0.87451, 0.0745098, 0.956863, 1 )
+emission_energy = 0.3
+emission_operator = 0
+emission_on_uv2 = true
+emission_texture = ExtResource( 5 )
+uv1_scale = Vector3( 0.25, 0.25, 0.25 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.55606, 6.12389, 4.71853 )
+
+[node name="Ground and Border" parent="." instance=ExtResource( 3 )]
+
+[node name="Notes" type="Node" parent="."]
+
+[node name="Note1" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.819, 1, 16 )
+note_key = 1
+
+[node name="Note2" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, 16 )
+note_key = 2
+
+[node name="Note3" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.819, 1, 16 )
+note_key = 3
+
+[node name="Note4" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.819, 1, 16 )
+note_key = 4
+
+[node name="Note5" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.819, 1, 16 )
+note_key = 5
+
+[node name="Note6" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, 11 )
+note_key = 6
+
+[node name="Note7" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.819, 1, 11 )
+note_key = 7
+
+[node name="Note8" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.819, 1, 11 )
+note_key = 8
+
+[node name="Note9" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.819, 1, 11 )
+note_key = 9
+
+[node name="Note10" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, 6 )
+note_key = 10
+
+[node name="Note11" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.819, 1, 6 )
+note_key = 11
+
+[node name="Note12" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.819, 1, 6 )
+note_key = 12
+
+[node name="Note13" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.819, 1, 6 )
+note_key = 13
+
+[node name="Note14" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, 0 )
+note_key = 14
+
+[node name="Note15" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.819, 1, 0 )
+note_key = 15
+
+[node name="Note16" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.819, 1, 0 )
+note_key = 16
+
+[node name="Note17" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.819, 1, 0 )
+note_key = 17
+
+[node name="Note18" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, -5 )
+note_key = 18
+
+[node name="Note19" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.819, 1, -5 )
+note_key = 19
+
+[node name="Note20" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.819, 1, -5 )
+note_key = 20
+
+[node name="Note21" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.819, 1, -5 )
+note_key = 21
+
+[node name="Note22" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.819, 1, -10 )
+note_key = 22
+
+[node name="Note23" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.819, 1, -10 )
+note_key = 23
+
+[node name="Note24" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.819, 1, -10 )
+note_key = 24
+
+[node name="Note25" parent="Notes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.819, 1, -10 )
+note_key = 25
+
+[node name="UI Stuff" type="Node" parent="."]
+
+[node name="DirectionalLight2" type="DirectionalLight" parent="."]
+transform = Transform( 0.999751, -0.0155415, 0.0160153, 0, 0.717641, 0.696413, -0.0223165, -0.69624, 0.717462, 0, 0, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1.70711, -0.292893, 1, 1, 1, -1.41421, -0.292893, 1.70711, 1, 13.101, 4, -12.7306 )
+visible = false
+mesh = SubResource( 2 )
+material/0 = null
+script = ExtResource( 6 )
+
+[connection signal="got_note" from="Notes/Note1" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note2" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note3" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note4" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note5" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note6" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note7" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note8" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note9" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note10" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note11" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note12" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note13" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note14" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note15" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note16" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note17" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note18" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note19" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note20" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note21" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note22" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note23" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note24" to="." method="_on_StaticBody_got_note"]
+[connection signal="got_note" from="Notes/Note25" to="." method="_on_StaticBody_got_note"]

@@ -60,7 +60,7 @@ func get_language_font():
 func translate(message_key):
 	var data = _language_data[_language]
 	if data.has(message_key):
-		return data[message_key]
+		return data[message_key].c_unescape()
 	else:
 		print("WARNING: No message with key={k} in {l} language".format({k = message_key, l = _language}))
 		 # make it obvious that it's missing

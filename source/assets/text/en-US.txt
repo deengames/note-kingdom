@@ -16,5 +16,30 @@ VILLAGE_EAST: Village East
 VILLAGE_SOUTH: Village South
 VILLAGE_WEST: Village West
 CASTLE: Castle
-NOTE_0: This is about as long as notes get. We don't have a lot of room here with that huge font size that you picked. Well, actually, it's rather close to a tweet size. Maybe?
-NOTE_1: Another one text note text
+NOTE_0: Is this supposed to be 
+NOTE_1: If you're reading this note you should leave right away!\n-The Treefort Gang\nP.S. It seems like we've had less visitors lately, haven't we?
+NOTE_2: Grocery List:\n1. Eggs\n2. Milk\n3. ButterI think I'll go for a walk today\n\nWhat else are we out of...hmmm
+NOTE_3: Dear Lucy,\nHow are things back in Village North? I m--- y-- hope you're doing well!\nL--- Your friend,\nTom
+NOTE_4: I wonder when Peter's cousin will be coming back? My husband is starting to worry. Maybe I'll see if Gregory will go look for him?
+NOTE_5: To the Reader:\nIt seems like something is different about this town recently. Have you figured out what it is?\nFrom:\nThe Writer
+NOTE_6: Plans:\n1. Get the band back together\n2. Build Rocket\n3. ???\n4. Profit\n
+NOTE_7: Closed for the summer solstice festival.
+NOTE_8: I hope more people come for the festival this year. We always had so many people until last year...
+NOTE_9: To the Reader:\nPeople mysteriously stopped coming through our gates. After a while, we closed them. Nobody's come, so we haven't opened them since.\nFrom:\nThe Writer
+NOTE_10: I think I'll go for a walk today
+NOTE_11: I went looking to the next town for Peter's cousin, but I couldn't even find one person to ask for help! I'm so embarrassed...
+NOTE_12: Menu\nMonday: Donuts\nTuesday: Donuts\nWednesday: Donuts\nThursday: Donuts\nFriday: Donuts\nWhat should we eat on Saturday though?
+NOTE_13: To the Reader:\nIf you are reading these notes, then I suppose we are having a kind of conversation. Tell me something. Can we trust each other?\nFrom:\nThe Writer
+NOTE_14: Why is it always so cold up here? The grass is still green! we don't have any snow!
+NOTE_15: Something strange is going on in this town. Just an intuition. Maybe I'm wrong! Yeah! I'm probably wrong!
+NOTE_16: Dear Tom,\nWhen are you coming back? I keep hoping you'll come back to me soon.\nLove,\nLucy
+NOTE_17: To the Reader:\nI have a hypothesis about what's happening. Can you guess what it is? If you know, come to the Castle north of the village square.\nFrom:\nThe Writer
+NOTE_18: A Knight, to guard his kingdom from potential attackers, took the power of a mysterious artefact.
+NOTE_19: He brought that artefact into his little kingdom. He used it's powers to create peace for all his subjects.
+NOTE_20: There was a cost to this peace, however. A barrier of silence may stop evil, but does it also stop good?
+NOTE_21: To the Reader:\nYou know don't you? My subjects and I are invisible. There is a way to resolve this, but can I ask you, a stranger, to rescue us?\nFrom:\nThe Writer
+NOTE_22: Touching this artefact will free all the people of this kingdom from invisibility--But you yourself will become invisible.
+NOTE_23: You can still leave. You haven't touched it yet. Don't make decision you will regret. I've regretted what I did to this kingdom ever since we found it, fallen from the sky.
+NOTE_24: No one will force you. You do not owe us anything.
+NOTE_25: Reader, which will you choose?
+
