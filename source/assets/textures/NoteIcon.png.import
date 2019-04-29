@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Note16x16Icon.png-8c10670f43df25e4b42c08bbef8a5a1e.stex"
+path="res://.import/NoteIcon.png-e78abe2ca9da43b4e8d8005e3f8bcb0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Note16x16Icon.png"
-dest_files=[ "res://.import/Note16x16Icon.png-8c10670f43df25e4b42c08bbef8a5a1e.stex" ]
+source_file="res://assets/textures/NoteIcon.png"
+dest_files=[ "res://.import/NoteIcon.png-e78abe2ca9da43b4e8d8005e3f8bcb0c.stex" ]
 
 [params]
 

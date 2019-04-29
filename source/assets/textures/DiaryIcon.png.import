@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Diary16x16Icon.png-3962a11c5b18ee59deb5e0683a423a34.stex"
+path="res://.import/DiaryIcon.png-1c6bfff45cd56d1af7b6c6d2f115cba8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/Diary16x16Icon.png"
-dest_files=[ "res://.import/Diary16x16Icon.png-3962a11c5b18ee59deb5e0683a423a34.stex" ]
+source_file="res://assets/textures/DiaryIcon.png"
+dest_files=[ "res://.import/DiaryIcon.png-1c6bfff45cd56d1af7b6c6d2f115cba8.stex" ]
 
 [params]
 
