@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/entities/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/GUI.gd" type="Script" id=2]
@@ -6,9 +6,8 @@
 [ext_resource path="res://assets/textures/SaveIcon.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/DefaultFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://assets/audio/sfx/save.ogg" type="AudioStream" id=6]
-[ext_resource path="res://assets/models/player.obj" type="ArrayMesh" id=7]
-[ext_resource path="res://scenes/entities/PlayerCharacter.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/entities/LocationBanner.gd" type="Script" id=9]
+[ext_resource path="res://scenes/entities/PlayerCharacter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/entities/LocationBanner.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "ScreenFade"
@@ -25,7 +24,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="CapsuleShape" id=3]
+[sub_resource type="CapsuleShape" id=2]
 
 [node name="KinematicBody" type="KinematicBody" groups=[
 "player",
@@ -81,7 +80,6 @@ autowrap = true
 clip_text = true
 
 [node name="Fade" type="ColorRect" parent="GUI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -92,14 +90,9 @@ anchor_bottom = 1.0
 [node name="SaveGame" type="AudioStreamPlayer" parent="GUI"]
 stream = ExtResource( 6 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-visible = false
-mesh = ExtResource( 7 )
-material/0 = null
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.740423, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 43.6154, 24.9741 )
@@ -112,8 +105,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 enabled = true
 cast_to = Vector3( -1.5, 0, 0 )
 
-[node name="PlayerCharacter" parent="." instance=ExtResource( 8 )]
-editor/display_folded = true
+[node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.750994, 0 )
 
 [node name="RayCastGround1" type="RayCast" parent="PlayerCharacter"]
@@ -150,7 +142,7 @@ margin_top = -30.0
 margin_right = 640.0
 margin_bottom = 25.0
 color = Color( 0.172549, 0.176471, 0.345098, 1 )
-script = ExtResource( 9 )
+script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="CanvasLayer/LocationBanner"]
 anchor_left = 0.5

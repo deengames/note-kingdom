@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Tests/WalkingTraversal.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
@@ -10,25 +10,9 @@
 [ext_resource path="res://scenes/entities/SwitchableBlock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/entities/PressurePlate.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/entities/Teleporter.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/textures/Artefact Texture.png" type="Texture" id=11]
-[ext_resource path="res://scenes/entities/Artifact.gd" type="Script" id=12]
+[ext_resource path="res://scenes/entities/Artifact.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Environment" id=1]
-
-[sub_resource type="SpatialMaterial" id=2]
-flags_world_triplanar = true
-albedo_texture = ExtResource( 11 )
-emission_enabled = true
-emission = Color( 0.87451, 0.0745098, 0.956863, 1 )
-emission_energy = 0.3
-emission_operator = 0
-emission_on_uv2 = true
-emission_texture = ExtResource( 11 )
-uv1_scale = Vector3( 0.25, 0.25, 0.25 )
-uv1_triplanar = true
-
-[sub_resource type="CubeMesh" id=3]
-material = SubResource( 2 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
@@ -116,10 +100,6 @@ target_name = "T3"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.76446, 0, 14.2128 )
 target_name = "T1"
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1.70711, -0.292893, 1, 1, 1, -1.41421, -0.292893, 1.70711, 1, 13.101, 4, 4.662 )
-mesh = SubResource( 3 )
-material/0 = null
-script = ExtResource( 12 )
+[node name="MeshInstance" parent="." instance=ExtResource( 11 )]
 
 [connection signal="got_note" from="Notes/StaticBody" to="." method="_on_StaticBody_got_note"]

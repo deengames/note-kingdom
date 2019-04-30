@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=2]
 
-[sub_resource type="Shader" id=5]
+[sub_resource type="Shader" id=1]
 code = "shader_type spatial;
 
 uniform vec4 color_added = vec4(0.0, 0.0, 0.0, .0);
@@ -23,6 +23,6 @@ void light () {
 
 [resource]
 resource_local_to_scene = true
-shader = SubResource( 5 )
+shader = SubResource( 1 )
 shader_param/color_added = Plane( 0, 0, 0, 1 )
 
