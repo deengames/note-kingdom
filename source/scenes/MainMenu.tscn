@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Hitch-hike/Hitch-hike.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Bender/Jovanny Lemonad - Bender-Black.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/models/KingdomEntrance.dae" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -68,6 +69,11 @@ margin_bottom = 338.0
 custom_fonts/font = SubResource( 2 )
 text = "Exit"
 
+[node name="Scene Root" parent="." instance=ExtResource( 4 )]
+transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, -0.5, 0.5, -10, 25, 5 )
 [connection signal="pressed" from="ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="ButtonsContainer/LoadButton" to="." method="_on_LoadButton_pressed"]
 [connection signal="pressed" from="ButtonsContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
