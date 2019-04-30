@@ -19,7 +19,7 @@ func _ready():
 	for i in Globals.notes_collected.size():
 		var new_button = diary_panel_button.instance()
 		var note_info = Globals.notes_collected[i]
-		new_button.text = "Note%s" % i
+		new_button.text = "Note #%s" % (i + 1)
 		new_button.note_key = "NOTE_%s" % Globals.notes_collected[i]
 		$Panel/ScrollContainer/VBoxContainer.add_child(new_button)
 
