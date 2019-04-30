@@ -1,12 +1,8 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Label.add_font_override("font", Globals.get_language_font())
+	$Label.text = Globals.translate("CREDITS").replace("@names", "Nightblade, mrdudeiii, legendiguess, Bhagat")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
