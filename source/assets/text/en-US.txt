@@ -44,4 +44,4 @@ NOTE_22: Touching this artifact will free all the people of this kingdom from in
 NOTE_23: You can still leave. You haven't touched it yet. Don't make decision you will regret. I've regretted what I did to this kingdom ever since we found it, fallen from the sky.
 NOTE_24: No one will force you. You do not owe us anything.
 NOTE_25: Reader, which will you choose?
-CREDITS: Thank you for playing!\nGame made by @names
+CREDITS_TEXT: Thank you for playing!\nGame made by @names
