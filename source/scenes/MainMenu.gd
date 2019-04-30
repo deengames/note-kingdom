@@ -46,3 +46,6 @@ func _on_LoadButton_pressed():
 	var map_name = Globals.current_room.replace(" ", "")
 	var scene_path = "res://scenes/WorldAreas/" + map_name + ".tscn"
 	get_tree().change_scene(scene_path)
+
+func _on_CreditsButton_pressed():
+	get_tree().change_scene("res://scenes/Credits.tscn")

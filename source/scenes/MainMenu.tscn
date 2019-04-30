@@ -71,4 +71,5 @@ text = "Exit"
 [connection signal="pressed" from="ButtonsContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="ButtonsContainer/LoadButton" to="." method="_on_LoadButton_pressed"]
 [connection signal="pressed" from="ButtonsContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="ButtonsContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="ButtonsContainer/ExitButton" to="." method="_on_ExitButton_pressed"]

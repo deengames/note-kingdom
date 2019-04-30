@@ -5,6 +5,7 @@ CREDITS: Credits
 EXIT: Exit
 CLOSE: Close
 SAVE_AND_EXIT: Apply and return to main menu
+BACK_TO_MAIN: Back to main menu
 CHOOSE_LANGUAGE: Choose language
 AUDIO_SETTINGS: Audio settings
 MUSIC: Music
