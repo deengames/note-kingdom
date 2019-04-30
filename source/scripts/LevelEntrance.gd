@@ -30,15 +30,14 @@ func enter_or_exit_puzzle(body=null): # this sometimes takes 1 arg that we disca
 		body.get_node("PlayerCharacter/AnimationPlayer").stop(false)
 		body.set_physics_process(false)
 		yield(body.get_node("GUI/AnimationPlayer"), "animation_finished")
-	else:
-		print("where is GUI though?")
 	
 	if newArea != "":
 		if get_tree().get_root().get_node("Location").location_name: # note the space between the words in location_name
 			old_area = get_tree().get_root().get_node("Location").location_name
-			print("old area name is " + old_area)
-			print("new area name is " + newArea)
-		
+			if old_area == "Castle" or newArea.ends_with("Castle.tscn"):
+				var a = newArea.get_basename().split("/")[-1]
+				print(a)
+				Music.change_track(a)
 		get_tree().change_scene(newArea)
 	else:
 		old_area = get_tree().current_scene.name
