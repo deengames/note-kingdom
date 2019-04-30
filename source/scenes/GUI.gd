@@ -6,6 +6,8 @@ const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 func _ready():
 	$SaveGame.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
+	$SaveLabel.add_font_override("font", Globals.get_language_font())
+	$SaveLabel.text = Globals.translate("PRESS_TO_SAVE").replace("@key", "F")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

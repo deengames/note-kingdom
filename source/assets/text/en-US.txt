@@ -45,3 +45,4 @@ NOTE_23: You can still leave. You haven't touched it yet. Don't make decision yo
 NOTE_24: No one will force you. You do not owe us anything.
 NOTE_25: Reader, which will you choose?
 CREDITS_TEXT: Thank you for playing!\nGame made by @names
+PRESS_TO_SAVE: Press @key to save
