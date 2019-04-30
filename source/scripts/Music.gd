@@ -24,7 +24,7 @@ func change_track(area):
 		"Sanctum":
 			$Channel1.stop()
 #			$Channel2.stop()
-		_:
+		"VillageSquare":
 			$Channel1.stream = load("res://music/WalkingInVillage.ogg")
 			$Channel1.play()
 #			$Channel2.stop()

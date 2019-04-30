@@ -183,7 +183,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99382e-007, 1, -4 )
 transform = Transform( -8.74228e-008, 0, 2, 0, 4, 0, -2, 0, -8.74228e-008, 46, 0, 1.00536e-005 )
 script = ExtResource( 6 )
 newArea = "res://scenes/WorldAreas/Castle.tscn"
-unlockNumber = 15
+unlockNumber = 16
 
 [node name="ToSquare" type="Area" parent="Map/BigDoor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.5, -1.13687e-011, 0, 0 )

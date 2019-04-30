@@ -18,7 +18,7 @@ VILLAGE_SOUTH: Village South
 VILLAGE_WEST: Village West
 CASTLE: Castle
 SANCTUM: Sanctum
-NOTE_0: Is this supposed to be 
+NOTE_0: Is this supposed to be a "note"? change the number!
 NOTE_1: If you're reading this note you should leave right away!\n-The Treefort Gang\nP.S. It seems like we've had less visitors lately, haven't we?
 NOTE_2: Grocery List:\n1. Eggs\n2. Milk\n3. ButterI think I'll go for a walk today\n\nWhat else are we out of...hmmm
 NOTE_3: Dear Lucy,\nHow are things back in Village North? I m--- y-- hope you're doing well!\nL--- Your friend,\nTom

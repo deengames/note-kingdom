@@ -106,6 +106,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 8, 9.86, 2, -16.089 )
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.181, 1, -18 )
+note_key = 18
 
 [node name="NotePanel" parent="." instance=ExtResource( 12 )]
 visible = false

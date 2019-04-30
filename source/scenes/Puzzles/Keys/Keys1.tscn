@@ -94,5 +94,6 @@ number = 6
 
 [node name="Note" parent="Notes" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181, 1, -14.7005 )
+note_key = 14
 
 [connection signal="enter_or_exit" from="Walls/Ground and Border" to="." method="enter_or_exit_puzzle"]

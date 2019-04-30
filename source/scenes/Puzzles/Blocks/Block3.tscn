@@ -71,6 +71,6 @@ transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 4, 12.2779, 1, -9.33921 )
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181, 1, -19 )
-message_key = "NOTE_4"
+note_key = 4
 
 [connection signal="enter_or_exit" from="Walls/Ground and Border" to="." method="enter_or_exit_puzzle"]

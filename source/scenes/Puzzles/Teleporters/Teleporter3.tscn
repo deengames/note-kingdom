@@ -45,10 +45,10 @@ transform = Transform( 13, 0, 0, 0, 2, 0, 0, 0, 1, 8.71261, 3, 7.36726 )
 transform = Transform( 23, 0, 0, 0, 2, 0, 0, 0, 1, 0.438636, 3, 15.6365 )
 
 [node name="Notes" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.462175, 2.64078, -14.1613 )
+note_key = 20
 
 [node name="NotePanel" parent="." instance=ExtResource( 7 )]
 visible = false

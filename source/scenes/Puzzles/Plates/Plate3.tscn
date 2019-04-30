@@ -80,9 +80,9 @@ transform = Transform( 1, 0, 0, 0, 2, 0, 0, 0, 8, -4.81162, 3, -15.497 )
 transform = Transform( 6, 0, 0, 0, 2, 0, 0, 0, 2, 0.209765, 3, -7.33994 )
 
 [node name="Notes" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Note" parent="Notes" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181, 1, -20.0723 )
+note_key = 12
 
 [connection signal="enter_or_exit" from="Walls/Ground and Border" to="." method="enter_or_exit_puzzle"]

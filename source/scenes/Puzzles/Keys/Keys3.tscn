@@ -145,5 +145,6 @@ transform = Transform( 1, 0, 0, 0, 3, 0, 0, 0, 10, 5.2427, 3, -15.0877 )
 
 [node name="Note" parent="Notes" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.181, 1, -18.1799 )
+note_key = 16
 
 [connection signal="enter_or_exit" from="Walls/Ground and Border" to="." method="enter_or_exit_puzzle"]

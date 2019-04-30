@@ -33,4 +33,4 @@ func _on_Area_body_entered(body):
 		yield(fadeAnim, "animation_finished")
 		player.get_node("GUI/AnimationPlayer").play("ScreenFade", -1, -0.3, true)
 		yield(player.get_node("GUI/AnimationPlayer"), "animation_finished")
-		get_tree().change_scene("res://scenes/MainMenu.tscn") # this probably needs to be credits
+		get_tree().change_scene("res://scenes/Credits.tscn") # this probably needs to be credits

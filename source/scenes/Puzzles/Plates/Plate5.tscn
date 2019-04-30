@@ -2499,6 +2499,7 @@ auto_reset = true
 
 [node name="StaticBody" parent="Notes" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.819, 1, 20 )
+note_key = 13
 
 [node name="NotePanel" parent="." instance=ExtResource( 7 )]
 visible = false

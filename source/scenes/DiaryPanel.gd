@@ -21,7 +21,7 @@ func _ready():
 		var note_info = Globals.notes_collected[i]
 		new_button.text = "Note%s" % i
 		new_button.note_key = "NOTE_%s" % Globals.notes_collected[i]
-		$Panel/VBoxContainer.add_child(new_button)
+		$Panel/ScrollContainer/VBoxContainer.add_child(new_button)
 
 func set_text(message_key):
 	$Label.text = Globals.translate(message_key)
