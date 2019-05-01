@@ -27,22 +27,22 @@ NOTE_5: Читателю:\nКажется что-то изменилось в э
 NOTE_6: Дорогой Том,\nТы не писал мне уже некоторое время. Караван прошел через деревню и сказал, что там нет людей. Пожалуйста, отпиши мне.\nЛюси
 NOTE_7: Мы закрыли вход в деревню на праздник летнего солнцестояния.
 NOTE_8: Я надеюсь больше людей придут ради фестиваля в этом году. У нас всегда было так много людей, не считая прошлого года... 
-NOTE_9: To the reader:\nPeople mysteriously stopped coming through our gates. After a while, we closed them. Nobody's come, so we haven't opened them since.\nFrom:\nThe Writer
-NOTE_10: I think I'll go for a walk today. Why didn't the animals or birds notice me yesterday?
-NOTE_11: I went looking to the next town for Peter's cousin, but I couldn't even find one person to ask for help! I'm so embarrassed...
-NOTE_12: The weather seems strange recently. It's almost as if time has stopped. And yet, the sun continues to rise and set...
-NOTE_13: To the reader:\nIf you are reading these notes, then I suppose we are having a kind of conversation. Tell me something. Can we trust each other?\nFrom:\nThe Writer
-NOTE_14: Why is it always so cold up here? The grass is still green! we don't have any snow!
-NOTE_15: This kingdom belongs to a knight, the legendary Sir Artor, who travelled far and wide before returning.
-NOTE_16: Dear Tom,\nWhen are you coming back? I keep hoping you'll come back to me soon.\n\nLucy
-NOTE_17: To the reader:\nI have a theory about what's happening. Can you guess what it is? If you know, come to the castle, north of the village square.
-NOTE_18: Sir Artor brought that artifact into this little kingdom. He used it's powers to create peace for all his subjects.
-NOTE_19: To guard his kingdom from potential attackers, Sir Artor took the power of a mysterious artifact.
-NOTE_20: There was a cost to this peace, however. A barrier of silence may stop evil, but does it also stop good?
-NOTE_21: To the reader:\nYou know don't you? My subjects and I are invisible. There is a way to resolve this, but can I ask you, a stranger, to rescue us?\nFrom:\nSir Artor
-NOTE_22: Touching this artifact will free all the people of this kingdom from invisibility -- but you, yourself, will become invisible.
-NOTE_23: You can still leave. You haven't touched it yet. Don't make decision you will regret. I've regretted what I did to this kingdom ever since we found it, fallen from the sky.
-NOTE_24: No one will force you. You do not owe us anything.
-NOTE_25: Reader, which will you choose?
-CREDITS_TEXT: Thank you for playing!\nGame made by @names
-PRESS_TO_SAVE: Press @key to save
+NOTE_9: Читателю:\nЗагадочно, но люди перестали проходить через наши ворота. Через некоторое время мы их закрыли. Никто так и не пришел с того времени, поэтому мы больше никогда не открывали их обратно.\nОт:\nПисатель
+NOTE_10: Я думаю я пойду сегодня на прогулку. Почему животные или птицы не заметили меня вчера?
+NOTE_11: Я пошел искать в ближайшем городе двоюрдного брата Питера, но я не смог найти ни одного человека чтобы попросить о помощи! Я не понимаю что происходит...
+NOTE_12: Погода кажется странной в последнее время. Как будто время остановилось. И все же я вижу как восходит и заходит солнце...
+NOTE_13: Читателю:\nЕсли ты читаешь эти записки, тогда, я пологаюа, у нас что-то вроде разговора. Скажи мне что-нибудь. Можем ли мы доверять друг другу?\nОт:\nПисатель
+NOTE_14: Почему здесь всегда так холодно? Трава все еще зеленая! И у нас нету никакого снега!
+NOTE_15: Это королевство принадлежит рыцарю, легендарному Сэру Артору, который много путешествовал перед своим возвращением.
+NOTE_16: Дорого Том,\nКогда ты вернешься? Я продолжаю надеяться, что ты скоро вернешься ко мне.\n\nЛюси
+NOTE_17: Читателю:\nУ меня есть теория по поводу того что происходит. Сможешь угадать о чем я? Если понял, то приходи в замок, к северу от деревенской площади.
+NOTE_18: Сэр Артос принес этот артефакт в это маленькое королевство. Он использовал его силы чтобы создать мир для своих подданых.
+NOTE_19: Чтобы защиттиь свое королевство от потенциальных врагов, Сэр Артор взял сила таинственного аретфакта.
+NOTE_20: Однако у этой мирной жизни была своя цена. Барьер безмолвия может остановить зло, но ведь и добро он остановит тоже?
+NOTE_21: Читателю:\nТы уже все понял, не так ли? Мои поданные и я - невидимы. Есть один способ решить эту проблему, но могу ли я просить вас, незнакомец, спасти нас?\nОт:\nСэр Артор
+NOTE_22: Одно лишь прикосновение к этому артефакту освободит всех людей этого королевства от невидимости - но ты, сам, станешь невидим.
+NOTE_23: Ты все еще можешь уйти. Ты еще не трогал его. Не принимай решение, о котором будешь сожалеть. Я сожалел о том, что сделал с этим королевством с тех пор, как мы нашли этот, упавший с неба, артефакт.
+NOTE_24: Никто не заставит тебя. Ты ничего нам не должен.
+NOTE_25: Читатель, что ты выберешь?
+CREDITS_TEXT: Спасибо вас за игру!\nИгра сделана @name
+PRESS_TO_SAVE: Нажми @key чтобы сохраниться
