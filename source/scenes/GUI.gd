@@ -20,6 +20,8 @@ func _process(delta):
 			"notes_collected": Globals.notes_collected
 		}
 		SaveManager.save(SaveManager.SAVE_FILE_NAME, save_data)
+	if Input.is_action_pressed("exit_to_main_menu"):
+		get_tree().change_scene("res://scenes/MainMenu.tscn")
 
 func _on_toggle_diary():
 	# DiaryPanelContainer should store only "DiaryPanel" or do not store anything at all
