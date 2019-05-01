@@ -3,14 +3,10 @@ extends Spatial
 export var target_name:String = ""
 export var one_time_use:bool = false
 
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
-
 var can_teleport = true
 var _target
 
 func _ready():
-	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
-		
 	var parent = self.get_parent()
 	var siblings = parent.get_children()
 	for sibling in siblings:

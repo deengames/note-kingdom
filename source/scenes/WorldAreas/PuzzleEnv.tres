@@ -27,4 +27,3 @@ fog_height_curve = 3.24901
 dof_blur_far_enabled = true
 dof_blur_far_distance = 50.0
 dof_blur_far_transition = 50.0
-

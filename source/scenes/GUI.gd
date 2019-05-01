@@ -2,10 +2,8 @@ extends CanvasLayer
 
 var DiaryPanel = preload("res://scenes/DiaryPanel.tscn")
 const SaveManager = preload("res://scripts/SaveManager.gd")
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 func _ready():
-	$SaveGame.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 	$SaveLabel.add_font_override("font", Globals.get_language_font())
 	$SaveLabel.text = Globals.translate("PRESS_TO_SAVE").replace("@key", "F")
 

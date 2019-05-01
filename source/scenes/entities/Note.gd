@@ -2,7 +2,6 @@ extends Area
 
 const NotePanel = preload("res://scenes/NotePanel.tscn")
 const Player = preload("res://scenes/entities/Player.gd")
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 signal got_note
 
@@ -12,8 +11,6 @@ const _ROTATE_SPEED = 100
 var _current_angle: float = 0
 
 func _ready():
-	#$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
-	
 	# In notes_collected we store only note_key. Check if we already got this note.
 	# When you load (not sure about when you don't), note_key is an int, and Globals.notes_collected
 	# has floats. So to normalize, convert all to ints and compare. Don't use .find.

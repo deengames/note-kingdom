@@ -1,7 +1,6 @@
 extends Spatial
 
 const Player = preload("res://scenes/entities/Player.gd")
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 export var switchable_type:String = "SwitchableBlock"
 
@@ -11,7 +10,6 @@ var _is_player_touching = false
 
 func _ready():
 	_OFF_ROTATION = $Handle.rotation_degrees
-	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 	
 func flip():
 	$AudioStreamPlayer.play()

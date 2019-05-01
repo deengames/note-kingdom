@@ -112,5 +112,4 @@ note_key = 18
 visible = false
 
 [node name="UI Stuff" type="Node" parent="."]
-
 [connection signal="enter_or_exit" from="Ground and Border/Spatial" to="." method="enter_or_exit_puzzle"]

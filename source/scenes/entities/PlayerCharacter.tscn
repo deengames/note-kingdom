@@ -402,12 +402,10 @@ blend_times = [ "Push", "Fall", 0.1, "Push", "Run", 0.1, "Push", "Stand", 0.1, "
 
 [node name="RunningSteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -19.393
 bus = "SFX"
 
 [node name="PushingSteps" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-volume_db = -19.393
 pitch_scale = 0.6
 bus = "SFX"
 
@@ -419,4 +417,3 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92771, 0 )
 light_color = Color( 0, 0.0627451, 1, 1 )
 light_energy = 0.0
 omni_range = 3.0
-

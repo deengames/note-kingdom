@@ -67,6 +67,8 @@ func _on_SaveButton_pressed():
 
 func _on_SfxSlider_value_changed(value):
 	Globals.sfx_volume = value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value)
 
 func _on_MusicSlider_value_changed(value):
 	Globals.music_volume = $MusicSlider.value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), value)

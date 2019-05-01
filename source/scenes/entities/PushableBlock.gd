@@ -1,14 +1,7 @@
 extends KinematicBody
 
 export(bool) var pushable
-
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
-
 var _GRAVITY = -40
-
-
-func _ready():
-	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 
 func play_audio():
 	if not $AudioStreamPlayer.playing:

@@ -3,7 +3,6 @@ extends Spatial
 export var number: int = 0
 
 const Player = preload("res://scenes/entities/Player.gd")
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 var _base_y: float
 var _total_elapsed: float = 0
@@ -11,7 +10,6 @@ var _total_elapsed: float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	self._base_y = $MeshInstance.translation.y # just the mesh
-	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 
 func _process(delta):
 	if Globals.player.keys.find(number) == -1:

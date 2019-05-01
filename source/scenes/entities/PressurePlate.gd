@@ -3,16 +3,12 @@ extends Spatial
 const Player = preload("res://scenes/entities/Player.gd")
 const SwitchableBlock = preload("res://scenes/entities/SwitchableBlock.gd")
 const PushableBlock = preload("res://scenes/entities/PushableBlock.gd")
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 export var auto_reset: = false # if this is on, it will untoggle itself if nothing is touching it 
 
 var _OFF_ROTATION
 var _is_on = false
 var _is_player_touching = false
-
-func _ready():
-	$AudioStreamPlayer.volume_db = VolumeHelper.get_volume(Globals.sfx_volume)
 
 func flip():
 	self._is_on = not self._is_on

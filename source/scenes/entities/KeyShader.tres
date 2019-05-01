@@ -25,4 +25,3 @@ void light () {
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/color_added = Plane( 0, 0, 0, 1 )
-
