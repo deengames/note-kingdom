@@ -1,11 +1,48 @@
-﻿NEW_GAME: Играть
+﻿NEW_GAME: Новая игра
+LOAD_GAME: Загрузить игру
 SETTINGS: Настройки
 CREDITS: Авторы
 EXIT: Выход
-SAVE_AND_EXIT: Применить и выйти в главное меню
 CLOSE: Закрыть
-KINGDOM_ENTRANCE: Вход в Королевство
-VILLAGE_NORTH: Деревня. Север
-VILLAGE_EAST: Деревня. Восток
-VILLAGE_SOUTH: Деревня. Юг
-VILLAGE_WEST: Деревня. Запад
+SAVE_AND_EXIT: Применить и вернуться в главное меню
+BACK_TO_MAIN: Вернуться в главное меню
+CHOOSE_LANGUAGE: Выберите язык:
+AUDIO_SETTINGS: Настройки звука
+MUSIC: Музыка
+SOUND_EFFECTS: Эффекты
+KINGDOM_ENTRANCE: Kingdom Entrance
+VILLAGE_SQUARE: Village Square
+VILLAGE_NORTH: Village North
+VILLAGE_EAST: Village East
+VILLAGE_SOUTH: Village South
+VILLAGE_WEST: Village West
+CASTLE: Castle
+SANCTUM: Sanctum
+NOTE_0: Is this supposed to be a "note"? change the number!
+NOTE_1: If you're reading this note, you should leave right away!\n-The Treefort Gang\nP.S. It seems like we've had less visitors lately, haven't we?
+NOTE_2: Something strange is going on in this town. Just an intuition. Maybe I'm wrong! Yeah! I'm probably wrong!
+NOTE_3: Dear Lucy,\nHow are things back in Village North? I miss you and hope you're doing well!\nYour friend,\nTom
+NOTE_4: Peter's cousin still didn't return. My husband is starting to worry. Maybe I'll see if Gregory will go look for him?
+NOTE_5: To the reader:\nIt seems like something is different about this town recently. Have you figured out what it is?\nFrom:\nThe Writer
+NOTE_6: Dear Tom,\nYou didn't write me in a while. A caravan passed through town and mentioned there are no people. Please write back.\nLucy
+NOTE_7: We closed the entrance to town for the summer solstice festival.
+NOTE_8: I hope more people come for the festival this year. We always had so many people, until last year...
+NOTE_9: To the reader:\nPeople mysteriously stopped coming through our gates. After a while, we closed them. Nobody's come, so we haven't opened them since.\nFrom:\nThe Writer
+NOTE_10: I think I'll go for a walk today. Why didn't the animals or birds notice me yesterday?
+NOTE_11: I went looking to the next town for Peter's cousin, but I couldn't even find one person to ask for help! I'm so embarrassed...
+NOTE_12: The weather seems strange recently. It's almost as if time has stopped. And yet, the sun continues to rise and set...
+NOTE_13: To the reader:\nIf you are reading these notes, then I suppose we are having a kind of conversation. Tell me something. Can we trust each other?\nFrom:\nThe Writer
+NOTE_14: Why is it always so cold up here? The grass is still green! we don't have any snow!
+NOTE_15: This kingdom belongs to a knight, the legendary Sir Artor, who travelled far and wide before returning.
+NOTE_16: Dear Tom,\nWhen are you coming back? I keep hoping you'll come back to me soon.\n\nLucy
+NOTE_17: To the reader:\nI have a theory about what's happening. Can you guess what it is? If you know, come to the castle, north of the village square.
+NOTE_18: Sir Artor brought that artifact into this little kingdom. He used it's powers to create peace for all his subjects.
+NOTE_19: To guard his kingdom from potential attackers, Sir Artor took the power of a mysterious artifact.
+NOTE_20: There was a cost to this peace, however. A barrier of silence may stop evil, but does it also stop good?
+NOTE_21: To the reader:\nYou know don't you? My subjects and I are invisible. There is a way to resolve this, but can I ask you, a stranger, to rescue us?\nFrom:\nSir Artor
+NOTE_22: Touching this artifact will free all the people of this kingdom from invisibility -- but you, yourself, will become invisible.
+NOTE_23: You can still leave. You haven't touched it yet. Don't make decision you will regret. I've regretted what I did to this kingdom ever since we found it, fallen from the sky.
+NOTE_24: No one will force you. You do not owe us anything.
+NOTE_25: Reader, which will you choose?
+CREDITS_TEXT: Thank you for playing!\nGame made by @names
+PRESS_TO_SAVE: Press @key to save
