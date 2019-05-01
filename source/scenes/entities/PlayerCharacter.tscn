@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/models/Material_001.material" type="Material" id=1]
-[ext_resource path="res://music/footstep.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/sfx/walking.ogg" type="AudioStream" id=2]
+[ext_resource path="res://music/footstep.wav" type="AudioStream" id=3]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Character"
@@ -141,7 +142,7 @@ tracks/7/path = NodePath("PushingSteps")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/keys = {
 "times": PoolRealArray( 0.05, 0.45 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -217,7 +218,7 @@ tracks/7/path = NodePath("RunningSteps")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
-tracks/7/enabled = true
+tracks/7/enabled = false
 tracks/7/keys = {
 "times": PoolRealArray( 0.05, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -339,6 +340,7 @@ tracks/1/keys = {
 [node name="PlayerCharacter" type="Spatial"]
 
 [node name="Rotator" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="Armature" type="Skeleton" parent="Rotator"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17379, 0 )
@@ -405,7 +407,7 @@ stream = ExtResource( 2 )
 bus = "SFX"
 
 [node name="PushingSteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 3 )
 pitch_scale = 0.6
 bus = "SFX"
 

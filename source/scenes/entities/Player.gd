@@ -101,6 +101,8 @@ func _process_input(delta):
 			if grounded or $PlayerCharacter/RayCastGround4.is_colliding():
 				$PlayerCharacter/AnimationPlayer.play("Run")
 				$PlayerCharacter.rotation.y = -input_direction.tangent().angle()
+				if not $PlayerCharacter/RunningSteps.playing:
+					$PlayerCharacter/RunningSteps.play()
 			else:
 				$PlayerCharacter/AnimationPlayer.play("Fall")
 					
