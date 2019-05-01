@@ -154,18 +154,17 @@ margin_left = 500.0
 margin_top = 382.0
 margin_right = 1000.0
 margin_bottom = 416.0
-min_value = -60.0
-max_value = 10.0
-value = 10.0
+min_value = -40.0
+max_value = 0.0
+ticks_on_borders = true
 
 [node name="SfxSlider" type="HSlider" parent="."]
 margin_left = 500.0
 margin_top = 468.0
 margin_right = 1000.0
 margin_bottom = 500.0
-min_value = -60.0
-max_value = 10.0
-value = 10.0
+min_value = -40.0
+max_value = 0.0
 ticks_on_borders = true
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/EnglishLanguage" to="." method="_on_EnglishLanguage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RussianLanguage" to="." method="_on_RussianLanguage_pressed"]
