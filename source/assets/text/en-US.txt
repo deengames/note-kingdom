@@ -41,7 +41,7 @@ NOTE_19: To guard his kingdom from potential attackers, Sir Artor took the power
 NOTE_20: There was a cost to this peace, however. A barrier of silence may stop evil, but does it also stop good?
 NOTE_21: To the reader:\nYou know don't you? My subjects and I are invisible. There is a way to resolve this, but can I ask you, a stranger, to rescue us?\nFrom:\nSir Artor
 NOTE_22: Touching this artifact will free all the people of this kingdom from invisibility -- but you, yourself, will become invisible.
-NOTE_23: You can still leave. You haven't touched it yet. Don't make decision you will regret. I've regretted what I did to this kingdom ever since we found it, fallen from the sky.
+NOTE_23: You can still leave. You haven't touched it yet. Don't make decision you will regret. I've regretted what I did to this kingdom ever since we found it, artifact, fallen from the sky.
 NOTE_24: No one will force you. You do not owe us anything.
 NOTE_25: Reader, which will you choose?
 CREDITS_TEXT: Thank you for playing!\nGame made by @names
