@@ -10,6 +10,7 @@ CHOOSE_LANGUAGE: Choose language
 AUDIO_SETTINGS: Audio settings
 MUSIC: Music
 SOUND_EFFECTS: Sound effects
+GAME_SAVED: Game was saved
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_SQUARE: Village Square
 VILLAGE_NORTH: Village North

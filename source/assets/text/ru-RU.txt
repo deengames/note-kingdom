@@ -10,6 +10,7 @@ CHOOSE_LANGUAGE: Выберите язык:
 AUDIO_SETTINGS: Настройки звука
 MUSIC: Музыка
 SOUND_EFFECTS: Эффекты
+GAME_SAVED: Игра сохранена
 KINGDOM_ENTRANCE: Вход в Королевство
 VILLAGE_SQUARE: Деревенская площадь
 VILLAGE_NORTH: Деревня. Север

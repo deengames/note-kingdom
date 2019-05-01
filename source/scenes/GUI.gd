@@ -5,7 +5,7 @@ const SaveManager = preload("res://scripts/SaveManager.gd")
 
 func _ready():
 	$SaveLabel.add_font_override("font", Globals.get_language_font())
-	$SaveLabel.text = Globals.translate("PRESS_TO_SAVE").replace("@key", "F")
+	$SaveIndicator.text = Globals.translate("GAME_SAVED")#.replace("@key", "F")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -14,6 +14,7 @@ func _process(delta):
 		self._on_toggle_diary()
 	if Input.is_action_just_pressed("save"):
 		$SaveGame.play()
+		$SaveIndicator.alpha = 1
 		var save_data = {
 			"last_room": Globals.last_room,
 			"current_room": Globals.current_room,
