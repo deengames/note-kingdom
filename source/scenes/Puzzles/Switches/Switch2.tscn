@@ -193,5 +193,4 @@ note_key = 7
 visible = false
 
 [node name="UI Stuff" type="Node" parent="."]
-
 [connection signal="enter_or_exit" from="Spatial" to="." method="enter_or_exit_puzzle"]

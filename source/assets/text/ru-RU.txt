@@ -10,22 +10,22 @@ CHOOSE_LANGUAGE: Выберите язык:
 AUDIO_SETTINGS: Настройки звука
 MUSIC: Музыка
 SOUND_EFFECTS: Эффекты
-KINGDOM_ENTRANCE: Kingdom Entrance
-VILLAGE_SQUARE: Village Square
-VILLAGE_NORTH: Village North
-VILLAGE_EAST: Village East
-VILLAGE_SOUTH: Village South
-VILLAGE_WEST: Village West
-CASTLE: Castle
-SANCTUM: Sanctum
-NOTE_0: Is this supposed to be a "note"? change the number!
-NOTE_1: If you're reading this note, you should leave right away!\n-The Treefort Gang\nP.S. It seems like we've had less visitors lately, haven't we?
-NOTE_2: Something strange is going on in this town. Just an intuition. Maybe I'm wrong! Yeah! I'm probably wrong!
-NOTE_3: Dear Lucy,\nHow are things back in Village North? I miss you and hope you're doing well!\nYour friend,\nTom
-NOTE_4: Peter's cousin still didn't return. My husband is starting to worry. Maybe I'll see if Gregory will go look for him?
-NOTE_5: To the reader:\nIt seems like something is different about this town recently. Have you figured out what it is?\nFrom:\nThe Writer
-NOTE_6: Dear Tom,\nYou didn't write me in a while. A caravan passed through town and mentioned there are no people. Please write back.\nLucy
-NOTE_7: We closed the entrance to town for the summer solstice festival.
+KINGDOM_ENTRANCE: Вход в Королевство
+VILLAGE_SQUARE: Деревенская площадь
+VILLAGE_NORTH: Деревня. Север
+VILLAGE_EAST: Деревня. Восток
+VILLAGE_SOUTH: Деревня. Юг
+VILLAGE_WEST: Деревня. Запад
+CASTLE: Замок
+SANCTUM: Святилище
+NOTE_0: Это должна быть "записка"? Измени номер!
+NOTE_1: Если ты читаешь эту записку, ты должен уйти прямо сейчас!\n-Банда форта на дереве\nP.S. Кажется, в последнее время у нас стало меньше поситителей, не так ли?
+NOTE_2: Что-то странное происходит в этой деревне. Просто интуиция. Может быть я ошибаюсь! Да! Я скорее всего ошибаюсь!
+NOTE_3: Дорогая Люси,\nКак дела в северной части Деревни? Я скучаю по тебе и надеюсь, что у тебя все хорошо!\nТвой друг, \nТом
+NOTE_4: Двоюродный брат Питера все еще не вернулся. Мой муж начинает беспокоиться. Может быть, я посмотрю, будет ли Грегори его искать?
+NOTE_5: Читателю:\nКажется что-то изменилось в этом городе в последнее время. Ты выяснил что это?\nОт:\nПисатель
+NOTE_6: Дорогой Том,\nТы не писал мне уже некоторое время. Караван прошел через деревню и сказал, что там нет людей. Пожалуйста, отпиши мне.\nЛюси
+NOTE_7: Мы закрыли вход в деревню на праздник летнего солнцестояния.
 NOTE_8: I hope more people come for the festival this year. We always had so many people, until last year...
 NOTE_9: To the reader:\nPeople mysteriously stopped coming through our gates. After a while, we closed them. Nobody's come, so we haven't opened them since.\nFrom:\nThe Writer
 NOTE_10: I think I'll go for a walk today. Why didn't the animals or birds notice me yesterday?
