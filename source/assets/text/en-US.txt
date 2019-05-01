@@ -11,6 +11,7 @@ AUDIO_SETTINGS: Audio settings
 MUSIC: Music
 SOUND_EFFECTS: Sound effects
 GAME_SAVED: Game was saved
+NOTE_BUTTON: Note @number
 KINGDOM_ENTRANCE: Kingdom Entrance
 VILLAGE_SQUARE: Village Square
 VILLAGE_NORTH: Village North
