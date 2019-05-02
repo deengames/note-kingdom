@@ -4,7 +4,7 @@ extends Spatial
 
 const Player = preload("res://scenes/entities/Player.gd")
 const SwitchableBlock = preload("res://scenes/entities/SwitchableBlock.gd")
-const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
+#const VolumeHelper = preload("res://scripts/VolumeHelper.gd")
 
 var _OFF_ROTATION
 var _is_on = false
