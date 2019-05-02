@@ -101,15 +101,18 @@ text = "Русский"
 align = 1
 
 [node name="HindiLanguage" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_left = 528.0
 margin_right = 768.0
 margin_bottom = 160.0
 rect_min_size = Vector2( 240, 160 )
+disabled = true
 texture_normal = ExtResource( 7 )
 expand = true
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HindiLanguage"]
+visible = false
 margin_top = 160.0
 margin_right = 240.0
 margin_bottom = 218.0
