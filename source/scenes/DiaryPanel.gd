@@ -6,6 +6,7 @@ func _ready():
 	$AudioStreamPlayer.play()
 	$Tween.interpolate_property(self, "rect_position:y", self.rect_position.y, 0, 0.2, Tween.TRANS_EXPO,Tween.EASE_OUT)
 	$Tween.start()
+	$Label.text = Globals.translate("DIARY")
 	$CloseButton.text = Globals.translate($CloseButton.text)
 	
 	# Breaks the style of the close button but makes it localizable

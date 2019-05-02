@@ -169,7 +169,6 @@ margin_bottom = 500.0
 min_value = -40.0
 max_value = 0.0
 ticks_on_borders = true
-
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/EnglishLanguage" to="." method="_on_EnglishLanguage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/RussianLanguage" to="." method="_on_RussianLanguage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/HindiLanguage" to="." method="_on_HindiLanguage_pressed"]
