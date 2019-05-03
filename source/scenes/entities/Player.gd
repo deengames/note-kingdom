@@ -24,6 +24,15 @@ var _block_pushing = null # ah, you horrible hack. stops audio when we stop push
 var keys = [] # numbers like 1, 37
 
 func _ready():
+	$CanvasLayer/QuitPanel.hide()
+	
+	var language_font = Globals.get_language_font()	
+	$CanvasLayer/QuitPanel/Label.add_font_override("font", language_font)
+	$CanvasLayer/QuitPanel/Label.text = Globals.translate("CONFIRM_EXIT")
+	
+	$CanvasLayer/QuitPanel/QuitButton.add_font_override("font", language_font)
+	$CanvasLayer/QuitPanel/QuitButton.text = Globals.translate("EXIT")
+	
 	Globals.player = self
 	if Globals.last_room != "" and get_tree().get_root().find_node(Globals.last_room, true, false) != null:
 		translation = get_tree().get_root().find_node(Globals.last_room, true, false).global_transform.origin

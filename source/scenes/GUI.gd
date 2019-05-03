@@ -21,9 +21,10 @@ func _process(delta):
 			"notes_collected": Globals.notes_collected
 		}
 		SaveManager.save(SaveManager.SAVE_FILE_NAME, save_data)
-	if Input.is_action_pressed("exit_to_main_menu"):
-		get_tree().change_scene("res://scenes/MainMenu.tscn")
-
+	if Input.is_action_just_pressed("exit_to_main_menu"):
+		var quit_panel = get_parent().get_node("CanvasLayer/QuitPanel")
+		quit_panel.visible = not quit_panel.visible
+		
 func _on_toggle_diary():
 	# DiaryPanelContainer should store only "DiaryPanel" or do not store anything at all
 	var diary_panel_container_children = $DiaryPanelContainer.get_children()
@@ -33,3 +34,9 @@ func _on_toggle_diary():
 	else:
 		var panel = DiaryPanel.instance()
 		$DiaryPanelContainer.add_child(panel)
+
+func _on_QuitButton_pressed():
+	get_tree().change_scene("res://scenes/MainMenu.tscn")
+
+func _on_XButton_pressed():
+	get_parent().get_node("CanvasLayer/QuitPanel").hide()

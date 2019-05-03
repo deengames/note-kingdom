@@ -146,6 +146,7 @@ enabled = true
 cast_to = Vector3( -1.5, 0, 0 )
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 7 )]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.750994, 0 )
 
 [node name="RayCastGround1" type="RayCast" parent="PlayerCharacter"]
@@ -200,4 +201,30 @@ align = 1
 valign = 1
 uppercase = true
 
+[node name="QuitPanel" type="WindowDialog" parent="CanvasLayer"]
+visible = true
+margin_left = 430.0
+margin_top = 261.0
+margin_right = 881.0
+margin_bottom = 456.0
+
+[node name="Label" type="Label" parent="CanvasLayer/QuitPanel"]
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 439.0
+margin_bottom = 107.0
+custom_fonts/font = ExtResource( 5 )
+text = "BACK_TO_MAIN"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/QuitPanel"]
+margin_left = 149.0
+margin_top = 125.0
+margin_right = 308.0
+margin_bottom = 175.0
+custom_fonts/font = ExtResource( 5 )
+text = "EXIT"
 [connection signal="tween_completed" from="CanvasLayer/Tween" to="CanvasLayer/LocationBanner" method="_on_Tween_tween_completed"]
+[connection signal="pressed" from="CanvasLayer/QuitPanel/QuitButton" to="GUI" method="_on_QuitButton_pressed"]
