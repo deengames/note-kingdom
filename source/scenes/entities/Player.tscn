@@ -24,7 +24,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 script/source = "extends Label
 
 var alpha = 0
@@ -39,7 +39,7 @@ func _process(delta):
 		set(\"custom_colors/font_color_shadow\", Color(0, 0, 0, alpha))
 		alpha -= 0.025"
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=3]
 
 [node name="KinematicBody" type="KinematicBody" groups=[
 "player",
@@ -108,7 +108,6 @@ autowrap = true
 clip_text = true
 
 [node name="Fade" type="ColorRect" parent="GUI"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -129,11 +128,11 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
 text = "GAME_SAVED"
 align = 1
 valign = 1
-script = SubResource( 3 )
+script = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.740423, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 43.6154, 24.9741 )
@@ -200,4 +199,5 @@ text = "Location name"
 align = 1
 valign = 1
 uppercase = true
+
 [connection signal="tween_completed" from="CanvasLayer/Tween" to="CanvasLayer/LocationBanner" method="_on_Tween_tween_completed"]
