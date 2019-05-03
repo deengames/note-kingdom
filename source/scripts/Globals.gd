@@ -10,8 +10,9 @@ var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
 
 # START: global settings to save
 var _language: String = "en-US"
-var music_volume:float = 100
-var sfx_volume:float = 100
+# ranges from -40 (fully muted) to 0 (full volume)
+var music_volume:float = 0
+var sfx_volume:float = 0
 # END: global settings to save
 
 
