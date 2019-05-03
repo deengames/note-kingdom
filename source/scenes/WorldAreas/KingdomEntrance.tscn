@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Location.gd" type="Script" id=1]
 [ext_resource path="res://scenes/entities/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/models/GateTileMap.material" type="Material" id=5]
 [ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/LevelEntrance.gd" type="Script" id=7]
+[ext_resource path="res://assets/textures/arrow-keys.png" type="Texture" id=8]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube.001"
@@ -107,4 +108,9 @@ shape = SubResource( 4 )
 [node name="CollisionShape2" type="CollisionShape" parent="StaticBody3"]
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, 12, 28 )
 shape = SubResource( 4 )
+
+[node name="WASD" type="Sprite3D" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.2, -6.75741 )
+pixel_size = 0.05
+texture = ExtResource( 8 )
 [connection signal="body_entered" from="AreaTransition/ToSquare" to="AreaTransition" method="enter_or_exit_puzzle"]
