@@ -11,8 +11,8 @@ var _DEFAULT_FONT = preload("res://assets/fonts/DefaultFont.tres")
 # START: global settings to save
 var _language: String = "en-US"
 # ranges from -40 (fully muted) to 0 (full volume)
-var music_volume:float = 0
-var sfx_volume:float = 0
+var music_volume:float = -20
+var sfx_volume:float = -20
 # END: global settings to save
 
 
@@ -33,6 +33,8 @@ var _language_fonts = {
 }
 
 func _ready():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), Globals.sfx_volume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), Globals.music_volume)
 	self._load_global_preferences()
 	
 	for code in _language_data.keys():

@@ -4,8 +4,6 @@ const SaveManager = preload("res://scripts/SaveManager.gd")
 const SettingsPanel = preload("res://scenes/SettingsPanel.tscn")
 
 func _ready():
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), Globals.sfx_volume)
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), Globals.music_volume)
 	_on_picked_language() # set in globals on startup
 	# Check if save file exists. Enable Load button if so.
 	$ButtonsContainer/LoadButton.disabled = not File.new().file_exists(SaveManager.SAVE_FILE_NAME)

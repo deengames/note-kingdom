@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/models/GateTileMap.material" type="Material" id=5]
 [ext_resource path="res://scenes/entities/Note.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/LevelEntrance.gd" type="Script" id=7]
-[ext_resource path="res://assets/decals/arrow-keys.png" type="Texture" id=8]
+[ext_resource path="res://assets/decals/tutorial.png" type="Texture" id=8]
 [ext_resource path="res://assets/decals/arrow-down.png" type="Texture" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
@@ -68,7 +68,7 @@ environment = ExtResource( 3 )
 [node name="Map" type="StaticBody" parent="."]
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
 
-[node name="Map2" type="MeshInstance" parent="Map"]
+[node name="Map" type="MeshInstance" parent="Map"]
 mesh = SubResource( 1 )
 material/0 = null
 material/1 = null
@@ -111,7 +111,7 @@ transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -10, 
 shape = SubResource( 4 )
 
 [node name="WASD" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0.3, -6.757 )
+transform = Transform( 3, 0, 0, 0, -1.31134e-007, 3, 0, -3, -1.31134e-007, 0, 0.3, -6.757 )
 pixel_size = 0.05
 texture = ExtResource( 8 )
 
