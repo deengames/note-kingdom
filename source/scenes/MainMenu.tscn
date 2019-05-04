@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/Hitch-hike/Hitch-hike.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/fonts/Bender/Jovanny Lemonad - Bender-Black.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/Location.gd" type="Script" id=4]
 [ext_resource path="res://scenes/WorldAreas/VillageAreasEnv.tres" type="Environment" id=5]
-[ext_resource path="res://assets/models/KingdomEntranceTileMap.material" type="Material" id=6]
+[ext_resource path="res://assets/textures/KingdomEntranceTileMap.png" type="Texture" id=6]
 [ext_resource path="res://assets/models/GateTileMap.material" type="Material" id=7]
 
 [sub_resource type="DynamicFont" id=1]
@@ -16,6 +16,12 @@ font_data = ExtResource( 2 )
 size = 32
 font_data = ExtResource( 3 )
 
+[sub_resource type="SpatialMaterial" id=5]
+resource_name = "KingdomEntranceTileMap"
+params_cull_mode = 2
+albedo_texture = ExtResource( 6 )
+metallic_specular = 0.0
+
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "Cube.001"
 surfaces/0 = {
@@ -25,7 +31,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 8352,
-"material": ExtResource( 6 ),
+"material": SubResource( 5 ),
 "name": "KingdomEntranceTileMap",
 "primitive": 4,
 "skeleton_aabb": [  ],
