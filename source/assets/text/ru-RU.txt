@@ -6,6 +6,7 @@ EXIT: Выход
 CLOSE: Закрыть
 SAVE_AND_EXIT: Применить и вернуться в главное меню
 BACK_TO_MAIN: Вернуться в главное меню
+CONFIRM_EXIT: Вы уверены что хотите выйти?
 CHOOSE_LANGUAGE: Выберите язык:
 AUDIO_SETTINGS: Настройки звука
 MUSIC: Музыка
