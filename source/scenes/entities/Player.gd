@@ -33,6 +33,8 @@ func _ready():
 	$CanvasLayer/QuitPanel/QuitButton.add_font_override("font", language_font)
 	$CanvasLayer/QuitPanel/QuitButton.text = Globals.translate("EXIT")
 	
+	$GUI/Fade.visible = true
+	
 	Globals.player = self
 	if Globals.last_room != "" and get_tree().get_root().find_node(Globals.last_room, true, false) != null:
 		translation = get_tree().get_root().find_node(Globals.last_room, true, false).global_transform.origin
